@@ -1,0 +1,19 @@
+----------------------------------------------------------------------
+                                                      Baby Names | Web
+----------------------------------------------------------------------
+  ______________
+_| OPTIMIZATION |_____________________________________________________
+
+        long |   database   | rank coed
+        long |   SOLIDify   | check to see if the code is SOLID
+     tedious | cleanup code | spacing, order
+     tedious | add comments | explain code
+----------------------------------------------------------------------
+  __________
+_| FEATURES |_________________________________________________________
+
+        easy |     name     | add your own baby name
+ complicated |     rank     | sort by personal rank / rating
+ complicated |   facebook   | get fb name on signup with fb
+        long |    social    | use fb friend names, share lists
+----------------------------------------------------------------------

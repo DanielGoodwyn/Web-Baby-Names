@@ -1,0 +1,105 @@
+<head>
+  <meta charset="utf-8">
+  <title>My Baby Names</title>
+  <meta name="description" content="Baby Names">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="css/iPhone.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body onload="currentPage('MyNames')">
+  <div class="spacer"></div>
+  <div id="main" class="container">
+    <header>
+      <h1>Baby Names</h1>
+      <button id="account" onclick="account()">Account</button>
+      <button id="myNames" class="selected" onclick="myNames()">My Names</button>
+      <button id="newNames" onclick="newNames()">New Names</button>
+    </header>
+    <h2>My Baby Names</h2>
+    <div class="showAllNames">
+      <a onclick="resetDefaults()">All <i>My</i> Names</a>
+      <a onclick="randomName()">Ξ</a>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="form ">
+          <span id="sortExpand">
+            <p style="cursor:pointer;" onclick="show('sortCollapse'), hide('sortExpand')">sort <span style="float:left;">▶</span></p>
+          </span>
+          <span style="display:none;" id="sortCollapse">
+            <p style="cursor:pointer;" onclick="show('sortExpand'), hide('sortCollapse')">sort <span style="float:left;">▼</span></p>
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <button id="namesAtoZ" onclick="myNamesAtoZ()">A-Z</button>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <button id="namesZtoA" onclick="myNamesZtoA()">Z-A</button>
+              </div>
+              <div class="hidden-md hidden-lg"><br><br><div class="clearfix"></div></div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <button id="namesNewest" onclick="myNamesNewest()">newest</button>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <button id="namesOldest" onclick="myNamesOldest()">oldest</button>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="form " id="genderForm">
+          <span style="display:none;" id="filterExpand">
+            <p style="cursor:pointer;" onclick="show('filterCollapse'), hide('filterExpand')">filter <span style="float:left;">▶</span></p>
+          </span>
+          <span id="filterCollapse">
+            <p style="cursor:pointer;" onclick="show('filterExpand'), hide('filterCollapse')">filter <span style="float:left;">▼</span></p>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <button id="maleNames" onclick="myMaleNames()"><img src="images/boy.png"><br>boy</button>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <button id="allNames" onclick="allMyNames()"><img src="images/baby.png"><br>both</button>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <button id="femaleNames" onclick="myFemaleNames()"><img src="images/girl.png"><br>girl</button>
+            </div>
+            <div class="clearfix"></div>
+          </span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="form" class="form">
+          <p>starts with</p>
+          <input type="search" id="startsWith" type="text" name="startsWith" placeholder="Start typing..." onkeyup="return getMyNames()" value="A"><br>
+        </div>
+      </div>
+    </div>
+    <a name='babyNames'>
+      <h4>Names</h4>
+    </a>    
+    <p class='orderedList' id="randomName"></p>
+    <p id="output"></p>    
+    <div class="form">
+      <p>limit</p>
+      <select id="limitSelect" onchange="setLimit(), getMyNames()">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option selected value="unlimited">unlimited</option>
+      </select>
+    </div>
+  </div>  
+  <footer>
+    <button onclick="about()">About</button>  
+  </footer>  
+  <script src="js/babynames.js"></script>
+</body>
+</html>
