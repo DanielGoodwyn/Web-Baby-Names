@@ -1,3 +1,11 @@
+
+p {
+    margin: auto!important;
+    padding: none!important;
+    text-align: center!important;
+    width: 200%!important;
+}
+
 body {    
     zoom: 50%;
 }
