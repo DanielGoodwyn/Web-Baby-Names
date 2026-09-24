@@ -806,7 +806,7 @@ function getNewNames() {
   namesArray = [];
   gendersArray = [];
   var genderClass;
-  var BabyName = Parse.Object.extend("name");
+  var BabyName = Parse.Object.extend("Name");
 
   currentUser.save({
     limit: limit,
@@ -822,9 +822,10 @@ function getNewNames() {
   });
 
   var query = new Parse.Query(BabyName);
-  if (gender!="All"){
-    query.equalTo("gender", gender);
-  }
+  // We will filter by gender locally after fetching to avoid Firestore index errors
+  // if (gender!="All"){
+  //   query.equalTo("gender", gender);
+  // }
   if (sort=="uncommon") {
     query.descending("rank");
   } else if (sort=="popular") {
@@ -854,10 +855,13 @@ function getNewNames() {
   query.find({
     success: function(results) {
       for (var i = 0; i < results.length; i++) {
-        var object = results[i];       
-        namesArray.push(object.get('name'));
-        gendersArray.push(object.get('gender'));
-      }      
+        var object = results[i];
+        var g = object.get('gender');
+        if (gender === "All" || g === gender) {
+          namesArray.push(object.get('name'));
+          gendersArray.push(g);
+        }
+      }
       output = "<div class='orderedList'>";
       for (var j = 0; j < namesArray.length; j++) {
         var listItemName = namesArray[j];
