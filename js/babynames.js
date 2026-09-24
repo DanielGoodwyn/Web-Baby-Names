@@ -199,11 +199,21 @@ function setEmail() {
 
 function resetPassword() {
   getLoginInput();
+  if (!email || email.length < 3) {
+    output = "Please enter your email address to reset password.";
+    setOutput();
+    return;
+  }
+  output = "Sending password reset email...";
+  setOutput();
   Parse.User.requestPasswordReset(email, {
     success: function() {
+      output = "Password reset email sent to " + email;
+      setOutput();
     },
     error: function(error) {
-      alert("Error: " + error.code + " " + error.message);
+      output = "Error: " + error.message;
+      setOutput();
     }
   });
 }
@@ -326,15 +336,15 @@ function checkCurrentUser() {
       document.getElementById("newNames").style.display = "inline-block";
       document.getElementById("logOut").style.display = "inline-block";
       document.getElementById("logIn").style.display = "none";
-      document.getElementById("logInWithFB").style.display = "none";      
-      if (Parse.FacebookUtils.isLinked(currentUser)) {
-        document.getElementById("unlinkFromFB").style.display = "inline-block";
-        document.getElementById("linkWithFB").style.display = "none";
+      if (document.getElementById("logInWithFB")) document.getElementById("logInWithFB").style.display = "none";      
+      if (Parse.FacebookUtils && Parse.FacebookUtils.isLinked(currentUser)) {
+        if (document.getElementById("unlinkFromFB")) document.getElementById("unlinkFromFB").style.display = "inline-block";
+        if (document.getElementById("linkWithFB")) document.getElementById("linkWithFB").style.display = "none";
       } else {
-        document.getElementById("linkWithFB").style.display = "inline-block";
-        document.getElementById("unlinkFromFB").style.display = "none";
+        if (document.getElementById("linkWithFB")) document.getElementById("linkWithFB").style.display = "inline-block";
+        if (document.getElementById("unlinkFromFB")) document.getElementById("unlinkFromFB").style.display = "none";
       }
-      document.getElementById("resetPassword").style.display = "inline-block";
+      document.getElementById("resetPassword").style.display = "none";
       document.getElementById("setEmail").style.display = "inline-block";
       document.getElementById("setUsername").style.display = "inline-block";
       username = currentUser.getUsername();
@@ -350,10 +360,10 @@ function checkCurrentUser() {
       document.getElementById("newNames").style.display = "none";
       document.getElementById("logOut").style.display = "none";
       document.getElementById("logIn").style.display = "inline-block";
-      document.getElementById("logInWithFB").style.display = "inline-block";
-      document.getElementById("linkWithFB").style.display = "none";
-      document.getElementById("unlinkFromFB").style.display = "none";
-      document.getElementById("resetPassword").style.display = "none";
+      if (document.getElementById("logInWithFB")) document.getElementById("logInWithFB").style.display = "inline-block";
+      if (document.getElementById("linkWithFB")) document.getElementById("linkWithFB").style.display = "none";
+      if (document.getElementById("unlinkFromFB")) document.getElementById("unlinkFromFB").style.display = "none";
+      document.getElementById("resetPassword").style.display = "inline-block";
       setElementById("account","!current");
     } else {
       account();

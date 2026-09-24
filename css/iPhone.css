@@ -1,18 +1,20 @@
 
 p {
-    margin: auto!important;
-    padding: none!important;
+    margin: 1em auto!important;
     text-align: center!important;
-    width: 200%!important;
+    width: 100%!important;
+    font-size: 16px;
+    color: #333;
 }
 
 body {    
-    zoom: 50%;
+    /* Removed legacy zoom */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f2f2f7; /* iOS standard background */
 }
 html, body, .container {
     padding: 0!important;
-    min-width:100%!important;
-    width:480px!important;
+    width: 100%!important;
     max-width: 100%!important;
     overflow-x: hidden!important;
 }
@@ -55,61 +57,79 @@ footer {
 }
 
 form {
-    max-width: 80%;
-    margin: 5%;
-    padding: 5%;
-    border-radius: 2em;
+    background: #ffffff;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-sizing: border-box;
 }
 
 input {
-    background: white;
-    border:sold thick gray;
-    border-radius: 2em;
-    text-align: center;
-    max-width: 80%;
-    padding: .25em 5%;
-    margin: .25em 5%;
+    background: #f9f9f9;
+    border: 1px solid #e5e5ea;
+    border-radius: 8px;
+    text-align: left;
+    width: 100%;
+    padding: 12px 16px;
+    margin: 8px 0;
+    font-size: 16px; /* Prevents auto-zoom on iOS */
+    box-sizing: border-box;
+    color: #333;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007aff;
+    background: #fff;
 }
 
 select {
-    min-width: 50%;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e5e5ea;
+    font-size: 16px;
+    margin: 8px 0;
 }
 
 button {
-    background: none;
-    border:none;
-    border-radius: 1in;
-    box-shadow: 0 0 0 rgba(0,0,0,0);
-    text-decoration: none;
-    color: blue;
-    padding:.25em 1%;
-    margin:.25em 1%;
-    min-width: 20%;
-    max-width: 96%;
-    font-weight: bolder;
+    background: #007aff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 14px 24px;
+    margin: 12px 0;
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 122, 255, 0.3);
 }
 
 button:hover, button:active {    
-    box-shadow: 0 0 0 rgba(0,0,0,0);
+    background: #005bb5;
+    box-shadow: none;
+    color: white;
 }
 
 button:disabled {
-    background: none;
-    color: #ddd!important;
+    background: #e5e5ea;
+    color: #8e8e93!important;
+    box-shadow: none;
 }
 
 button img {
-    max-width: 80%;
+    max-width: 100%;
 }
 
-button:active, button.selected {
-    font-weight: bolder;
-    position: relative;
-    top:-2px;
-    left:0;
-    box-shadow: none;
-    background: white;
-    color: black;
+button.selected {
+    background: #34c759;
+    color: white;
+    box-shadow: 0 2px 4px rgba(52, 199, 89, 0.3);
 }
 
 h1 {
@@ -137,13 +157,13 @@ p {
 }
 
 a {
-    color: blue!important;
+    color: #007aff!important;
     text-decoration: none;
-    font-weight: bolder;
+    font-weight: 500;
 }
 
 a:visited {
-    color: blue;
+    color: #007aff;
 }
 
 .listItem, .rowTitle, .detail {
