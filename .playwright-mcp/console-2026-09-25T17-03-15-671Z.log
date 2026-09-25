@@ -1,0 +1,4 @@
+[     653ms] TypeError: Cannot read properties of undefined (reading 'value')
+    at getMyNames (http://localhost:8000/js/babynames.js?v=2:690:32)
+    at checkCurrentUser (http://localhost:8000/js/babynames.js?v=2:364:5)
+    at http://localhost:8000/js/parse-adapter.js:20:57

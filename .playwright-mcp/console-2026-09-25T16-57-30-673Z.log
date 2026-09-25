@@ -1,0 +1,41 @@
+[     201ms] [LOG] dispatch gnavPromoReady after header promo init @ https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js:91
+[     203ms] [LOG] init AFTER fetching header @ https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js:346
+[     208ms] [LOG] dispatch gnavReady after footer @ https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js:293
+[     216ms] [LOG] Gtag Preloader (NEW) - pre setup fired @ https://assets.adobedtm.com/2ea7ee22c8c2/ece9aa9bcf6f/launch-72284e178e44.min.js:9
+[     232ms] [LOG] %c ============ VZTAG LOADED ============  color:#d68400; @ :12
+[    1007ms] Identifier 'newel' has already been declared
+[    2540ms] [ERROR] Access to CSS stylesheet at 'https://www.verizon.com/etc/designs/vzwcom/gnav20/core.css' from origin 'https://secure.verizon.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ about:blank:0
+[    2540ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.verizon.com/etc/designs/vzwcom/gnav20/core.css:0
+[    3000ms] [LOG] preparedVzdlForTargetPrefetch {page: Object, user: Object, event: Object, target: Object, utils: Object} @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    5583ms] [LOG] epsilon - last eventId - pageView e9f2bf4c-ea62-4a7d-841e-bebd5ab54b47-1790355453668 @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    6427ms] [LOG] calling vz_chat init 0 times @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    6432ms] [LOG] epsilon - last eventId - pageView e9f2bf4c-ea62-4a7d-841e-bebd5ab54b47-1790355453668 @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    6486ms] [LOG] sso @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    6486ms] [LOG] log in @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    6763ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://media.evolv.ai/asset-manager/releases/latest/webloader.min.js:0
+[    6967ms] [WARNING] Unrecognized feature: 'attribution-reporting'. @ https://c.amazon-adsystem.com/aat/amzn.js:1
+[    6981ms] [LOG] Askverizon PROD script @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7088ms] [LOG] bing- no prodid @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7343ms] [LOG] scrapePageData: Scraping from <main> element. @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7344ms] [LOG] scrapePageData: scrapedPageDataObject updated {0: Object} @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7344ms] [LOG] newPageDataObj: newPageDataObj updated {0: Object} @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7430ms] [LOG] calling vz_chat init 1 times @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7523ms] [ERROR] Error while sending postMessage: SyntaxError: Failed to execute 'postMessage' on 'Window': Invalid target origin 'false' in a call to 'postMessage'.
+    at checkWindowVzdl (https://chatbot-exp.verizon.com/chatbot/nsa/nos/h8sv-vzwcb-onebot-proxy/eksprod/public/FeatureFlagContainer.html:165:25)
+    at https://chatbot-exp.verizon.com/chatbot/nsa/nos/h8sv-vzwcb-onebot-proxy/eksprod/public/FeatureFlagContainer.html:172:7
+    at https://chatbot-exp.verizon.com/chatbot/nsa/nos/h8sv-vzwcb-onebot-proxy/eksprod/public/FeatureFlagContainer.html:199:7 @ https://chatbot-exp.verizon.com/chatbot/nsa/nos/h8sv-vzwcb-onebot-proxy/eksprod/public/FeatureFlagContainer.html:166
+[    7661ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://secure.verizon.com/nextgendigital/sales/assistant/scripts/search-overlay-bundle.min.js:0
+[    7661ms] [ERROR] [SearchOverlay] Failed to load bundle: /nextgendigital/sales/assistant/scripts/search-overlay-bundle.min.js @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7666ms] NotSupportedError: Failed to execute 'browsingTopics' on 'Document': document.browsingTopics() is deprecated and has been removed.
+    at https://rtr.innovid.com/observe-topics.html:5:118
+[    7706ms] [LOG] preparedVzdlForTargetPrefetch {page: Object, user: Object, event: Object, target: Object, utils: Object} @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7782ms] [WARNING] jQuery.Deferred exception: Failed to execute 'postMessage' on 'Window': Invalid target origin 'false' in a call to 'postMessage'. SyntaxError: Failed to execute 'postMessage' on 'Window': Invalid target origin 'false' in a call to 'postMessage'.
+    at Object.<anonymous> (https://chatbot-exp.verizon.com/chatbot/nsa/nos/h8sv-vzwcb-onebot-proxy/eksprod/public/FeatureFlagContainer.html:158:29)
+    at mightThrow (https://code.jquery.com/jquery-3.6.4.js:3802:29)
+    at process (https://code.jquery.com/jquery-3.6.4.js:3870:12) undefined @ https://code.jquery.com/jquery-3.6.4.js:4085
+[    7809ms] [LOG] ext JS_in init @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7809ms] [LOG] ext JS_in addexternalscript @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7809ms] [LOG] ext JS_in valid check @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7809ms] [LOG] ext JS_in_if function @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[    7809ms] [LOG] ext JS_after add @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129
+[   12554ms] [WARNING] New element is longer than 100 characters. Skipping. @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129

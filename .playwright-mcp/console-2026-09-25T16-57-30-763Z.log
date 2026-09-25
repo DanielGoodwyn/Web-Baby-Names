@@ -1,0 +1,9 @@
+[     324ms] [LOG] dispatch gnavPromoReady after header promo init @ https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js:91
+[     325ms] [LOG] init AFTER fetching header @ https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js:346
+[     331ms] [LOG] dispatch gnavReady after footer @ https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js:293
+[     345ms] [LOG] Gtag Preloader (NEW) - pre setup fired @ https://assets.adobedtm.com/2ea7ee22c8c2/ece9aa9bcf6f/launch-72284e178e44.min.js:9
+[     359ms] [LOG] %c ============ VZTAG LOADED ============  color:#d68400; @ :12
+[     917ms] Identifier 'newel' has already been declared
+[    2701ms] [ERROR] Access to CSS stylesheet at 'https://www.verizon.com/etc/designs/vzwcom/gnav20/core.css' from origin 'https://secure.verizon.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ about:blank:0
+[    2702ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.verizon.com/etc/designs/vzwcom/gnav20/core.css:0
+[    2860ms] [LOG] preparedVzdlForTargetPrefetch {page: Object, user: Object, event: Object, target: Object, env: Object} @ https://cdn.quantummetric.com/qscripts/quantum-verizon.js:129

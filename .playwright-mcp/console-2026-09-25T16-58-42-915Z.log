@@ -1,0 +1,34 @@
+[     350ms] [ERROR] Mixed Content: The page at 'https://www.danielgoodwyn.com/index.html' was loaded over HTTPS, but requested an insecure script 'http://www.google-analytics.com/ga.js'. This request has been blocked; the content must be served over HTTPS. @ https://www.danielgoodwyn.com/index.html:0
+[     532ms] [WARNING] Allow attribute will take precedence over 'allowfullscreen'. @ https://www.danielgoodwyn.com/index.html:1106
+[    1241ms] Uncaught Unable to load video v6cz927
+    at s.loadVideo (https://rumble.com/embedJS/uet7mz.va6ubz/?url=https%3A%2F%2Fwww.danielgoodwyn.com%2Findex.html&args=%5B%22play%22%2C%7B%22video%22%3A%22va6ubz%22%2C%22div%22%3A%22rumble_va6ubz%22%7D%5D:0:15737)
+    at m.e.ad_count (https://rumble.com/embedJS/uet7mz.va6ubz/?url=https%3A%2F%2Fwww.danielgoodwyn.com%2Findex.html&args=%5B%22play%22%2C%7B%22video%22%3A%22va6ubz%22%2C%22div%22%3A%22rumble_va6ubz%22%7D%5D:0:15612)
+    at <anonymous> (https://rumble.com/embedJS/uet7mz.va6ubz/?url=https%3A%2F%2Fwww.danielgoodwyn.com%2Findex.html&args=%5B%22play%22%2C%7B%22video%22%3A%22va6ubz%22%2C%22div%22%3A%22rumble_va6ubz%22%7D%5D:0:20176)
+    at n.onreadystatechange (https://rumble.com/embedJS/uet7mz.va6ubz/?url=https%3A%2F%2Fwww.danielgoodwyn.com%2Findex.html&args=%5B%22play%22%2C%7B%22video%22%3A%22va6ubz%22%2C%22div%22%3A%22rumble_va6ubz%22%7D%5D:0:19511)
+[    1387ms] [WARNING] It is recommended that a robustness level be specified. Not specifying the robustness level could result in unexpected behavior. @ https://embed.podcasts.apple.com/assets/dev-BtlvGk0o.js:0
+[    1476ms] [LOG] ❌ Debug logger DISABLED - only console logging active @ https://www.brighteon.com/_next/static/chunks/2713-e7a3e98499821cfa.js:0
+[    1476ms] [WARNING] VIDEOJS: WARN: A plugin named "qualityLevels" already exists. You may want to avoid re-registering plugins! @ https://www.brighteon.com/_next/static/chunks/123e19f2-948dc0f90e2a41fd.js:0
+[    1538ms] [LOG] Background Audio Platform Detection: {platform: desktop, isPWA: false, supportsBackgroundAudio: true, supportsMediaSession: true, confidence: high} @ https://www.brighteon.com/_next/static/chunks/2713-e7a3e98499821cfa.js:0
+[    1539ms] [WARNING] VIDEOJS: WARN: A plugin named "overlay" already exists. You may want to avoid re-registering plugins! @ https://www.brighteon.com/_next/static/chunks/123e19f2-948dc0f90e2a41fd.js:0
+[    1541ms] [WARNING] VIDEOJS: WARN: videojs.mergeOptions is deprecated and will be removed in 9.0; please use videojs.obj.merge instead. @ https://www.brighteon.com/_next/static/chunks/123e19f2-948dc0f90e2a41fd.js:0
+[    1556ms] [WARNING] VIDEOJS: WARN: A plugin named "brand" already exists. You may want to avoid re-registering plugins! @ https://www.brighteon.com/_next/static/chunks/123e19f2-948dc0f90e2a41fd.js:0
+[    1556ms] [WARNING] VIDEOJS: WARN: A plugin named "settingsPlugin" already exists. You may want to avoid re-registering plugins! @ https://www.brighteon.com/_next/static/chunks/123e19f2-948dc0f90e2a41fd.js:0
+[    1556ms] [WARNING] VIDEOJS: WARN: A plugin named "share" already exists. You may want to avoid re-registering plugins! @ https://www.brighteon.com/_next/static/chunks/123e19f2-948dc0f90e2a41fd.js:0
+[    1556ms] [WARNING] VIDEOJS: WARN: A plugin named "overlay" already exists. You may want to avoid re-registering plugins! @ https://www.brighteon.com/_next/static/chunks/123e19f2-948dc0f90e2a41fd.js:0
+[    1562ms] [LOG] Background Audio Platform Detection: {platform: desktop, isPWA: false, supportsBackgroundAudio: true, supportsMediaSession: true, confidence: high} @ https://www.brighteon.com/_next/static/chunks/2713-e7a3e98499821cfa.js:0
+[    1636ms] [LOG] 🎬 Player ready {readyState: 0} @ https://www.brighteon.com/_next/static/chunks/2713-e7a3e98499821cfa.js:0
+[    1652ms] [LOG] Background Audio Platform Detection: {platform: desktop, isPWA: false, supportsBackgroundAudio: true, supportsMediaSession: true, confidence: high} @ https://www.brighteon.com/_next/static/chunks/2713-e7a3e98499821cfa.js:0
+[    2513ms] Uncaught TypeError: f is not a function
+    at za (https://support.brighteon.com/Javascripts/BrighteonWBA.js:0:219075)
+    at <anonymous> (https://support.brighteon.com/Javascripts/BrighteonWBA.js:0:221795)
+    at <anonymous> (https://support.brighteon.com/Javascripts/BrighteonWBA.js:0:221806)
+[    2010ms] [ERROR] There was an error setting cookie `_pk_ref.591.c124`. Please check domain and path. @ https://analytics.distributednews.com/piwik/matomo.js:11
+[    2011ms] [ERROR] There was an error setting cookie `_pk_id.591.c124`. Please check domain and path. @ https://analytics.distributednews.com/piwik/matomo.js:11
+[    2012ms] [ERROR] There was an error setting cookie `_pk_ses.591.c124`. Please check domain and path. @ https://analytics.distributednews.com/piwik/matomo.js:11
+[    2057ms] [WARNING] The keyword 'slider-vertical' specified to an 'appearance' property is not standardized. It will be removed in the future. Use <input type=range style="writing-mode: vertical-lr; direction: rtl"> instead. @ https://analytics.distributednews.com/piwik/matomo.js:246
+[    3515ms] [ERROR] There was an error setting cookie `_pk_ref.591.c124`. Please check domain and path. @ https://analytics.distributednews.com/piwik/matomo.js:11
+[    3516ms] [ERROR] There was an error setting cookie `_pk_id.591.c124`. Please check domain and path. @ https://analytics.distributednews.com/piwik/matomo.js:11
+[    3516ms] [ERROR] There was an error setting cookie `_pk_ses.591.c124`. Please check domain and path. @ https://analytics.distributednews.com/piwik/matomo.js:11
+[    3516ms] [ERROR] There was an error setting cookie `_pk_ref.591.c124`. Please check domain and path. @ https://analytics.distributednews.com/piwik/matomo.js:11
+[    3517ms] [ERROR] There was an error setting cookie `_pk_id.591.c124`. Please check domain and path. @ https://analytics.distributednews.com/piwik/matomo.js:11
+[    3517ms] [ERROR] There was an error setting cookie `_pk_ses.591.c124`. Please check domain and path. @ https://analytics.distributednews.com/piwik/matomo.js:11

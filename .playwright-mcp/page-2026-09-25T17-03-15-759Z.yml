@@ -1,0 +1,39 @@
+- generic [active] [ref=f1438e1]:
+  - generic [ref=f1438e3]:
+    - banner [ref=f1438e4]:
+      - heading "Baby Names" [level=1] [ref=f1438e5]
+      - button "Account" [ref=f1438e6] [cursor=pointer]
+      - button "My Names" [ref=f1438e7] [cursor=pointer]
+      - button "New Names" [ref=f1438e8] [cursor=pointer]
+    - heading "My Baby Names" [level=2] [ref=f1438e9]
+    - generic [ref=f1438e10] [cursor=pointer]:
+      - generic [ref=f1438e11]: All My Names
+      - text: Ξ
+    - generic [ref=f1438e12]:
+      - paragraph [ref=f1438e16] [cursor=pointer]:
+        - text: sort
+        - generic [ref=f1438e17]: ▶
+      - generic [ref=f1438e20]:
+        - paragraph [ref=f1438e21] [cursor=pointer]:
+          - text: filter
+          - generic [ref=f1438e22]: ▼
+        - button "boy" [ref=f1438e24] [cursor=pointer]
+        - button "both" [ref=f1438e27] [cursor=pointer]
+        - button "girl" [ref=f1438e30] [cursor=pointer]
+      - generic [ref=f1438e34]:
+        - paragraph [ref=f1438e35]: starts with
+        - searchbox "Start typing..." [ref=f1438e36]: A
+    - heading "Names" [level=4] [ref=f1438e38] [cursor=pointer]
+    - paragraph
+    - paragraph
+    - generic [ref=f1438e39]:
+      - paragraph [ref=f1438e40]: limit
+      - combobox [ref=f1438e41]:
+        - option "10"
+        - option "25"
+        - option "50"
+        - option "100"
+        - option "200"
+        - option "unlimited" [selected]
+  - contentinfo [ref=f1438e42]:
+    - button "About" [ref=f1438e43] [cursor=pointer]

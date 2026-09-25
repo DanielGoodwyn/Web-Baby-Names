@@ -17,6 +17,7 @@ const Parse = {
           Parse.User._currentUser = new Parse.UserClass(u, d.data() || {});
           if (!authResolved) {
             authResolved = true;
+            Parse.authResolved = true;
             if (typeof checkCurrentUser === 'function') checkCurrentUser();
           }
         });
@@ -24,6 +25,7 @@ const Parse = {
         Parse.User._currentUser = null;
         if (!authResolved) {
           authResolved = true;
+          Parse.authResolved = true;
           if (typeof checkCurrentUser === 'function') checkCurrentUser();
         }
       }

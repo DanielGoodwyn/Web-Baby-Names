@@ -1,0 +1,7 @@
+[     383ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8000/index.html:0
+[   27154ms] TypeError: Cannot read properties of null (reading 'get')
+    at setDefaults (http://localhost:8000/js/babynames.js?v=2:378:63)
+    at checkCurrentUser (http://localhost:8000/js/babynames.js?v=2:357:3)
+    at currentPage (http://localhost:8000/js/babynames.js?v=2:37:3)
+    at onload (http://localhost:8000/mynames.html:18:39)
+[   27148ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8000/index.html:0

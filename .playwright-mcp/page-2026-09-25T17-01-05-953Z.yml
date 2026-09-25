@@ -1,0 +1,19 @@
+- generic [active] [ref=f1435e1]:
+  - generic [ref=f1435e3]:
+    - banner [ref=f1435e4]:
+      - heading "Baby Names" [level=1] [ref=f1435e5]
+      - button "please log in." [ref=f1435e6] [cursor=pointer]
+    - generic [ref=f1435e8]:
+      - heading "Log In / Sign Up" [level=2] [ref=f1435e9]
+      - generic [ref=f1435e10]:
+        - textbox "username" [ref=f1435e11]
+        - textbox "password" [ref=f1435e12]
+        - generic [ref=f1435e13] [cursor=pointer]: Forgot Password?
+        - textbox "email (required for signup)" [ref=f1435e14]
+      - button "Sign Up" [ref=f1435e15] [cursor=pointer]
+      - button "Log In" [ref=f1435e16] [cursor=pointer]
+      - paragraph
+  - contentinfo [ref=f1435e17]:
+    - link "How To" [ref=f1435e19] [cursor=pointer]:
+      - /url: about.html#howto
+    - button "About" [ref=f1435e20] [cursor=pointer]

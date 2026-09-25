@@ -1,0 +1,6 @@
+[     214ms] [LOG] dispatch gnavPromoReady after header promo init @ https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js:91
+[     216ms] [LOG] init AFTER fetching header @ https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js:346
+[     221ms] [LOG] dispatch gnavReady after footer @ https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js:293
+[     229ms] [LOG] Gtag Preloader (NEW) - pre setup fired @ https://assets.adobedtm.com/2ea7ee22c8c2/ece9aa9bcf6f/launch-72284e178e44.min.js:9
+[     245ms] [LOG] %c ============ VZTAG LOADED ============  color:#d68400; @ :12
+[    1019ms] Identifier 'newel' has already been declared

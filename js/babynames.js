@@ -34,18 +34,20 @@ var exampleInnerHTML;
 function currentPage(value) {
 	currentPageValue = value;
 
-  checkCurrentUser();
-  if (currentUser!=null) {
-    currentUser.save({
-      lastPage: currentPageValue
-    }, {
-      success: function(currentUser) {
-        checkCurrentUser();
-      },
-      error: function(currentUser, error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
-    });
+  if (Parse.authResolved) {
+    checkCurrentUser();
+    if (currentUser!=null) {
+      currentUser.save({
+        lastPage: currentPageValue
+      }, {
+        success: function(currentUser) {
+          checkCurrentUser();
+        },
+        error: function(currentUser, error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
+    }
   }
 }
 
@@ -85,6 +87,7 @@ function setElementById(identification, string) {
 }
 
 function getLoginInput() {
+  var loginForm = document.getElementById("loginForm");
   username = loginForm.elements[0].value.toLowerCase();
   password = loginForm.elements[1].value;
   email = loginForm.elements[2].value.toLowerCase();
@@ -684,7 +687,8 @@ function randomNumber(min, max) {
 function getMyNames() {
   currentUser = Parse.User.current();
   username = currentUser.getUsername();
-  startsWithValue = startsWith.value;
+  var startsWithEl = document.getElementById("startsWith");
+  startsWithValue = startsWithEl ? startsWithEl.value : "";
   namesArray = [];
   gendersArray = [];
   var genderClass;
@@ -779,7 +783,8 @@ function getMyNames() {
 function getNewNames() {
   currentUser = Parse.User.current();
   username = currentUser.getUsername();
-  startsWithValue = startsWith.value;
+  var startsWithEl = document.getElementById("startsWith");
+  startsWithValue = startsWithEl ? startsWithEl.value : "";
 
   namesArray = [];
   gendersArray = [];
