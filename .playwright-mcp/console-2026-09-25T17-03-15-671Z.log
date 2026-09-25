@@ -2,3 +2,7 @@
     at getMyNames (http://localhost:8000/js/babynames.js?v=2:690:32)
     at checkCurrentUser (http://localhost:8000/js/babynames.js?v=2:364:5)
     at http://localhost:8000/js/parse-adapter.js:20:57
+[  739938ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?database=projects%2Fgoodwyn-babynames%2Fdatabases%2F(default)&gsessionid=shmmLjbNKN8W5Ixu21cgf6cJW8lJKibAhVUOg1OKR7vff3sG2pstAw&VER=8&RID=rpc&SID=fRKkXGjNviXKX6mFwL7yPA&CI=0&AID=10&TYPE=xmlhttp&zx=rftzbmapxqin&t=1:0
+[  739940ms] [WARNING] [2026-09-25T17:15:35.610Z]  @firebase/firestore: Firestore (8.10.1): Connection WebChannel transport errored: _r @ https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js:0
+[  739946ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://firestore.googleapis.com/google.firestore.v1.Firestore/Write/channel?database=projects%2Fgoodwyn-babynames%2Fdatabases%2F(default)&gsessionid=z3u8kSd71otko41v6fszBENd7eAnSEATBtMiyCjJf96JrVVW7aQv_g&VER=8&RID=rpc&SID=T4PULkD42oaoRivDkGxEsA&CI=0&AID=5&TYPE=xmlhttp&zx=6tas7tu44a9b&t=1:0
+[  739946ms] [WARNING] [2026-09-25T17:15:35.617Z]  @firebase/firestore: Firestore (8.10.1): Connection WebChannel transport errored: _r @ https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js:0

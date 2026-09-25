@@ -708,38 +708,49 @@ function getMyNames() {
   });
 
   var query = new Parse.Query(BabyName);
-  if (gender != "All") {
-    query.equalTo("gender", gender);
-  }
   query.equalTo("userId", userId);
 
-  if (startsWithValue != null || startsWithValue != "") {
-    query.matches("name", capitaliseFirstLetter(startsWithValue.toLowerCase() + ".*"));
+  if (startsWithValue != null && startsWithValue != "") {
     currentUser.save({
-    letter: capitaliseFirstLetter(startsWithValue.substring(0,1))
-  }, {
-    success: function(currentUser) {
-    },
-    error: function(currentUser, error) {
-      alert("Error: " + error.code + " " + error.message);
-    }
-  });
+      letter: capitaliseFirstLetter(startsWithValue.substring(0,1))
+    }, {
+      success: function(currentUser) {
+      },
+      error: function(currentUser, error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
+    });
   }
 
-  if (sort=="newest") {
-    query.descending("createdAt");
-  } else if (sort=="oldest") {
-    query.ascending("createdAt");
-  } else if (sort=="namesAtoZ") {
-    query.ascending("name");
-  } else if (sort=="namesZtoA") {
-    query.descending("name");
-  } else {
-    query.ascending("name");
-  }
-  query.limit(limit);
+  query.limit(1000); // Fetch all to process locally
   query.find({
     success: function(results) {
+      if (gender != "All") {
+        results = results.filter(function(r) { return r.get("gender") == gender; });
+      }
+      
+      if (startsWithValue && startsWithValue != "") {
+        var prefix = startsWithValue.toLowerCase();
+        results = results.filter(function(r) { 
+          var n = r.get("name");
+          return n && n.toLowerCase().indexOf(prefix) === 0; 
+        });
+      }
+
+      if (sort=="newest") {
+        results.sort(function(a,b) { return b.createdAt - a.createdAt; });
+      } else if (sort=="oldest") {
+        results.sort(function(a,b) { return a.createdAt - b.createdAt; });
+      } else if (sort=="namesAtoZ") {
+        results.sort(function(a,b) { return a.get("name").localeCompare(b.get("name")); });
+      } else if (sort=="namesZtoA") {
+        results.sort(function(a,b) { return b.get("name").localeCompare(a.get("name")); });
+      } else {
+        results.sort(function(a,b) { return a.get("name").localeCompare(b.get("name")); });
+      }
+      
+      results = results.slice(0, limit);
+
       for (var i = 0; i < results.length; i++) {
         var object = results[i];       
         namesArray.push(object.get('name'));
@@ -809,45 +820,52 @@ function getNewNames() {
   // if (gender!="All"){
   //   query.equalTo("gender", gender);
   // }
-  if (sort=="uncommon") {
-    query.descending("rank");
-  } else if (sort=="popular") {
-    query.ascending("rank");
-  } else if (sort=="namesAtoZ") {
-    query.ascending("name");
-  } else if (sort=="namesZtoA") {
-    query.descending("name");
-  } else {
-    query.ascending("name");
-  }
-
-  if (startsWithValue != null || startsWithValue != "") {
-    query.matches("name", capitaliseFirstLetter(startsWithValue.toLowerCase() + ".*"));
+  if (startsWithValue != null && startsWithValue != "") {
     currentUser.save({
-    letter: capitaliseFirstLetter(startsWithValue.substring(0,1))
-  }, {
-    success: function(currentUser) {
-    },
-    error: function(currentUser, error) {
-      alert("Error: " + error.code + " " + error.message);
-    }
-  });
-  } 
+      letter: capitaliseFirstLetter(startsWithValue.substring(0,1))
+    }, {
+      success: function(currentUser) {
+      },
+      error: function(currentUser, error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
+    });
+  }
 
   // We fetch without limit to ensure local gender filtering doesn't run out of names
   // query.limit(limit);
   query.find({
     success: function(results) {
+      if (gender != "All") {
+        results = results.filter(function(r) { return r.get("gender") == gender; });
+      }
+      
+      if (startsWithValue && startsWithValue != "") {
+        var prefix = startsWithValue.toLowerCase();
+        results = results.filter(function(r) { 
+          var n = r.get("name");
+          return n && n.toLowerCase().indexOf(prefix) === 0; 
+        });
+      }
+
+      if (sort=="uncommon") {
+        results.sort(function(a,b) { return b.get("rank") - a.get("rank"); });
+      } else if (sort=="popular") {
+        results.sort(function(a,b) { return a.get("rank") - b.get("rank"); });
+      } else if (sort=="namesAtoZ") {
+        results.sort(function(a,b) { return a.get("name").localeCompare(b.get("name")); });
+      } else if (sort=="namesZtoA") {
+        results.sort(function(a,b) { return b.get("name").localeCompare(a.get("name")); });
+      } else {
+        results.sort(function(a,b) { return a.get("name").localeCompare(b.get("name")); });
+      }
+
+      results = results.slice(0, limit);
+
       for (var i = 0; i < results.length; i++) {
         var object = results[i];
-        var g = object.get('gender');
-        if (gender === "All" || g === gender) {
-          namesArray.push(object.get('name'));
-          gendersArray.push(g);
-          if (namesArray.length >= limit) {
-            break; // Apply limit locally
-          }
-        }
+        namesArray.push(object.get('name'));
+        gendersArray.push(object.get('gender'));
       }
       output = "<div class='orderedList'>";
       for (var j = 0; j < namesArray.length; j++) {
