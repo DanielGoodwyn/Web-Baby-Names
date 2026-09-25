@@ -851,7 +851,8 @@ function getNewNames() {
   });
   } 
 
-  query.limit(limit);
+  // We fetch without limit to ensure local gender filtering doesn't run out of names
+  // query.limit(limit);
   query.find({
     success: function(results) {
       for (var i = 0; i < results.length; i++) {
@@ -860,6 +861,9 @@ function getNewNames() {
         if (gender === "All" || g === gender) {
           namesArray.push(object.get('name'));
           gendersArray.push(g);
+          if (namesArray.length >= limit) {
+            break; // Apply limit locally
+          }
         }
       }
       output = "<div class='orderedList'>";
