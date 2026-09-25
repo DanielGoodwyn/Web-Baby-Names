@@ -34,13 +34,13 @@
           <input id="username" type="text" name="username" placeholder="username" onkeypress="return logIn(event)"><br>
           <a style="display:none;" id="setUsername" onclick="setUsername()">Set Username</a>
           <input id="password" type="password" name="password" placeholder="password" onkeypress="return logIn(event)"><br>
-          <a style="display:none;" id="resetPassword" onclick="resetPassword()">Forgot Password?</a>
+          <a id="resetPassword" onclick="resetPassword()" style="cursor: pointer; color: blue;">Forgot Password?</a><br><br>
           <input id="email" type="text" name="email" placeholder="email (required for signup)" onkeypress="return signUp(event)"><br>
           <a style="display:none;" id="setEmail" onclick="setEmail()">Set Email</a>
         </form>
         <div class="clearfix"></div><br>
-        <button style="display:none;" id="signUp" onclick="signUpWithButton()">Sign Up</button>
-        <button style="display:none;" id="logIn" onclick="logInWithButton()">Log In</button>
+        <button id="signUp" onclick="signUpWithButton()">Sign Up</button>
+        <button id="logIn" onclick="logInWithButton()">Log In</button>
         <button id="logOut" class="red" onclick="logOut()">Log Out</button>
         <button style="display:none;" class="green" id="begin" onclick="newNames()">Begin!</button>
         <p id="output"></p>

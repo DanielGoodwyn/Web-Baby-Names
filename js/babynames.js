@@ -233,29 +233,7 @@ function unlinkFromFB() {
 }
 
 function loginInputValidate() {
-  usernameInputText = loginForm.elements[0].value;
-  passwordInputText = loginForm.elements[1].value;
-  emailInputText = loginForm.elements[2].value;
-  if (usernameInputText < 1 || passwordInputText < 1 || emailInputText < 1) {
-    document.getElementById("signUp").style.display = "none";
-  } else {
-    document.getElementById("signUp").style.display = "inline-block";
-  }
-  if (usernameInputText < 1 || passwordInputText < 1) {
-    document.getElementById("logIn").style.display = "none";
-  } else {
-    document.getElementById("logIn").style.display = "inline-block";
-  }
-  if (usernameInputText < 1 || !currentUser) {
-    document.getElementById("setUsername").style.display = "none";
-  } else {
-    document.getElementById("setUsername").style.display = "inline-block";
-  }
-  if (emailInputText < 1 || !currentUser) {
-    document.getElementById("setEmail").style.display = "none";
-  } else {
-    document.getElementById("setEmail").style.display = "inline-block";
-  }
+  // Removed buggy validation that hid buttons
 }
 
 function signUp(e) {
@@ -360,6 +338,7 @@ function checkCurrentUser() {
       document.getElementById("newNames").style.display = "none";
       document.getElementById("logOut").style.display = "none";
       document.getElementById("logIn").style.display = "inline-block";
+      document.getElementById("signUp").style.display = "inline-block";
       if (document.getElementById("logInWithFB")) document.getElementById("logInWithFB").style.display = "inline-block";
       if (document.getElementById("linkWithFB")) document.getElementById("linkWithFB").style.display = "none";
       if (document.getElementById("unlinkFromFB")) document.getElementById("unlinkFromFB").style.display = "none";
