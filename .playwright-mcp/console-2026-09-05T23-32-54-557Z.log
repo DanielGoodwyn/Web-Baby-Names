@@ -1,0 +1,8 @@
+[     196ms] [WARNING] document.domain mutation is ignored because the surrounding agent cluster is origin-keyed. @ https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:1
+[     249ms] [WARNING] Metrics config: No config provided via delegate or fetched via init(), using default/cached config values. @ https://appstoreconnect.apple.com/access/static/js/344.d09a59ff782b29d1.js:0
+[     413ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://appstoreconnect.apple.com/access/users/69a495fa-94ad-5733-e053-5b8c7c1155b0:0
+[    1011ms] [WARNING] An array is needed to render meta tags @ https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:1
+[    1310ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://appstoreconnect.apple.com/partials/app-store/js/date-fns-locale-de-index-js.da22cac8.js:0
+[    1488ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://appstoreconnect.apple.com/partials/app-store/js/date-fns-locale-de-index-js.da22cac8.js:0
+[ 1947856ms] [LOG] Version: 1.0.0 [] @ https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:1
+[ 1947991ms] [ERROR] Refused to apply style from 'https://www.apple.com/wss/fonts/?families=SF+Pro,v2:100,300,400,500,600,700,800|SF+Mono,v2:400,900' because its MIME type ('') is not a supported stylesheet MIME type, and strict MIME checking is enabled. @ https://appstoreconnect.apple.com/teams/69a6de88-133b-47e3-e053-5b8c7c11a4d1/access/ci:0

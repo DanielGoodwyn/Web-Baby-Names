@@ -1,0 +1,20 @@
+[     331ms] [WARNING] document.domain mutation is ignored because the surrounding agent cluster is origin-keyed. @ https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:1
+[     398ms] [WARNING] Metrics config: No config provided via delegate or fetched via init(), using default/cached config values. @ https://appstoreconnect.apple.com/access/static/js/344.d09a59ff782b29d1.js:0
+[     612ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://appstoreconnect.apple.com/:0
+[     957ms] [ERROR] error in mw dispatch or next call, probably in middlware/reducer/render fn: TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+    at t.value (https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:271686)
+    at _ (https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:274242)
+    at https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:278235
+    at h (https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:173959)
+    at e._next (https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:216478)
+    at e.__tryOrUnsub (https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:180811)
+    at e.next (https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:179980)
+    at e._next (https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:179084)
+    at e.next (https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:178755)
+    at e.notifyNext (https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:2:196091) @ https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:1
+[     965ms] [WARNING] An array is needed to render meta tags @ https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:1
+[    1847ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://appstoreconnect.apple.com/partials/app-store/js/date-fns-locale-de-index-js.da22cac8.js:0
+[    2235ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://appstoreconnect.apple.com/partials/app-store/js/date-fns-locale-de-index-js.da22cac8.js:0
+[    2308ms] [WARNING] eventQueue overflow, deleting LRU events: size is: 101 which is over max size: 100 @ https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:1
+[    2459ms] [WARNING] eventQueue overflow, deleting LRU events: size is: 101 which is over max size: 100 @ https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:1
+[    3947ms] [WARNING] eventQueue overflow, deleting LRU events: size is: 101 which is over max size: 100 @ https://appstoreconnect.apple.com/access/static/js/container.a0a10284aec7fdec.js:1

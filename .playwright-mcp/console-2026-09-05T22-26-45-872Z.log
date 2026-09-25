@@ -1,0 +1,6 @@
+[   26223ms] [WARNING] An array is needed to render meta tags @ https://unpkg.apple.com/@maison/maison@3.2.6/umd/maison.mjs:0
+[   42866ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://idmsa.apple.com/appleauth/auth/signin?widgetKey=e0b80c3bf78523bfe80974d320935bfa30add02e1bff88ec2166c6bd5a706c42&language=en_US&iframeId=auth-gsgaqcve-78t7-73cd-xof2-wr47p7ug&authVersion=latest:0
+[   73105ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://idmsa.apple.com/appleauth/jslog:0
+[   73124ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://idmsa.apple.com/appleauth/jslog:0
+[   73168ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://idmsa.apple.com/appleauth/auth/verify/device/key/challenge:0
+[   76861ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://appstoreconnect.apple.com/static/img/app_store_connect_icon@3x.1768505445909.png:0

@@ -1,0 +1,982 @@
+- generic [ref=f9e1]:
+  - iframe [aria-hidden] [ref=f9e2]
+  - generic [ref=f9e10]:
+    - generic [ref=f9e12]:
+      - generic [ref=f9e13]:
+        - link "Skip to content" [ref=f9e14] [cursor=pointer]:
+          - /url: ""
+        - link "Using Gmail with screen readers" [ref=f9e15] [cursor=pointer]:
+          - /url: ""
+      - heading [level=1] [ref=f9e17]:
+        - banner [ref=f9e18]:
+          - generic [ref=f9e19]:
+            - generic [ref=f9e20]:
+              - button "Main menu" [expanded] [ref=f9e21] [cursor=pointer]
+              - link "Gmail" [ref=f9e26] [cursor=pointer]:
+                - /url: "#inbox"
+            - generic [ref=f9e28]:
+              - search [ref=f9e30]:
+                - heading "Search" [level=2] [ref=f9e31]
+                - combobox "Search mail" [ref=f9e33]
+                - button "Advanced search options" [ref=f9e34] [cursor=pointer]
+                - button "Search mail" [disabled] [ref=f9e37] [cursor=pointer]
+              - generic [ref=f9e41]:
+                - button [ref=f9e42] [cursor=pointer]
+                - button "Settings" [ref=f9e45] [cursor=pointer]
+                - generic [ref=f9e49]:
+                  - generic:
+                    - button "Ask Gemini" [ref=f9e56] [cursor=pointer]
+                    - tooltip [aria-hidden] [ref=f9e59]: Ask Gemini
+            - generic [ref=f9e61]:
+              - button "Google apps" [ref=f9e65] [cursor=pointer]
+              - 'button "Google Account: Daniel Goodwyn (danielgoodwyn@gmail.com), Google membership" [ref=f9e71] [cursor=pointer]'
+      - alert [ref=f9e77]
+    - generic [ref=f9e80]:
+      - navigation [ref=f9e81]:
+        - button "Compose" [ref=f9e84] [cursor=pointer]
+        - generic [ref=f9e90]:
+          - generic [ref=f9e92]:
+            - heading "Labels" [level=2] [ref=f9e93]
+            - generic [ref=f9e94]:
+              - generic [ref=f9e95]:
+                - generic [ref=f9e104]:
+                  - link "Inbox 2 unread" [ref=f9e106] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#inbox
+                    - text: Inbox
+                  - generic [ref=f9e107]: "2"
+                - link "AI Inbox" [ref=f9e112] [cursor=pointer]:
+                  - /url: https://mail.google.com/mail/u/0/#aiinbox
+                - generic [ref=f9e114]:
+                  - link "Starred" [ref=f9e123] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#starred
+                  - link "Snoozed" [ref=f9e132] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#snoozed
+                  - link "Important" [ref=f9e141] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#imp
+                  - link "Sent" [ref=f9e150] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#sent
+                  - link "Scheduled" [ref=f9e159] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#scheduled
+                  - link "Drafts" [ref=f9e168] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#drafts
+                  - link "All Mail" [ref=f9e177] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#all
+                  - generic [ref=f9e184]:
+                    - link "Spam 560 unread" [ref=f9e186] [cursor=pointer]:
+                      - /url: https://mail.google.com/mail/u/0/#spam
+                      - text: Spam
+                    - generic [ref=f9e187]: "560"
+                  - link "Trash" [ref=f9e196] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#trash
+                - generic [ref=f9e198]:
+                  - link "Purchases has menu" [ref=f9e207] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#category/purchases
+                    - text: Purchases
+                  - link "Social has menu" [ref=f9e216] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#category/social
+                    - text: Social
+                  - generic [ref=f9e223]:
+                    - link "Updates 2 unread has menu" [ref=f9e225] [cursor=pointer]:
+                      - /url: https://mail.google.com/mail/u/0/#category/updates
+                      - text: Updates
+                    - generic [ref=f9e226]: "2"
+                  - link "Forums has menu" [ref=f9e235] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#category/forums
+                    - text: Forums
+                  - link "Promotions has menu" [ref=f9e244] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/u/0/#category/promotions
+                    - text: Promotions
+              - button "More labels" [ref=f9e246] [cursor=pointer]:
+                - generic [ref=f9e247]: More
+          - generic [ref=f9e251]:
+            - heading "Labels" [ref=f9e252]
+            - button "Create new label" [ref=f9e253] [cursor=pointer]
+          - generic [ref=f9e255]:
+            - heading "Labels" [level=2] [ref=f9e256]
+            - button "More labels" [ref=f9e259] [cursor=pointer]:
+              - generic [ref=f9e260]: More
+      - generic [ref=f9e270]:
+        - main [ref=f9e273]:
+          - generic [ref=f9e278]:
+            - button "Select" [ref=f9e280] [cursor=pointer]:
+              - checkbox [ref=f9e282]
+            - button "Refresh" [ref=f9e285] [cursor=pointer]
+            - button "More email options" [ref=f9e290] [cursor=pointer]
+          - heading "Conversations" [level=2] [ref=f9e295]
+          - generic [ref=f9e296]:
+            - tabpanel [ref=f9e297]:
+              - generic [ref=f9e299]:
+                - button "Unread" [ref=f9e301] [cursor=pointer]
+                - generic [ref=f9e303]:
+                  - button "Show more messages" [ref=f9e304]:
+                    - generic [ref=f9e307] [cursor=pointer]:
+                      - generic [ref=f9e308]: 1–2
+                      - text: of 2
+                  - button "Inbox section options" [ref=f9e309] [cursor=pointer]
+              - grid [ref=f9e313]:
+                - rowgroup [ref=f9e314]:
+                  - row "unread, App Store Connect, There's an issue with your Half Plus Seven Rule (iOS) submission., 9:14 AM, ." [ref=f9e315] [cursor=pointer]:
+                    - gridcell [ref=f9e316]
+                    - gridcell "unread, App Store Connect, There's an issue with your Half Plus Seven Rule (iOS) submission., 9:14 AM, ." [ref=f9e317]:
+                      - checkbox "unread, App Store Connect, There's an issue with your Half Plus Seven Rule (iOS) submission., 9:14 AM, ." [ref=f9e318]
+                    - gridcell [ref=f9e319]:
+                      - button "Not starred" [ref=f9e320]
+                    - gridcell "App Store Connect" [ref=f9e321]
+                    - gridcell [ref=f9e324]:
+                      - link "Updates There's an issue with your Half Plus Seven Rule (iOS) submission." [ref=f9e325]:
+                        - generic [ref=f9e326]:
+                          - generic "Updates" [ref=f9e329]
+                          - generic [ref=f9e332]: There's an issue with your Half Plus Seven Rule (iOS) submission.
+                    - gridcell [ref=f9e335]
+                    - gridcell "Sat, Sep 5, 2026, 9:14 AM" [ref=f9e336]:
+                      - generic "Sat, Sep 5, 2026, 9:14 AM" [ref=f9e337]: 9:14 AM
+                    - gridcell
+                  - row "unread, App Store Connect, The status of your (iOS) app, Half Plus Seven Rule, is now \"In Review\", 9:14 AM, ." [ref=f9e338] [cursor=pointer]:
+                    - gridcell [ref=f9e339]
+                    - gridcell "unread, App Store Connect, The status of your (iOS) app, Half Plus Seven Rule, is now \"In Review\", 9:14 AM, ." [ref=f9e340]:
+                      - checkbox "unread, App Store Connect, The status of your (iOS) app, Half Plus Seven Rule, is now \"In Review\", 9:14 AM, ." [ref=f9e341]
+                    - gridcell [ref=f9e342]:
+                      - button "Not starred" [ref=f9e343]
+                    - gridcell "App Store Connect" [ref=f9e344]
+                    - gridcell [ref=f9e347]:
+                      - link "Updates The status of your (iOS) app, Half Plus Seven Rule, is now \"In Review\"" [ref=f9e348]:
+                        - generic [ref=f9e349]:
+                          - generic "Updates" [ref=f9e352]
+                          - generic [ref=f9e355]: The status of your (iOS) app, Half Plus Seven Rule, is now "In Review"
+                    - gridcell [ref=f9e358]
+                    - gridcell "Sat, Sep 5, 2026, 9:14 AM" [ref=f9e359]:
+                      - generic "Sat, Sep 5, 2026, 9:14 AM" [ref=f9e360]: 9:14 AM
+                    - gridcell
+            - tabpanel [ref=f9e361]:
+              - generic [ref=f9e363]:
+                - button "Everything else" [ref=f9e365] [cursor=pointer]
+                - generic [ref=f9e367]:
+                  - button "Show more messages" [ref=f9e368]:
+                    - generic [ref=f9e371] [cursor=pointer]:
+                      - generic [ref=f9e372]: 1–50
+                      - text: of 68,477
+                  - button "Inbox section options" [ref=f9e373] [cursor=pointer]
+              - grid [ref=f9e377]:
+                - rowgroup [ref=f9e378]:
+                  - 'row "Epoch Times Good Ev., How Hamas Used Civilians as Human Shields: EpochTV, 3:38 PM, ." [ref=f9e379] [cursor=pointer]':
+                    - gridcell [ref=f9e380]
+                    - 'gridcell "Epoch Times Good Ev., How Hamas Used Civilians as Human Shields: EpochTV, 3:38 PM, ." [ref=f9e381]':
+                      - 'checkbox "Epoch Times Good Ev., How Hamas Used Civilians as Human Shields: EpochTV, 3:38 PM, ." [ref=f9e382]'
+                    - gridcell [ref=f9e383]:
+                      - button "Not starred" [ref=f9e384]
+                    - gridcell "Epoch Times Good Ev." [ref=f9e385]
+                    - gridcell [ref=f9e388]:
+                      - 'link "Updates How Hamas Used Civilians as Human Shields: EpochTV" [ref=f9e390]':
+                        - generic [ref=f9e391]:
+                          - generic "Updates" [ref=f9e394]
+                          - generic [ref=f9e397]: "How Hamas Used Civilians as Human Shields: EpochTV"
+                    - gridcell [ref=f9e400]
+                    - gridcell "Sat, Sep 5, 2026, 3:38 PM" [ref=f9e401]:
+                      - generic "Sat, Sep 5, 2026, 3:38 PM" [ref=f9e402]: 3:38 PM
+                    - gridcell
+                  - row "Steve Hilton, My consultants told me to keep this quiet., 3:36 PM, ." [ref=f9e403] [cursor=pointer]:
+                    - gridcell [ref=f9e404]
+                    - gridcell "Steve Hilton, My consultants told me to keep this quiet., 3:36 PM, ." [ref=f9e405]:
+                      - checkbox "Steve Hilton, My consultants told me to keep this quiet., 3:36 PM, ." [ref=f9e406]
+                    - gridcell [ref=f9e407]:
+                      - button "Not starred" [ref=f9e408]
+                    - gridcell "Steve Hilton" [ref=f9e409]
+                    - gridcell [ref=f9e412]:
+                      - link "My consultants told me to keep this quiet." [ref=f9e413]
+                    - gridcell [ref=f9e418]
+                    - gridcell "Sat, Sep 5, 2026, 3:36 PM" [ref=f9e419]:
+                      - generic "Sat, Sep 5, 2026, 3:36 PM" [ref=f9e420]: 3:36 PM
+                    - gridcell
+                  - row "Mike Johnson, This is critical, Friend., 3:22 PM, ." [ref=f9e421] [cursor=pointer]:
+                    - gridcell [ref=f9e422]
+                    - gridcell "Mike Johnson, This is critical, Friend., 3:22 PM, ." [ref=f9e423]:
+                      - checkbox "Mike Johnson, This is critical, Friend., 3:22 PM, ." [ref=f9e424]
+                    - gridcell [ref=f9e425]:
+                      - button "Not starred" [ref=f9e426]
+                    - gridcell "Mike Johnson" [ref=f9e427]
+                    - gridcell [ref=f9e430]:
+                      - link "Promotions This is critical, Friend." [ref=f9e432]:
+                        - generic [ref=f9e433]:
+                          - generic "Promotions" [ref=f9e436]
+                          - generic [ref=f9e439]: This is critical, Friend.
+                    - gridcell [ref=f9e442]
+                    - gridcell "Sat, Sep 5, 2026, 3:22 PM" [ref=f9e443]:
+                      - generic "Sat, Sep 5, 2026, 3:22 PM" [ref=f9e444]: 3:22 PM
+                    - gridcell
+                  - row "Trip.com, ⚡ Preview 50% OFF Mega Sale Deals, 2:59 PM, ." [ref=f9e445] [cursor=pointer]:
+                    - gridcell [ref=f9e446]
+                    - gridcell "Trip.com, ⚡ Preview 50% OFF Mega Sale Deals, 2:59 PM, ." [ref=f9e447]:
+                      - checkbox "Trip.com, ⚡ Preview 50% OFF Mega Sale Deals, 2:59 PM, ." [ref=f9e448]
+                    - gridcell [ref=f9e449]:
+                      - button "Not starred" [ref=f9e450]
+                    - gridcell "Trip.com" [ref=f9e451]
+                    - gridcell [ref=f9e454]:
+                      - link "Promotions ⚡ Preview 50% OFF Mega Sale Deals" [ref=f9e456]:
+                        - generic [ref=f9e457]:
+                          - generic "Promotions" [ref=f9e460]
+                          - generic [ref=f9e465]:
+                            - img "⚡" [ref=f9e466]
+                            - text: Preview 50% OFF Mega Sale Deals
+                    - gridcell [ref=f9e468]
+                    - gridcell "Sat, Sep 5, 2026, 2:59 PM" [ref=f9e469]:
+                      - generic "Sat, Sep 5, 2026, 2:59 PM" [ref=f9e470]: 2:59 PM
+                    - gridcell
+                  - row "One America News Ne., Loved ones of 9/11 victims call for Mamdani to be excluded from memorial service, plan to ‘ignore’ him, 2:58 PM, ." [ref=f9e471] [cursor=pointer]:
+                    - gridcell [ref=f9e472]
+                    - gridcell "One America News Ne., Loved ones of 9/11 victims call for Mamdani to be excluded from memorial service, plan to ‘ignore’ him, 2:58 PM, ." [ref=f9e473]:
+                      - checkbox "One America News Ne., Loved ones of 9/11 victims call for Mamdani to be excluded from memorial service, plan to ‘ignore’ him, 2:58 PM, ." [ref=f9e474]
+                    - gridcell [ref=f9e475]:
+                      - button "Not starred" [ref=f9e476]
+                    - gridcell "One America News Ne." [ref=f9e477]
+                    - gridcell [ref=f9e480]:
+                      - link "Updates Loved ones of 9/11 victims call for Mamdani to be excluded from memorial service, plan to ‘ignore’ him" [ref=f9e482]:
+                        - generic [ref=f9e483]:
+                          - generic "Updates" [ref=f9e486]
+                          - generic [ref=f9e489]: Loved ones of 9/11 victims call for Mamdani to be excluded from memorial service, plan to ‘ignore’ him
+                    - gridcell [ref=f9e492]
+                    - gridcell "Sat, Sep 5, 2026, 2:58 PM" [ref=f9e493]:
+                      - generic "Sat, Sep 5, 2026, 2:58 PM" [ref=f9e494]: 2:58 PM
+                    - gridcell
+                  - row "custserv, Clipper order receipt, 2:51 PM, ." [ref=f9e495] [cursor=pointer]:
+                    - gridcell [ref=f9e496]
+                    - gridcell "custserv, Clipper order receipt, 2:51 PM, ." [ref=f9e497]:
+                      - checkbox "custserv, Clipper order receipt, 2:51 PM, ." [ref=f9e498]
+                    - gridcell [ref=f9e499]:
+                      - button "Not starred" [ref=f9e500]
+                    - gridcell "custserv" [ref=f9e501]
+                    - gridcell [ref=f9e504]:
+                      - link "Updates Clipper order receipt" [ref=f9e505]:
+                        - generic [ref=f9e506]:
+                          - generic "Updates" [ref=f9e509]
+                          - generic [ref=f9e512]: Clipper order receipt
+                    - gridcell [ref=f9e515]
+                    - gridcell "Sat, Sep 5, 2026, 2:51 PM" [ref=f9e516]:
+                      - generic "Sat, Sep 5, 2026, 2:51 PM" [ref=f9e517]: 2:51 PM
+                    - gridcell
+                  - row "Tucker Carlson Netw., Weird foreign meat, fortunes wasted on gambling, a forgotten bombing, and more, 2:30 PM, ." [ref=f9e518] [cursor=pointer]:
+                    - gridcell [ref=f9e519]
+                    - gridcell "Tucker Carlson Netw., Weird foreign meat, fortunes wasted on gambling, a forgotten bombing, and more, 2:30 PM, ." [ref=f9e520]:
+                      - checkbox "Tucker Carlson Netw., Weird foreign meat, fortunes wasted on gambling, a forgotten bombing, and more, 2:30 PM, ." [ref=f9e521]
+                    - gridcell [ref=f9e522]:
+                      - button "Not starred" [ref=f9e523]
+                    - gridcell "Tucker Carlson Netw." [ref=f9e524]
+                    - gridcell [ref=f9e527]:
+                      - link "Updates Weird foreign meat, fortunes wasted on gambling, a forgotten bombing, and more" [ref=f9e529]:
+                        - generic [ref=f9e530]:
+                          - generic "Updates" [ref=f9e533]
+                          - generic [ref=f9e536]: Weird foreign meat, fortunes wasted on gambling, a forgotten bombing, and more
+                    - gridcell [ref=f9e539]
+                    - gridcell "Sat, Sep 5, 2026, 2:30 PM" [ref=f9e540]:
+                      - generic "Sat, Sep 5, 2026, 2:30 PM" [ref=f9e541]: 2:30 PM
+                    - gridcell
+                  - 'row "Chris, me 2, Fwd: There''s an issue with your Half Plus Seven Rule (iOS) submission., 1:59 PM, ." [ref=f9e542] [cursor=pointer]':
+                    - gridcell [ref=f9e543]
+                    - 'gridcell "Chris, me 2, Fwd: There''s an issue with your Half Plus Seven Rule (iOS) submission., 1:59 PM, ." [ref=f9e544]':
+                      - 'checkbox "Chris, me 2, Fwd: There''s an issue with your Half Plus Seven Rule (iOS) submission., 1:59 PM, ." [ref=f9e545]'
+                    - gridcell [ref=f9e546]:
+                      - button "Not starred" [ref=f9e547]
+                    - gridcell "Chris, me 2" [ref=f9e548]:
+                      - generic [ref=f9e549]:
+                        - generic [ref=f9e550]: Chris, me
+                        - generic [ref=f9e551]: "2"
+                    - gridcell [ref=f9e552]:
+                      - 'link "Fwd: There''s an issue with your Half Plus Seven Rule (iOS) submission." [ref=f9e553]'
+                    - gridcell [ref=f9e558]
+                    - gridcell "Sat, Sep 5, 2026, 1:59 PM" [ref=f9e559]:
+                      - generic "Sat, Sep 5, 2026, 1:59 PM" [ref=f9e560]: 1:59 PM
+                    - gridcell
+                  - row "One America News Ne., U.S. forces strike and disable 3 Iranian oil tankers after Iran targets Navy warships, 1:55 PM, ." [ref=f9e561] [cursor=pointer]:
+                    - gridcell [ref=f9e562]
+                    - gridcell "One America News Ne., U.S. forces strike and disable 3 Iranian oil tankers after Iran targets Navy warships, 1:55 PM, ." [ref=f9e563]:
+                      - checkbox "One America News Ne., U.S. forces strike and disable 3 Iranian oil tankers after Iran targets Navy warships, 1:55 PM, ." [ref=f9e564]
+                    - gridcell [ref=f9e565]:
+                      - button "Not starred" [ref=f9e566]
+                    - gridcell "One America News Ne." [ref=f9e567]
+                    - gridcell [ref=f9e570]:
+                      - link "Updates U.S. forces strike and disable 3 Iranian oil tankers after Iran targets Navy warships" [ref=f9e572]:
+                        - generic [ref=f9e573]:
+                          - generic "Updates" [ref=f9e576]
+                          - generic [ref=f9e579]: U.S. forces strike and disable 3 Iranian oil tankers after Iran targets Navy warships
+                    - gridcell [ref=f9e582]
+                    - gridcell "Sat, Sep 5, 2026, 1:55 PM" [ref=f9e583]:
+                      - generic "Sat, Sep 5, 2026, 1:55 PM" [ref=f9e584]: 1:55 PM
+                    - gridcell
+                  - row "Epoch Newsroom, Trump Issues New Executive Orders, 1:27 PM, ." [ref=f9e585] [cursor=pointer]:
+                    - gridcell [ref=f9e586]
+                    - gridcell "Epoch Newsroom, Trump Issues New Executive Orders, 1:27 PM, ." [ref=f9e587]:
+                      - checkbox "Epoch Newsroom, Trump Issues New Executive Orders, 1:27 PM, ." [ref=f9e588]
+                    - gridcell [ref=f9e589]:
+                      - button "Not starred" [ref=f9e590]
+                    - gridcell "Epoch Newsroom" [ref=f9e591]
+                    - gridcell [ref=f9e594]:
+                      - link "Promotions Trump Issues New Executive Orders" [ref=f9e596]:
+                        - generic [ref=f9e597]:
+                          - generic "Promotions" [ref=f9e600]
+                          - generic [ref=f9e603]: Trump Issues New Executive Orders
+                    - gridcell [ref=f9e606]
+                    - gridcell "Sat, Sep 5, 2026, 1:27 PM" [ref=f9e607]:
+                      - generic "Sat, Sep 5, 2026, 1:27 PM" [ref=f9e608]: 1:27 PM
+                    - gridcell
+                  - row "Lori FURSTENBERG, 51st State - or America’s Capital?, has attachment, 1:09 PM, ." [ref=f9e609] [cursor=pointer]:
+                    - gridcell [ref=f9e610]
+                    - gridcell "Lori FURSTENBERG, 51st State - or America’s Capital?, has attachment, 1:09 PM, ." [ref=f9e611]:
+                      - checkbox "Lori FURSTENBERG, 51st State - or America’s Capital?, has attachment, 1:09 PM, ." [ref=f9e612]
+                    - gridcell [ref=f9e613]:
+                      - button "Not starred" [ref=f9e614]
+                    - gridcell "Lori FURSTENBERG" [ref=f9e615]
+                    - gridcell [ref=f9e618]:
+                      - link "51st State - or America’s Capital?" [ref=f9e619]
+                    - gridcell [ref=f9e624]:
+                      - img "Has attachment" [ref=f9e626]
+                    - gridcell "Sat, Sep 5, 2026, 1:09 PM" [ref=f9e628]:
+                      - generic "Sat, Sep 5, 2026, 1:09 PM" [ref=f9e629]: 1:09 PM
+                    - gridcell
+                  - row "Team Hilton, Protect Kids. Back Parents. Put People First., 1:08 PM, ." [ref=f9e630] [cursor=pointer]:
+                    - gridcell [ref=f9e631]
+                    - gridcell "Team Hilton, Protect Kids. Back Parents. Put People First., 1:08 PM, ." [ref=f9e632]:
+                      - checkbox "Team Hilton, Protect Kids. Back Parents. Put People First., 1:08 PM, ." [ref=f9e633]
+                    - gridcell [ref=f9e634]:
+                      - button "Not starred" [ref=f9e635]
+                    - gridcell "Team Hilton" [ref=f9e636]
+                    - gridcell [ref=f9e639]:
+                      - link "Updates Protect Kids. Back Parents. Put People First." [ref=f9e640]:
+                        - generic [ref=f9e641]:
+                          - generic "Updates" [ref=f9e644]
+                          - generic [ref=f9e647]: Protect Kids. Back Parents. Put People First.
+                    - gridcell [ref=f9e650]
+                    - gridcell "Sat, Sep 5, 2026, 1:08 PM" [ref=f9e651]:
+                      - generic "Sat, Sep 5, 2026, 1:08 PM" [ref=f9e652]: 1:08 PM
+                    - gridcell
+                  - row "service@paypal.com, Stop Hate sent you $400.00 USD, 12:53 PM, ." [ref=f9e653] [cursor=pointer]:
+                    - gridcell [ref=f9e654]
+                    - gridcell "service@paypal.com, Stop Hate sent you $400.00 USD, 12:53 PM, ." [ref=f9e655]:
+                      - checkbox "service@paypal.com, Stop Hate sent you $400.00 USD, 12:53 PM, ." [ref=f9e656]
+                    - gridcell [ref=f9e657]:
+                      - button "Not starred" [ref=f9e658]
+                    - gridcell "service@paypal.com" [ref=f9e659]
+                    - gridcell [ref=f9e662]:
+                      - link "Updates Stop Hate sent you $400.00 USD" [ref=f9e663]:
+                        - generic [ref=f9e664]:
+                          - generic "Updates" [ref=f9e667]
+                          - generic [ref=f9e670]: Stop Hate sent you $400.00 USD
+                    - gridcell [ref=f9e673]
+                    - gridcell "Sat, Sep 5, 2026, 12:53 PM" [ref=f9e674]:
+                      - generic "Sat, Sep 5, 2026, 12:53 PM" [ref=f9e675]: 12:53 PM
+                    - gridcell
+                  - row "Urban Scoop/UTK, Podcast#12 - Roger Stone, 12:24 PM, ." [ref=f9e676] [cursor=pointer]:
+                    - gridcell [ref=f9e677]
+                    - gridcell "Urban Scoop/UTK, Podcast#12 - Roger Stone, 12:24 PM, ." [ref=f9e678]:
+                      - checkbox "Urban Scoop/UTK, Podcast#12 - Roger Stone, 12:24 PM, ." [ref=f9e679]
+                    - gridcell [ref=f9e680]:
+                      - button "Not starred" [ref=f9e681]
+                    - gridcell "Urban Scoop/UTK" [ref=f9e682]
+                    - gridcell [ref=f9e685]:
+                      - link "Updates Podcast#12 - Roger Stone" [ref=f9e687]:
+                        - generic [ref=f9e688]:
+                          - generic "Updates" [ref=f9e691]
+                          - generic [ref=f9e694]: Podcast#12 - Roger Stone
+                    - gridcell [ref=f9e697]
+                    - gridcell "Sat, Sep 5, 2026, 12:24 PM" [ref=f9e698]:
+                      - generic "Sat, Sep 5, 2026, 12:24 PM" [ref=f9e699]: 12:24 PM
+                    - gridcell
+                  - 'row "One America News Ne., Patrick Clancy speaks out after Lindsay Clancy’s mistrial: Another trial would be ‘extraordinarily painful'', 12:18 PM, ." [ref=f9e700] [cursor=pointer]':
+                    - gridcell [ref=f9e701]
+                    - 'gridcell "One America News Ne., Patrick Clancy speaks out after Lindsay Clancy’s mistrial: Another trial would be ‘extraordinarily painful'', 12:18 PM, ." [ref=f9e702]':
+                      - 'checkbox "One America News Ne., Patrick Clancy speaks out after Lindsay Clancy’s mistrial: Another trial would be ‘extraordinarily painful'', 12:18 PM, ." [ref=f9e703]'
+                    - gridcell [ref=f9e704]:
+                      - button "Not starred" [ref=f9e705]
+                    - gridcell "One America News Ne." [ref=f9e706]
+                    - gridcell [ref=f9e709]:
+                      - 'link "Updates Patrick Clancy speaks out after Lindsay Clancy’s mistrial: Another trial would be ‘extraordinarily painful''" [ref=f9e711]':
+                        - generic [ref=f9e712]:
+                          - generic "Updates" [ref=f9e715]
+                          - generic [ref=f9e718]: "Patrick Clancy speaks out after Lindsay Clancy’s mistrial: Another trial would be ‘extraordinarily painful'"
+                    - gridcell [ref=f9e721]
+                    - gridcell "Sat, Sep 5, 2026, 12:18 PM" [ref=f9e722]:
+                      - generic "Sat, Sep 5, 2026, 12:18 PM" [ref=f9e723]: 12:18 PM
+                    - gridcell
+                  - row "Epoch Newsroom, Maria Bartiromo Responds to Claims, 12:09 PM, ." [ref=f9e724] [cursor=pointer]:
+                    - gridcell [ref=f9e725]
+                    - gridcell "Epoch Newsroom, Maria Bartiromo Responds to Claims, 12:09 PM, ." [ref=f9e726]:
+                      - checkbox "Epoch Newsroom, Maria Bartiromo Responds to Claims, 12:09 PM, ." [ref=f9e727]
+                    - gridcell [ref=f9e728]:
+                      - button "Not starred" [ref=f9e729]
+                    - gridcell "Epoch Newsroom" [ref=f9e730]
+                    - gridcell [ref=f9e733]:
+                      - link "Updates Maria Bartiromo Responds to Claims" [ref=f9e735]:
+                        - generic [ref=f9e736]:
+                          - generic "Updates" [ref=f9e739]
+                          - generic [ref=f9e742]: Maria Bartiromo Responds to Claims
+                    - gridcell [ref=f9e745]
+                    - gridcell "Sat, Sep 5, 2026, 12:09 PM" [ref=f9e746]:
+                      - generic "Sat, Sep 5, 2026, 12:09 PM" [ref=f9e747]: 12:09 PM
+                    - gridcell
+                  - row "Apple Store, How was your experience with Ben?, 11:37 AM, ." [ref=f9e748] [cursor=pointer]:
+                    - gridcell [ref=f9e749]
+                    - gridcell "Apple Store, How was your experience with Ben?, 11:37 AM, ." [ref=f9e750]:
+                      - checkbox "Apple Store, How was your experience with Ben?, 11:37 AM, ." [ref=f9e751]
+                    - gridcell [ref=f9e752]:
+                      - button "Not starred" [ref=f9e753]
+                    - gridcell "Apple Store" [ref=f9e754]
+                    - gridcell [ref=f9e757]:
+                      - link "Updates How was your experience with Ben?" [ref=f9e759]:
+                        - generic [ref=f9e760]:
+                          - generic "Updates" [ref=f9e763]
+                          - generic [ref=f9e766]: How was your experience with Ben?
+                    - gridcell [ref=f9e769]
+                    - gridcell "Sat, Sep 5, 2026, 11:37 AM" [ref=f9e770]:
+                      - generic "Sat, Sep 5, 2026, 11:37 AM" [ref=f9e771]: 11:37 AM
+                    - gridcell
+                  - row "Shuffle, September plans? How about meeting someone?, 11:31 AM, ." [ref=f9e772] [cursor=pointer]:
+                    - gridcell [ref=f9e773]
+                    - gridcell "Shuffle, September plans? How about meeting someone?, 11:31 AM, ." [ref=f9e774]:
+                      - checkbox "Shuffle, September plans? How about meeting someone?, 11:31 AM, ." [ref=f9e775]
+                    - gridcell [ref=f9e776]:
+                      - button "Not starred" [ref=f9e777]
+                    - gridcell "Shuffle" [ref=f9e778]
+                    - gridcell [ref=f9e781]:
+                      - link "Updates September plans? How about meeting someone?" [ref=f9e782]:
+                        - generic [ref=f9e783]:
+                          - generic "Updates" [ref=f9e786]
+                          - generic [ref=f9e789]: September plans? How about meeting someone?
+                    - gridcell [ref=f9e792]
+                    - gridcell "Sat, Sep 5, 2026, 11:31 AM" [ref=f9e793]:
+                      - generic "Sat, Sep 5, 2026, 11:31 AM" [ref=f9e794]: 11:31 AM
+                    - gridcell
+                  - row "Spotify, Update to the Spotify Terms of Use, 10:53 AM, ." [ref=f9e795] [cursor=pointer]:
+                    - gridcell [ref=f9e796]
+                    - gridcell "Spotify, Update to the Spotify Terms of Use, 10:53 AM, ." [ref=f9e797]:
+                      - checkbox "Spotify, Update to the Spotify Terms of Use, 10:53 AM, ." [ref=f9e798]
+                    - gridcell [ref=f9e799]:
+                      - button "Not starred" [ref=f9e800]
+                    - gridcell "Spotify" [ref=f9e801]
+                    - gridcell [ref=f9e804]:
+                      - link "Updates Update to the Spotify Terms of Use" [ref=f9e805]:
+                        - generic [ref=f9e806]:
+                          - generic "Updates" [ref=f9e809]
+                          - generic [ref=f9e812]: Update to the Spotify Terms of Use
+                    - gridcell [ref=f9e815]
+                    - gridcell "Sat, Sep 5, 2026, 10:53 AM" [ref=f9e816]:
+                      - generic "Sat, Sep 5, 2026, 10:53 AM" [ref=f9e817]: 10:53 AM
+                    - gridcell
+                  - row "Coffee Meets Bagel, We know just the person you should meet 💜, 10:00 AM, ." [ref=f9e818] [cursor=pointer]:
+                    - gridcell [ref=f9e819]
+                    - gridcell "Coffee Meets Bagel, We know just the person you should meet 💜, 10:00 AM, ." [ref=f9e820]:
+                      - checkbox "Coffee Meets Bagel, We know just the person you should meet 💜, 10:00 AM, ." [ref=f9e821]
+                    - gridcell [ref=f9e822]:
+                      - button "Not starred" [ref=f9e823]
+                    - gridcell "Coffee Meets Bagel" [ref=f9e824]
+                    - gridcell [ref=f9e827]:
+                      - link "Promotions We know just the person you should meet 💜" [ref=f9e829]:
+                        - generic [ref=f9e830]:
+                          - generic "Promotions" [ref=f9e833]
+                          - generic [ref=f9e838]:
+                            - text: We know just the person you should meet
+                            - img "💜" [ref=f9e839]
+                    - gridcell [ref=f9e841]
+                    - gridcell "Sat, Sep 5, 2026, 10:00 AM" [ref=f9e842]:
+                      - generic "Sat, Sep 5, 2026, 10:00 AM" [ref=f9e843]: 10:00 AM
+                    - gridcell
+                  - 'row "Dylan Martin, RE: 30 Day Notice - House Targets, 9:44 AM, ." [ref=f9e844] [cursor=pointer]':
+                    - gridcell [ref=f9e845]
+                    - 'gridcell "Dylan Martin, RE: 30 Day Notice - House Targets, 9:44 AM, ." [ref=f9e846]':
+                      - 'checkbox "Dylan Martin, RE: 30 Day Notice - House Targets, 9:44 AM, ." [ref=f9e847]'
+                    - gridcell [ref=f9e848]:
+                      - button "Not starred" [ref=f9e849]
+                    - gridcell "Dylan Martin" [ref=f9e850]
+                    - gridcell [ref=f9e853]:
+                      - 'link "Promotions RE: 30 Day Notice - House Targets" [ref=f9e855]':
+                        - generic [ref=f9e856]:
+                          - generic "Promotions" [ref=f9e859]
+                          - generic [ref=f9e862]: "RE: 30 Day Notice - House Targets"
+                    - gridcell [ref=f9e865]
+                    - gridcell "Sat, Sep 5, 2026, 9:44 AM" [ref=f9e866]:
+                      - generic "Sat, Sep 5, 2026, 9:44 AM" [ref=f9e867]: 9:44 AM
+                    - gridcell
+                  - row "Portola University ., Who’s a great contractor around San Francisco you’d recommend to a..., 9:39 AM, ." [ref=f9e868] [cursor=pointer]:
+                    - gridcell [ref=f9e869]
+                    - gridcell "Portola University ., Who’s a great contractor around San Francisco you’d recommend to a..., 9:39 AM, ." [ref=f9e870]:
+                      - checkbox "Portola University ., Who’s a great contractor around San Francisco you’d recommend to a..., 9:39 AM, ." [ref=f9e871]
+                    - gridcell [ref=f9e872]:
+                      - button "Not starred" [ref=f9e873]
+                    - gridcell "Portola University ." [ref=f9e874]
+                    - gridcell [ref=f9e877]:
+                      - link "Social Who’s a great contractor around San Francisco you’d recommend to a..." [ref=f9e878]:
+                        - generic [ref=f9e879]:
+                          - generic "Social" [ref=f9e882]
+                          - generic [ref=f9e885]: Who’s a great contractor around San Francisco you’d recommend to a...
+                    - gridcell [ref=f9e888]
+                    - gridcell "Sat, Sep 5, 2026, 9:39 AM" [ref=f9e889]:
+                      - generic "Sat, Sep 5, 2026, 9:39 AM" [ref=f9e890]: 9:39 AM
+                    - gridcell
+                  - row "One America News Ne., Putin and Zelensky pause strikes ahead of visits from Witkoff and Kushner over the weekend, 9:17 AM, ." [ref=f9e891] [cursor=pointer]:
+                    - gridcell [ref=f9e892]
+                    - gridcell "One America News Ne., Putin and Zelensky pause strikes ahead of visits from Witkoff and Kushner over the weekend, 9:17 AM, ." [ref=f9e893]:
+                      - checkbox "One America News Ne., Putin and Zelensky pause strikes ahead of visits from Witkoff and Kushner over the weekend, 9:17 AM, ." [ref=f9e894]
+                    - gridcell [ref=f9e895]:
+                      - button "Not starred" [ref=f9e896]
+                    - gridcell "One America News Ne." [ref=f9e897]
+                    - gridcell [ref=f9e900]:
+                      - link "Updates Putin and Zelensky pause strikes ahead of visits from Witkoff and Kushner over the weekend" [ref=f9e902]:
+                        - generic [ref=f9e903]:
+                          - generic "Updates" [ref=f9e906]
+                          - generic [ref=f9e909]: Putin and Zelensky pause strikes ahead of visits from Witkoff and Kushner over the weekend
+                    - gridcell [ref=f9e912]
+                    - gridcell "Sat, Sep 5, 2026, 9:17 AM" [ref=f9e913]:
+                      - generic "Sat, Sep 5, 2026, 9:17 AM" [ref=f9e914]: 9:17 AM
+                    - gridcell
+                  - row "Will Witt | Turning., Nearly 1,000 patriots showed up, 9:03 AM, ." [ref=f9e915] [cursor=pointer]:
+                    - gridcell [ref=f9e916]
+                    - gridcell "Will Witt | Turning., Nearly 1,000 patriots showed up, 9:03 AM, ." [ref=f9e917]:
+                      - checkbox "Will Witt | Turning., Nearly 1,000 patriots showed up, 9:03 AM, ." [ref=f9e918]
+                    - gridcell [ref=f9e919]:
+                      - button "Not starred" [ref=f9e920]
+                    - gridcell "Will Witt | Turning." [ref=f9e921]
+                    - gridcell [ref=f9e924]:
+                      - link "Promotions Nearly 1,000 patriots showed up" [ref=f9e926]:
+                        - generic [ref=f9e927]:
+                          - generic "Promotions" [ref=f9e930]
+                          - generic [ref=f9e933]: Nearly 1,000 patriots showed up
+                    - gridcell [ref=f9e936]
+                    - gridcell "Sat, Sep 5, 2026, 9:03 AM" [ref=f9e937]:
+                      - generic "Sat, Sep 5, 2026, 9:03 AM" [ref=f9e938]: 9:03 AM
+                    - gridcell
+                  - row "Candace Owens, The Department of War Is Paying 'Influencers' to Smear Me, 9:01 AM, ." [ref=f9e939] [cursor=pointer]:
+                    - gridcell [ref=f9e940]
+                    - gridcell "Candace Owens, The Department of War Is Paying 'Influencers' to Smear Me, 9:01 AM, ." [ref=f9e941]:
+                      - checkbox "Candace Owens, The Department of War Is Paying 'Influencers' to Smear Me, 9:01 AM, ." [ref=f9e942]
+                    - gridcell [ref=f9e943]:
+                      - button "Not starred" [ref=f9e944]
+                    - gridcell "Candace Owens" [ref=f9e945]
+                    - gridcell [ref=f9e948]:
+                      - link "Promotions The Department of War Is Paying 'Influencers' to Smear Me" [ref=f9e950]:
+                        - generic [ref=f9e951]:
+                          - generic "Promotions" [ref=f9e954]
+                          - generic [ref=f9e957]: The Department of War Is Paying 'Influencers' to Smear Me
+                    - gridcell [ref=f9e960]
+                    - gridcell "Sat, Sep 5, 2026, 9:01 AM" [ref=f9e961]:
+                      - generic "Sat, Sep 5, 2026, 9:01 AM" [ref=f9e962]: 9:01 AM
+                    - gridcell
+                  - row "James O'Keefe, They sued the reporter. The appeals court just sided with him., 9:00 AM, ." [ref=f9e963] [cursor=pointer]:
+                    - gridcell [ref=f9e964]
+                    - gridcell "James O'Keefe, They sued the reporter. The appeals court just sided with him., 9:00 AM, ." [ref=f9e965]:
+                      - checkbox "James O'Keefe, They sued the reporter. The appeals court just sided with him., 9:00 AM, ." [ref=f9e966]
+                    - gridcell [ref=f9e967]:
+                      - button "Not starred" [ref=f9e968]
+                    - gridcell "James O'Keefe" [ref=f9e969]
+                    - gridcell [ref=f9e972]:
+                      - link "Promotions They sued the reporter. The appeals court just sided with him." [ref=f9e974]:
+                        - generic [ref=f9e975]:
+                          - generic "Promotions" [ref=f9e978]
+                          - generic [ref=f9e981]: They sued the reporter. The appeals court just sided with him.
+                    - gridcell [ref=f9e984]
+                    - gridcell "Sat, Sep 5, 2026, 9:00 AM" [ref=f9e985]:
+                      - generic "Sat, Sep 5, 2026, 9:00 AM" [ref=f9e986]: 9:00 AM
+                    - gridcell
+                  - row "RetailMeNot, 💸 Score Big This Weekend! UGG Up to 50% Off + Belk 20% Off Select Beauty & More!, 8:04 AM, ." [ref=f9e987] [cursor=pointer]:
+                    - gridcell [ref=f9e988]
+                    - gridcell "RetailMeNot, 💸 Score Big This Weekend! UGG Up to 50% Off + Belk 20% Off Select Beauty & More!, 8:04 AM, ." [ref=f9e989]:
+                      - checkbox "RetailMeNot, 💸 Score Big This Weekend! UGG Up to 50% Off + Belk 20% Off Select Beauty & More!, 8:04 AM, ." [ref=f9e990]
+                    - gridcell [ref=f9e991]:
+                      - button "Not starred" [ref=f9e992]
+                    - gridcell "RetailMeNot" [ref=f9e993]
+                    - gridcell [ref=f9e996]:
+                      - link "Promotions 💸 Score Big This Weekend! UGG Up to 50% Off + Belk 20% Off Select Beauty & More!" [ref=f9e998]:
+                        - generic [ref=f9e999]:
+                          - generic "Promotions" [ref=f9e1002]
+                          - generic [ref=f9e1007]:
+                            - img "💸" [ref=f9e1008]
+                            - text: Score Big This Weekend! UGG Up to 50% Off + Belk 20% Off Select Beauty & More!
+                    - gridcell [ref=f9e1010]
+                    - gridcell "Sat, Sep 5, 2026, 8:04 AM" [ref=f9e1011]:
+                      - generic "Sat, Sep 5, 2026, 8:04 AM" [ref=f9e1012]: 8:04 AM
+                    - gridcell
+                  - 'row "MERRELL, Wrapt: Now up to 40% off, 8:03 AM, ." [ref=f9e1013] [cursor=pointer]':
+                    - gridcell [ref=f9e1014]
+                    - 'gridcell "MERRELL, Wrapt: Now up to 40% off, 8:03 AM, ." [ref=f9e1015]':
+                      - 'checkbox "MERRELL, Wrapt: Now up to 40% off, 8:03 AM, ." [ref=f9e1016]'
+                    - gridcell [ref=f9e1017]:
+                      - button "Not starred" [ref=f9e1018]
+                    - gridcell "MERRELL" [ref=f9e1019]
+                    - gridcell [ref=f9e1022]:
+                      - 'link "Promotions Wrapt: Now up to 40% off" [ref=f9e1024]':
+                        - generic [ref=f9e1025]:
+                          - generic "Promotions" [ref=f9e1028]
+                          - generic [ref=f9e1031]: "Wrapt: Now up to 40% off"
+                    - gridcell [ref=f9e1034]
+                    - gridcell "Sat, Sep 5, 2026, 8:03 AM" [ref=f9e1035]:
+                      - generic "Sat, Sep 5, 2026, 8:03 AM" [ref=f9e1036]: 8:03 AM
+                    - gridcell
+                  - row "Your Portola Univer., PLEASE CALL 9/11 IMMEDIATELY, 7:59 AM, ." [ref=f9e1037] [cursor=pointer]:
+                    - gridcell [ref=f9e1038]
+                    - gridcell "Your Portola Univer., PLEASE CALL 9/11 IMMEDIATELY, 7:59 AM, ." [ref=f9e1039]:
+                      - checkbox "Your Portola Univer., PLEASE CALL 9/11 IMMEDIATELY, 7:59 AM, ." [ref=f9e1040]
+                    - gridcell [ref=f9e1041]:
+                      - button "Not starred" [ref=f9e1042]
+                    - gridcell "Your Portola Univer." [ref=f9e1043]
+                    - gridcell [ref=f9e1046]:
+                      - link "Updates PLEASE CALL 9/11 IMMEDIATELY" [ref=f9e1047]:
+                        - generic [ref=f9e1048]:
+                          - generic "Updates" [ref=f9e1051]
+                          - generic [ref=f9e1054]: PLEASE CALL 9/11 IMMEDIATELY
+                    - gridcell [ref=f9e1057]
+                    - gridcell "Sat, Sep 5, 2026, 7:59 AM" [ref=f9e1058]:
+                      - generic "Sat, Sep 5, 2026, 7:59 AM" [ref=f9e1059]: 7:59 AM
+                    - gridcell
+                  - row "eBay, Daniel, are you still using your account?, 7:23 AM, ." [ref=f9e1060] [cursor=pointer]:
+                    - gridcell [ref=f9e1061]
+                    - gridcell "eBay, Daniel, are you still using your account?, 7:23 AM, ." [ref=f9e1062]:
+                      - checkbox "eBay, Daniel, are you still using your account?, 7:23 AM, ." [ref=f9e1063]
+                    - gridcell [ref=f9e1064]:
+                      - button "Not starred" [ref=f9e1065]
+                    - gridcell "eBay" [ref=f9e1066]
+                    - gridcell [ref=f9e1069]:
+                      - link "Updates Daniel, are you still using your account?" [ref=f9e1070]:
+                        - generic [ref=f9e1071]:
+                          - generic "Updates" [ref=f9e1074]
+                          - generic [ref=f9e1077]: Daniel, are you still using your account?
+                    - gridcell [ref=f9e1080]
+                    - gridcell "Sat, Sep 5, 2026, 7:23 AM" [ref=f9e1081]:
+                      - generic "Sat, Sep 5, 2026, 7:23 AM" [ref=f9e1082]: 7:23 AM
+                    - gridcell
+                  - row "The President’s Maj., Generous donors have already covered HALF of your membership, 6:22 AM, ." [ref=f9e1083] [cursor=pointer]:
+                    - gridcell [ref=f9e1084]
+                    - gridcell "The President’s Maj., Generous donors have already covered HALF of your membership, 6:22 AM, ." [ref=f9e1085]:
+                      - checkbox "The President’s Maj., Generous donors have already covered HALF of your membership, 6:22 AM, ." [ref=f9e1086]
+                    - gridcell [ref=f9e1087]:
+                      - button "Not starred" [ref=f9e1088]
+                    - gridcell "The President’s Maj." [ref=f9e1089]
+                    - gridcell [ref=f9e1092]:
+                      - link "Promotions Generous donors have already covered HALF of your membership" [ref=f9e1094]:
+                        - generic [ref=f9e1095]:
+                          - generic "Promotions" [ref=f9e1098]
+                          - generic [ref=f9e1101]: Generous donors have already covered HALF of your membership
+                    - gridcell [ref=f9e1104]
+                    - gridcell "Sat, Sep 5, 2026, 6:22 AM" [ref=f9e1105]:
+                      - generic "Sat, Sep 5, 2026, 6:22 AM" [ref=f9e1106]: 6:22 AM
+                    - gridcell
+                  - row "Team Hilton, You may remember Steve Hilton., 6:15 AM, ." [ref=f9e1107] [cursor=pointer]:
+                    - gridcell [ref=f9e1108]
+                    - gridcell "Team Hilton, You may remember Steve Hilton., 6:15 AM, ." [ref=f9e1109]:
+                      - checkbox "Team Hilton, You may remember Steve Hilton., 6:15 AM, ." [ref=f9e1110]
+                    - gridcell [ref=f9e1111]:
+                      - button "Not starred" [ref=f9e1112]
+                    - gridcell "Team Hilton" [ref=f9e1113]
+                    - gridcell [ref=f9e1116]:
+                      - link "Promotions You may remember Steve Hilton." [ref=f9e1118]:
+                        - generic [ref=f9e1119]:
+                          - generic "Promotions" [ref=f9e1122]
+                          - generic [ref=f9e1125]: You may remember Steve Hilton.
+                    - gridcell [ref=f9e1128]
+                    - gridcell "Sat, Sep 5, 2026, 6:15 AM" [ref=f9e1129]:
+                      - generic "Sat, Sep 5, 2026, 6:15 AM" [ref=f9e1130]: 6:15 AM
+                    - gridcell
+                  - row "The White Rose Resi., 48 Hours Left at This Price, 6:13 AM, ." [ref=f9e1131] [cursor=pointer]:
+                    - gridcell [ref=f9e1132]
+                    - gridcell "The White Rose Resi., 48 Hours Left at This Price, 6:13 AM, ." [ref=f9e1133]:
+                      - checkbox "The White Rose Resi., 48 Hours Left at This Price, 6:13 AM, ." [ref=f9e1134]
+                    - gridcell [ref=f9e1135]:
+                      - button "Not starred" [ref=f9e1136]
+                    - gridcell "The White Rose Resi." [ref=f9e1137]
+                    - gridcell [ref=f9e1140]:
+                      - link "Promotions 48 Hours Left at This Price" [ref=f9e1142]:
+                        - generic [ref=f9e1143]:
+                          - generic "Promotions" [ref=f9e1146]
+                          - generic [ref=f9e1149]: 48 Hours Left at This Price
+                    - gridcell [ref=f9e1152]
+                    - gridcell "Sat, Sep 5, 2026, 6:13 AM" [ref=f9e1153]:
+                      - generic "Sat, Sep 5, 2026, 6:13 AM" [ref=f9e1154]: 6:13 AM
+                    - gridcell
+                  - 'row "Liberty-Volunteers ., [Liberty-Volunteers] Liberty Volunteers - Digest #845, has attachment, 6:05 AM, ." [ref=f9e1155] [cursor=pointer]':
+                    - gridcell [ref=f9e1156]
+                    - 'gridcell "Liberty-Volunteers ., [Liberty-Volunteers] Liberty Volunteers - Digest #845, has attachment, 6:05 AM, ." [ref=f9e1157]':
+                      - 'checkbox "Liberty-Volunteers ., [Liberty-Volunteers] Liberty Volunteers - Digest #845, has attachment, 6:05 AM, ." [ref=f9e1158]'
+                    - gridcell [ref=f9e1159]:
+                      - button "Not starred" [ref=f9e1160]
+                    - gridcell "Liberty-Volunteers ." [ref=f9e1161]
+                    - gridcell [ref=f9e1164]:
+                      - 'link "Updates [Liberty-Volunteers] Liberty Volunteers - Digest #845" [ref=f9e1165]':
+                        - generic [ref=f9e1166]:
+                          - generic "Updates" [ref=f9e1169]
+                          - generic [ref=f9e1172]: "[Liberty-Volunteers] Liberty Volunteers - Digest #845"
+                    - gridcell [ref=f9e1175]:
+                      - img "Has attachment" [ref=f9e1177]
+                    - gridcell "Sat, Sep 5, 2026, 6:05 AM" [ref=f9e1179]:
+                      - generic "Sat, Sep 5, 2026, 6:05 AM" [ref=f9e1180]: 6:05 AM
+                    - gridcell
+                  - row "Robinhood Credit Ca., Don’t settle for 2% cash back or rotating categories, 5:11 AM, ." [ref=f9e1181] [cursor=pointer]:
+                    - gridcell [ref=f9e1182]
+                    - gridcell "Robinhood Credit Ca., Don’t settle for 2% cash back or rotating categories, 5:11 AM, ." [ref=f9e1183]:
+                      - checkbox "Robinhood Credit Ca., Don’t settle for 2% cash back or rotating categories, 5:11 AM, ." [ref=f9e1184]
+                    - gridcell [ref=f9e1185]:
+                      - button "Not starred" [ref=f9e1186]
+                    - gridcell "Robinhood Credit Ca." [ref=f9e1187]
+                    - gridcell [ref=f9e1190]:
+                      - link "Updates Don’t settle for 2% cash back or rotating categories" [ref=f9e1191]:
+                        - generic [ref=f9e1192]:
+                          - generic "Updates" [ref=f9e1195]
+                          - generic [ref=f9e1198]: Don’t settle for 2% cash back or rotating categories
+                    - gridcell [ref=f9e1201]
+                    - gridcell "Sat, Sep 5, 2026, 5:11 AM" [ref=f9e1202]:
+                      - generic "Sat, Sep 5, 2026, 5:11 AM" [ref=f9e1203]: 5:11 AM
+                    - gridcell
+                  - row "Kern Citizens for F., Today's updates to your followed content, 3:14 AM, ." [ref=f9e1204] [cursor=pointer]:
+                    - gridcell [ref=f9e1205]
+                    - gridcell "Kern Citizens for F., Today's updates to your followed content, 3:14 AM, ." [ref=f9e1206]:
+                      - checkbox "Kern Citizens for F., Today's updates to your followed content, 3:14 AM, ." [ref=f9e1207]
+                    - gridcell [ref=f9e1208]:
+                      - button "Not starred" [ref=f9e1209]
+                    - gridcell "Kern Citizens for F." [ref=f9e1210]
+                    - gridcell [ref=f9e1213]:
+                      - link "Updates Today's updates to your followed content" [ref=f9e1215]:
+                        - generic [ref=f9e1216]:
+                          - generic "Updates" [ref=f9e1219]
+                          - generic [ref=f9e1222]: Today's updates to your followed content
+                    - gridcell [ref=f9e1225]
+                    - gridcell "Sat, Sep 5, 2026, 3:14 AM" [ref=f9e1226]:
+                      - generic "Sat, Sep 5, 2026, 3:14 AM" [ref=f9e1227]: 3:14 AM
+                    - gridcell
+                  - row "GiveSendGo, The Prayer Hotline is open today — call anytime, 1–4 PM EST, 3:02 AM, ." [ref=f9e1228] [cursor=pointer]:
+                    - gridcell [ref=f9e1229]
+                    - gridcell "GiveSendGo, The Prayer Hotline is open today — call anytime, 1–4 PM EST, 3:02 AM, ." [ref=f9e1230]:
+                      - checkbox "GiveSendGo, The Prayer Hotline is open today — call anytime, 1–4 PM EST, 3:02 AM, ." [ref=f9e1231]
+                    - gridcell [ref=f9e1232]:
+                      - button "Not starred" [ref=f9e1233]
+                    - gridcell "GiveSendGo" [ref=f9e1234]
+                    - gridcell [ref=f9e1237]:
+                      - link "Promotions The Prayer Hotline is open today — call anytime, 1–4 PM EST" [ref=f9e1239]:
+                        - generic [ref=f9e1240]:
+                          - generic "Promotions" [ref=f9e1243]
+                          - generic [ref=f9e1246]: The Prayer Hotline is open today — call anytime, 1–4 PM EST
+                    - gridcell [ref=f9e1249]
+                    - gridcell "Sat, Sep 5, 2026, 3:02 AM" [ref=f9e1250]:
+                      - generic "Sat, Sep 5, 2026, 3:02 AM" [ref=f9e1251]: 3:02 AM
+                    - gridcell
+                  - row "Epoch Times Morning., Scoliosis Is More Than a Spinal Problem, 2:41 AM, ." [ref=f9e1252] [cursor=pointer]:
+                    - gridcell [ref=f9e1253]
+                    - gridcell "Epoch Times Morning., Scoliosis Is More Than a Spinal Problem, 2:41 AM, ." [ref=f9e1254]:
+                      - checkbox "Epoch Times Morning., Scoliosis Is More Than a Spinal Problem, 2:41 AM, ." [ref=f9e1255]
+                    - gridcell [ref=f9e1256]:
+                      - button "Not starred" [ref=f9e1257]
+                    - gridcell "Epoch Times Morning." [ref=f9e1258]
+                    - gridcell [ref=f9e1261]:
+                      - link "Updates Scoliosis Is More Than a Spinal Problem" [ref=f9e1263]:
+                        - generic [ref=f9e1264]:
+                          - generic "Updates" [ref=f9e1267]
+                          - generic [ref=f9e1270]: Scoliosis Is More Than a Spinal Problem
+                    - gridcell [ref=f9e1273]
+                    - gridcell "Sat, Sep 5, 2026, 2:41 AM" [ref=f9e1274]:
+                      - generic "Sat, Sep 5, 2026, 2:41 AM" [ref=f9e1275]: 2:41 AM
+                    - gridcell
+                  - row "Nextdoor Local News, Highway 101 closure:, Sep 4, ." [ref=f9e1276] [cursor=pointer]:
+                    - gridcell [ref=f9e1277]
+                    - gridcell "Nextdoor Local News, Highway 101 closure:, Sep 4, ." [ref=f9e1278]:
+                      - checkbox "Nextdoor Local News, Highway 101 closure:, Sep 4, ." [ref=f9e1279]
+                    - gridcell [ref=f9e1280]:
+                      - button "Not starred" [ref=f9e1281]
+                    - gridcell "Nextdoor Local News" [ref=f9e1282]
+                    - gridcell [ref=f9e1285]:
+                      - link "Social Highway 101 closure:" [ref=f9e1286]:
+                        - generic [ref=f9e1287]:
+                          - generic "Social" [ref=f9e1290]
+                          - generic [ref=f9e1293]: "Highway 101 closure:"
+                    - gridcell [ref=f9e1296]
+                    - gridcell "Fri, Sep 4, 2026, 10:38 PM" [ref=f9e1297]:
+                      - generic "Fri, Sep 4, 2026, 10:38 PM" [ref=f9e1298]: Sep 4
+                    - gridcell
+                  - row "service@paypal.com, Your PayPal Pay in 4 payment went through, Sep 4, ." [ref=f9e1299] [cursor=pointer]:
+                    - gridcell [ref=f9e1300]
+                    - gridcell "service@paypal.com, Your PayPal Pay in 4 payment went through, Sep 4, ." [ref=f9e1301]:
+                      - checkbox "service@paypal.com, Your PayPal Pay in 4 payment went through, Sep 4, ." [ref=f9e1302]
+                    - gridcell [ref=f9e1303]:
+                      - button "Not starred" [ref=f9e1304]
+                    - gridcell "service@paypal.com" [ref=f9e1305]
+                    - gridcell [ref=f9e1308]:
+                      - link "Updates Your PayPal Pay in 4 payment went through" [ref=f9e1309]:
+                        - generic [ref=f9e1310]:
+                          - generic "Updates" [ref=f9e1313]
+                          - generic [ref=f9e1316]: Your PayPal Pay in 4 payment went through
+                    - gridcell [ref=f9e1319]
+                    - gridcell "Fri, Sep 4, 2026, 9:41 PM" [ref=f9e1320]:
+                      - generic "Fri, Sep 4, 2026, 9:41 PM" [ref=f9e1321]: Sep 4
+                    - gridcell
+                  - row "App Store Connect, The status of your (iOS) app, Half Plus Seven Rule, is now \"Waiting for Review\", Sep 4, ." [ref=f9e1322] [cursor=pointer]:
+                    - gridcell [ref=f9e1323]
+                    - gridcell "App Store Connect, The status of your (iOS) app, Half Plus Seven Rule, is now \"Waiting for Review\", Sep 4, ." [ref=f9e1324]:
+                      - checkbox "App Store Connect, The status of your (iOS) app, Half Plus Seven Rule, is now \"Waiting for Review\", Sep 4, ." [ref=f9e1325]
+                    - gridcell [ref=f9e1326]:
+                      - button "Not starred" [ref=f9e1327]
+                    - gridcell "App Store Connect" [ref=f9e1328]
+                    - gridcell [ref=f9e1331]:
+                      - link "Updates The status of your (iOS) app, Half Plus Seven Rule, is now \"Waiting for Review\"" [ref=f9e1332]:
+                        - generic [ref=f9e1333]:
+                          - generic "Updates" [ref=f9e1336]
+                          - generic [ref=f9e1339]: The status of your (iOS) app, Half Plus Seven Rule, is now "Waiting for Review"
+                    - gridcell [ref=f9e1342]
+                    - gridcell "Fri, Sep 4, 2026, 8:21 PM" [ref=f9e1343]:
+                      - generic "Fri, Sep 4, 2026, 8:21 PM" [ref=f9e1344]: Sep 4
+                    - gridcell
+                  - row "App Store Connect, The status of your (iOS) app, Half Plus Seven Rule, is now \"Ready For Review\", Sep 4, ." [ref=f9e1345] [cursor=pointer]:
+                    - gridcell [ref=f9e1346]
+                    - gridcell "App Store Connect, The status of your (iOS) app, Half Plus Seven Rule, is now \"Ready For Review\", Sep 4, ." [ref=f9e1347]:
+                      - checkbox "App Store Connect, The status of your (iOS) app, Half Plus Seven Rule, is now \"Ready For Review\", Sep 4, ." [ref=f9e1348]
+                    - gridcell [ref=f9e1349]:
+                      - button "Not starred" [ref=f9e1350]
+                    - gridcell "App Store Connect" [ref=f9e1351]
+                    - gridcell [ref=f9e1354]:
+                      - link "Updates The status of your (iOS) app, Half Plus Seven Rule, is now \"Ready For Review\"" [ref=f9e1355]:
+                        - generic [ref=f9e1356]:
+                          - generic "Updates" [ref=f9e1359]
+                          - generic [ref=f9e1362]: The status of your (iOS) app, Half Plus Seven Rule, is now "Ready For Review"
+                    - gridcell [ref=f9e1365]
+                    - gridcell "Fri, Sep 4, 2026, 8:20 PM" [ref=f9e1366]:
+                      - generic "Fri, Sep 4, 2026, 8:20 PM" [ref=f9e1367]: Sep 4
+                    - gridcell
+                  - row "Michael Kellett, invite, has attachment, Sep 4, ." [ref=f9e1368] [cursor=pointer]:
+                    - gridcell [ref=f9e1369]
+                    - gridcell "Michael Kellett, invite, has attachment, Sep 4, ." [ref=f9e1370]:
+                      - checkbox "Michael Kellett, invite, has attachment, Sep 4, ." [ref=f9e1371]
+                    - gridcell [ref=f9e1372]:
+                      - button "Not starred" [ref=f9e1373]
+                    - gridcell "Michael Kellett" [ref=f9e1374]
+                    - gridcell [ref=f9e1377]:
+                      - link "invite" [ref=f9e1378]
+                    - gridcell [ref=f9e1383]:
+                      - img "Has attachment" [ref=f9e1385]
+                    - gridcell "Fri, Sep 4, 2026, 7:44 PM" [ref=f9e1387]:
+                      - generic "Fri, Sep 4, 2026, 7:44 PM" [ref=f9e1388]: Sep 4
+                    - gridcell
+                  - row "Plaid, You've connected your bank account to Square with Plaid, Sep 4, ." [ref=f9e1389] [cursor=pointer]:
+                    - gridcell [ref=f9e1390]
+                    - gridcell "Plaid, You've connected your bank account to Square with Plaid, Sep 4, ." [ref=f9e1391]:
+                      - checkbox "Plaid, You've connected your bank account to Square with Plaid, Sep 4, ." [ref=f9e1392]
+                    - gridcell [ref=f9e1393]:
+                      - button "Not starred" [ref=f9e1394]
+                    - gridcell "Plaid" [ref=f9e1395]
+                    - gridcell [ref=f9e1398]:
+                      - link "Updates You've connected your bank account to Square with Plaid" [ref=f9e1399]:
+                        - generic [ref=f9e1400]:
+                          - generic "Updates" [ref=f9e1403]
+                          - generic [ref=f9e1406]: You've connected your bank account to Square with Plaid
+                    - gridcell [ref=f9e1409]
+                    - gridcell "Fri, Sep 4, 2026, 7:33 PM" [ref=f9e1410]:
+                      - generic "Fri, Sep 4, 2026, 7:33 PM" [ref=f9e1411]: Sep 4
+                    - gridcell
+                  - row "DATCU 3, Identity Verification—DATCU, Sep 4, ." [ref=f9e1412] [cursor=pointer]:
+                    - gridcell [ref=f9e1413]
+                    - gridcell "DATCU 3, Identity Verification—DATCU, Sep 4, ." [ref=f9e1414]:
+                      - checkbox "DATCU 3, Identity Verification—DATCU, Sep 4, ." [ref=f9e1415]
+                    - gridcell [ref=f9e1416]:
+                      - button "Not starred" [ref=f9e1417]
+                    - gridcell "DATCU 3" [ref=f9e1418]:
+                      - generic [ref=f9e1419]:
+                        - generic [ref=f9e1420]: DATCU
+                        - generic [ref=f9e1421]: "3"
+                    - gridcell [ref=f9e1422]:
+                      - link "Identity Verification—DATCU" [ref=f9e1423]
+                    - gridcell [ref=f9e1428]
+                    - gridcell "Fri, Sep 4, 2026, 7:31 PM" [ref=f9e1429]:
+                      - generic "Fri, Sep 4, 2026, 7:31 PM" [ref=f9e1430]: Sep 4
+                    - gridcell
+                  - 'row "CaliforniaMAGA, Get On NOW and Updates : Next California MAGA Meeting September 4th, at 7pm, Sep 4, ." [ref=f9e1431] [cursor=pointer]':
+                    - gridcell [ref=f9e1432]
+                    - 'gridcell "CaliforniaMAGA, Get On NOW and Updates : Next California MAGA Meeting September 4th, at 7pm, Sep 4, ." [ref=f9e1433]':
+                      - 'checkbox "CaliforniaMAGA, Get On NOW and Updates : Next California MAGA Meeting September 4th, at 7pm, Sep 4, ." [ref=f9e1434]'
+                    - gridcell [ref=f9e1435]:
+                      - button "Not starred" [ref=f9e1436]
+                    - gridcell "CaliforniaMAGA" [ref=f9e1437]
+                    - gridcell [ref=f9e1440]:
+                      - 'link "Updates Get On NOW and Updates : Next California MAGA Meeting September 4th, at 7pm" [ref=f9e1442]':
+                        - generic [ref=f9e1443]:
+                          - generic "Updates" [ref=f9e1446]
+                          - generic [ref=f9e1449]: "Get On NOW and Updates : Next California MAGA Meeting September 4th, at 7pm"
+                    - gridcell [ref=f9e1452]
+                    - gridcell "Fri, Sep 4, 2026, 6:35 PM" [ref=f9e1453]:
+                      - generic "Fri, Sep 4, 2026, 6:35 PM" [ref=f9e1454]: Sep 4
+                    - gridcell
+                  - row "Your Portola Univer., I will no longer post anything on this group., Sep 4, ." [ref=f9e1455] [cursor=pointer]:
+                    - gridcell [ref=f9e1456]
+                    - gridcell "Your Portola Univer., I will no longer post anything on this group., Sep 4, ." [ref=f9e1457]:
+                      - checkbox "Your Portola Univer., I will no longer post anything on this group., Sep 4, ." [ref=f9e1458]
+                    - gridcell [ref=f9e1459]:
+                      - button "Not starred" [ref=f9e1460]
+                    - gridcell "Your Portola Univer." [ref=f9e1461]
+                    - gridcell [ref=f9e1464]:
+                      - link "Updates I will no longer post anything on this group." [ref=f9e1465]:
+                        - generic [ref=f9e1466]:
+                          - generic "Updates" [ref=f9e1469]
+                          - generic [ref=f9e1472]: I will no longer post anything on this group.
+                    - gridcell [ref=f9e1475]
+                    - gridcell "Fri, Sep 4, 2026, 5:40 PM" [ref=f9e1476]:
+                      - generic "Fri, Sep 4, 2026, 5:40 PM" [ref=f9e1477]: Sep 4
+                    - gridcell
+                  - 'row "City Life Church SF, City Life SF Weekly: News, Events, & What’s Ahead, Sep 4, ." [ref=f9e1478] [cursor=pointer]':
+                    - gridcell [ref=f9e1479]
+                    - 'gridcell "City Life Church SF, City Life SF Weekly: News, Events, & What’s Ahead, Sep 4, ." [ref=f9e1480]':
+                      - 'checkbox "City Life Church SF, City Life SF Weekly: News, Events, & What’s Ahead, Sep 4, ." [ref=f9e1481]'
+                    - gridcell [ref=f9e1482]:
+                      - button "Not starred" [ref=f9e1483]
+                    - gridcell "City Life Church SF" [ref=f9e1484]
+                    - gridcell [ref=f9e1487]:
+                      - 'link "Updates City Life SF Weekly: News, Events, & What’s Ahead" [ref=f9e1489]':
+                        - generic [ref=f9e1490]:
+                          - generic "Updates" [ref=f9e1493]
+                          - generic [ref=f9e1496]: "City Life SF Weekly: News, Events, & What’s Ahead"
+                    - gridcell [ref=f9e1499]
+                    - gridcell "Fri, Sep 4, 2026, 5:16 PM" [ref=f9e1500]:
+                      - generic "Fri, Sep 4, 2026, 5:16 PM" [ref=f9e1501]: Sep 4
+                    - gridcell
+                  - row "Google’s Find Hub, Your Android device will soon join the Find Hub network, Sep 4, ." [ref=f9e1502] [cursor=pointer]:
+                    - gridcell [ref=f9e1503]
+                    - gridcell "Google’s Find Hub, Your Android device will soon join the Find Hub network, Sep 4, ." [ref=f9e1504]:
+                      - checkbox "Google’s Find Hub, Your Android device will soon join the Find Hub network, Sep 4, ." [ref=f9e1505]
+                    - gridcell [ref=f9e1506]:
+                      - button "Not starred" [ref=f9e1507]
+                    - gridcell "Google’s Find Hub" [ref=f9e1508]
+                    - gridcell [ref=f9e1511]:
+                      - link "Updates Your Android device will soon join the Find Hub network" [ref=f9e1512]:
+                        - generic [ref=f9e1513]:
+                          - generic "Updates" [ref=f9e1516]
+                          - generic [ref=f9e1519]: Your Android device will soon join the Find Hub network
+                    - gridcell [ref=f9e1522]
+                    - gridcell "Fri, Sep 4, 2026, 4:28 PM" [ref=f9e1523]:
+                      - generic "Fri, Sep 4, 2026, 4:28 PM" [ref=f9e1524]: Sep 4
+                    - gridcell
+                  - row "TatianaSF com, New message in 🚀 Startup Pitch Night | B4SF.com, Sep 4, ." [ref=f9e1525] [cursor=pointer]:
+                    - gridcell [ref=f9e1526]
+                    - gridcell "TatianaSF com, New message in 🚀 Startup Pitch Night | B4SF.com, Sep 4, ." [ref=f9e1527]:
+                      - checkbox "TatianaSF com, New message in 🚀 Startup Pitch Night | B4SF.com, Sep 4, ." [ref=f9e1528]
+                    - gridcell [ref=f9e1529]:
+                      - button "Not starred" [ref=f9e1530]
+                    - gridcell "TatianaSF com" [ref=f9e1531]
+                    - gridcell [ref=f9e1534]:
+                      - link "Updates New message in 🚀 Startup Pitch Night | B4SF.com" [ref=f9e1536]:
+                        - generic [ref=f9e1537]:
+                          - generic "Updates" [ref=f9e1540]
+                          - generic [ref=f9e1545]:
+                            - text: New message in
+                            - img "🚀" [ref=f9e1546]
+                            - text: Startup Pitch Night | B4SF.com
+                    - gridcell [ref=f9e1548]
+                    - gridcell "Fri, Sep 4, 2026, 4:15 PM" [ref=f9e1549]:
+                      - generic "Fri, Sep 4, 2026, 4:15 PM" [ref=f9e1550]: Sep 4
+                    - gridcell
+        - contentinfo [ref=f9e1552]:
+          - link "0% of 5,120 GB used Follow link to manage storage" [ref=f9e1557] [cursor=pointer]:
+            - /url: https://drive.google.com/u/0/settings/storage?hl=en&utm_medium=web&utm_source=gmail&utm_campaign=storage_meter&utm_content=storage_normal
+            - generic [ref=f9e1559]:
+              - generic [ref=f9e1560]: 0% of 5,120 GB used
+              - img "Follow link to manage storage" [ref=f9e1561]
+          - generic [ref=f9e1565]:
+            - link "Terms" [ref=f9e1566] [cursor=pointer]:
+              - /url: https://www.google.com/intl/en/policies/terms/
+            - text: ·
+            - link "Privacy" [ref=f9e1567] [cursor=pointer]:
+              - /url: https://www.google.com/intl/en/policies/privacy/
+            - text: ·
+            - link "Program Policies" [ref=f9e1568] [cursor=pointer]:
+              - /url: https://www.google.com/gmail/about/policy/
+          - generic [ref=f9e1571]:
+            - generic [ref=f9e1572]: "Last account activity: 0 minutes ago"
+            - link "Details" [ref=f9e1573] [cursor=pointer]
+      - complementary "Side panel" [ref=f9e1577]

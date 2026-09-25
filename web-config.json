@@ -1,0 +1,11 @@
+⚠  Authenticating with `--token` is deprecated and will be removed in a future major version of `firebase-tools`. Instead, use a service account key with `GOOGLE_APPLICATION_CREDENTIALS`: https://cloud.google.com/docs/authentication/getting-started
+{
+  "projectId": "goodwyn-babynames",
+  "appId": "1:486710219401:web:88ee959f71896878962c58",
+  "storageBucket": "goodwyn-babynames.firebasestorage.app",
+  "apiKey": "AIzaSyCzUEuK46_qHYzxSS07GAprhtupTYsBNbs",
+  "authDomain": "goodwyn-babynames.firebaseapp.com",
+  "messagingSenderId": "486710219401",
+  "projectNumber": "486710219401",
+  "version": "2"
+}

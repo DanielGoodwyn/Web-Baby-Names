@@ -1,0 +1,10 @@
+- generic [ref=f18e9]:
+  - img "Google Play Console logo" [ref=f18e11]
+  - generic [ref=f18e12]:
+    - button [ref=f18e14] [cursor=pointer]:
+      - generic [ref=f18e16]:
+        - text: DanielGoodwyn@gmail.com
+        - img [aria-hidden] [ref=f18e18]: keyboard_arrow_down
+    - heading "Choose developer account" [level=2] [ref=f18e27]
+    - listbox [ref=f18e28]:
+      - option "Daniel Goodwyn" [ref=f18e29] [cursor=pointer]

@@ -1,0 +1,23 @@
+- generic [active] [ref=f29e1]:
+  - banner "App Store Connect" [ref=f29e3]:
+    - generic [ref=f29e4]:
+      - heading [level=1] [ref=f29e6]
+      - navigation "Global" [ref=f29e7]:
+        - generic:
+          - list
+  - contentinfo [ref=f29e10]:
+    - generic [ref=f29e11]:
+      - list
+      - list [ref=f29e12]:
+        - listitem [ref=f29e13]: Copyright © 2026 Apple Inc. All rights reserved. |
+        - listitem [ref=f29e14]:
+          - link "Terms of Service" [ref=f29e15] [cursor=pointer]:
+            - /url: /WebObjects/iTunesConnect.woa/wa/termsOfService
+          - text: "|"
+        - listitem [ref=f29e16]:
+          - link "Privacy Policy" [ref=f29e17] [cursor=pointer]:
+            - /url: https://www.apple.com/legal/privacy
+          - text: "|"
+        - listitem [ref=f29e18]:
+          - link "Contact Us" [ref=f29e19] [cursor=pointer]:
+            - /url: /contact-us

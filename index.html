@@ -15,6 +15,11 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
   <script src="js/parse-adapter.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script>
+    if (window.location.pathname.endsWith('/index.html')) {
+      window.history.replaceState({}, document.title, window.location.pathname.replace(/\/index\.html$/, ''));
+    }
+  </script>
 </head>
 <body onload="currentPage('Account')">
 
@@ -51,6 +56,6 @@
     <span><a href="about.html#howto">How To</a></span>
     <button onclick="about()">About</button>
   </footer>
-  <script src="js/babynames.js"></script>
+  <script src="js/babynames.js?v=2"></script>
 </body>
 </html>

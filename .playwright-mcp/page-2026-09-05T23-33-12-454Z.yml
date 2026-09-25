@@ -1,0 +1,477 @@
+- generic [active] [ref=f30e1]:
+  - banner "App Store Connect" [ref=f30e3]:
+    - generic [ref=f30e4]:
+      - heading [level=1] [ref=f30e20]:
+        - link "App Store Connect" [ref=f30e21] [cursor=pointer]:
+          - /url: /
+      - navigation "Global" [ref=f30e7]:
+        - list [ref=f30e23]:
+          - listitem [ref=f30e24]:
+            - link "Apps" [ref=f30e25] [cursor=pointer]:
+              - /url: /apps
+          - listitem [ref=f30e26]:
+            - link "Trends" [ref=f30e27] [cursor=pointer]:
+              - /url: /trends
+          - listitem [ref=f30e28]:
+            - link "Reports" [ref=f30e29] [cursor=pointer]:
+              - /url: /itc/payments_and_financial_reports
+          - listitem [ref=f30e30]:
+            - link "Business" [ref=f30e31] [cursor=pointer]:
+              - /url: /business
+          - listitem [ref=f30e32]:
+            - link "Users and Access" [ref=f30e33] [cursor=pointer]:
+              - /url: /access/users
+      - button "Daniel Goodwyn Daniel Goodwyn Account name menu" [ref=f30e35] [cursor=pointer]:
+        - generic:
+          - generic: Daniel Goodwyn
+          - generic: Daniel Goodwyn
+  - generic [ref=f30e233]:
+    - generic [ref=f30e234] [cursor=pointer]: Users and Access
+    - navigation "Users and Access" [ref=f30e241]:
+      - list [ref=f30e242]:
+        - listitem [ref=f30e243]:
+          - link "People" [ref=f30e244] [cursor=pointer]:
+            - /url: /access/users
+        - listitem [ref=f30e245]:
+          - link "Sandbox" [ref=f30e246] [cursor=pointer]:
+            - /url: /access/users/sandbox
+        - listitem [ref=f30e247]:
+          - link "Integrations" [ref=f30e248] [cursor=pointer]:
+            - /url: /access/integrations
+        - listitem [ref=f30e249]:
+          - link "Xcode Cloud" [ref=f30e250] [cursor=pointer]:
+            - /url: /teams/69a6de88-133b-47e3-e053-5b8c7c11a4d1/access/ci
+  - main [ref=f30e252]:
+    - generic [ref=f30e255]:
+      - navigation [ref=f30e257]:
+        - list [ref=f30e258]:
+          - listitem [ref=f30e259]:
+            - heading "Users" [level=2] [ref=f30e261]
+            - list [ref=f30e262]:
+              - listitem [ref=f30e263]:
+                - button "All" [ref=f30e264] [cursor=pointer]
+              - listitem [ref=f30e266]:
+                - button "Account Holder" [ref=f30e267] [cursor=pointer]
+              - listitem [ref=f30e269]:
+                - button "Admin" [ref=f30e270] [cursor=pointer]
+              - listitem [ref=f30e272]:
+                - button "Finance" [ref=f30e273] [cursor=pointer]
+              - listitem [ref=f30e275]:
+                - button "Access to Reports" [ref=f30e276] [cursor=pointer]
+              - listitem [ref=f30e278]:
+                - button "Sales" [ref=f30e279] [cursor=pointer]
+              - listitem [ref=f30e281]:
+                - button "Developer" [ref=f30e282] [cursor=pointer]
+              - listitem [ref=f30e284]:
+                - button "App Manager" [ref=f30e285] [cursor=pointer]
+              - listitem [ref=f30e287]:
+                - button "Customer Support" [ref=f30e288] [cursor=pointer]
+              - listitem [ref=f30e290]:
+                - button "Marketing" [ref=f30e291] [cursor=pointer]
+      - generic [ref=f30e294]:
+        - generic [ref=f30e296]:
+          - img "New User" [ref=f30e298]
+          - generic [ref=f30e300]:
+            - button "Search" [ref=f30e301] [cursor=pointer]
+            - button "All Apps" [ref=f30e306] [cursor=pointer]
+            - button "Edit" [ref=f30e310] [cursor=pointer]
+        - table [ref=f30e315]:
+          - rowgroup [ref=f30e316]:
+            - row [ref=f30e317]:
+              - columnheader "Apple Account" [ref=f30e318] [cursor=pointer]
+              - columnheader [ref=f30e321] [cursor=pointer]:
+                - paragraph [ref=f30e324]: Name
+              - columnheader [ref=f30e327]:
+                - paragraph [ref=f30e330]: Role
+              - columnheader [ref=f30e331]:
+                - paragraph [ref=f30e334]: Apps
+          - rowgroup [ref=f30e335]:
+            - row [ref=f30e336]:
+              - cell [ref=f30e337]:
+                - link "royal1957flush@yahoo.com" [ref=f30e339] [cursor=pointer]:
+                  - /url: /access/users/69a495fe-86b3-5733-e053-5b8c7c1155b0
+              - cell "Leonard Arnold" [ref=f30e340]:
+                - paragraph [ref=f30e343]:
+                  - generic [ref=f30e344]: Leonard Arnold
+              - cell [ref=f30e345]:
+                - paragraph [ref=f30e348]: Developer
+              - cell [ref=f30e349]:
+                - button [ref=f30e352] [cursor=pointer]:
+                  - generic [ref=f30e353]:
+                    - generic "Quick Bible" [ref=f30e355]:
+                      - img "Quick Bible" [ref=f30e356]
+                    - generic "Quick Emojis" [ref=f30e358]:
+                      - img "Quick Emojis" [ref=f30e359]
+            - row [ref=f30e360]:
+              - cell [ref=f30e361]:
+                - link "labreuer@gmail.com" [ref=f30e363] [cursor=pointer]:
+                  - /url: /access/users/69a495ff-6baf-5733-e053-5b8c7c1155b0
+              - cell "Luke Breuer" [ref=f30e364]:
+                - paragraph [ref=f30e367]:
+                  - generic [ref=f30e368]: Luke Breuer
+              - cell [ref=f30e369]:
+                - paragraph [ref=f30e372]: Developer
+              - cell [ref=f30e373]:
+                - button [ref=f30e376] [cursor=pointer]:
+                  - generic "Quick Emojis" [ref=f30e379]:
+                    - img "Quick Emojis" [ref=f30e380]
+            - row [ref=f30e381]:
+              - cell [ref=f30e382]:
+                - link "lyrics86@gmail.com" [ref=f30e384] [cursor=pointer]:
+                  - /url: /access/users/69a495fb-8653-5733-e053-5b8c7c1155b0
+              - cell "Danielle Burgos" [ref=f30e385]:
+                - paragraph [ref=f30e388]:
+                  - generic [ref=f30e389]: Danielle Burgos
+              - cell [ref=f30e390]:
+                - paragraph [ref=f30e393]: Developer
+              - cell [ref=f30e394]:
+                - button [ref=f30e397] [cursor=pointer]:
+                  - generic [ref=f30e398]:
+                    - generic "Quick Bible" [ref=f30e400]:
+                      - img "Quick Bible" [ref=f30e401]
+                    - generic "Quick Emojis" [ref=f30e403]:
+                      - img "Quick Emojis" [ref=f30e404]
+            - row [ref=f30e405]:
+              - cell [ref=f30e406]:
+                - link "joshuabcarvalho@gmail.com" [ref=f30e408] [cursor=pointer]:
+                  - /url: /access/users/69a495fa-6705-5733-e053-5b8c7c1155b0
+              - cell "Joshua Carvalho" [ref=f30e409]:
+                - paragraph [ref=f30e412]:
+                  - generic [ref=f30e413]: Joshua Carvalho
+              - cell [ref=f30e414]:
+                - paragraph [ref=f30e417]: Admin
+              - cell [ref=f30e418]:
+                - button [ref=f30e421] [cursor=pointer]:
+                  - paragraph [ref=f30e423]: All Apps
+            - row [ref=f30e424]:
+              - cell [ref=f30e425]:
+                - link "curylo@me.com" [ref=f30e427] [cursor=pointer]:
+                  - /url: /access/users/69a495ee-3c90-5733-e053-5b8c7c1155b0
+              - cell "Michael Curylo" [ref=f30e428]:
+                - paragraph [ref=f30e431]:
+                  - generic [ref=f30e432]: Michael Curylo
+              - cell [ref=f30e433]:
+                - paragraph [ref=f30e436]: Developer
+              - cell [ref=f30e437]:
+                - button [ref=f30e440] [cursor=pointer]:
+                  - generic [ref=f30e441]:
+                    - generic "DHMCo_" [ref=f30e443]:
+                      - img "DHMCo_" [ref=f30e444]
+                    - generic "Quick Bible" [ref=f30e446]:
+                      - img "Quick Bible" [ref=f30e447]
+                    - generic "Quick Emojis" [ref=f30e449]:
+                      - img "Quick Emojis" [ref=f30e450]
+            - row [ref=f30e451]:
+              - cell [ref=f30e452]:
+                - link "jordan.dodson31@gmail.com" [ref=f30e454] [cursor=pointer]:
+                  - /url: /access/users/69a495fc-2ade-5733-e053-5b8c7c1155b0
+              - cell "Jordan Dodson" [ref=f30e455]:
+                - paragraph [ref=f30e458]:
+                  - generic [ref=f30e459]: Jordan Dodson
+              - cell [ref=f30e460]:
+                - paragraph [ref=f30e463]: Developer
+              - cell [ref=f30e464]:
+                - button [ref=f30e467] [cursor=pointer]:
+                  - generic [ref=f30e468]:
+                    - generic "Quick Bible" [ref=f30e470]:
+                      - img "Quick Bible" [ref=f30e471]
+                    - generic "Quick Emojis" [ref=f30e473]:
+                      - img "Quick Emojis" [ref=f30e474]
+            - row [ref=f30e475]:
+              - cell [ref=f30e476]:
+                - link "joel.eschaas-tourne@outlook.fr" [ref=f30e478] [cursor=pointer]:
+                  - /url: /access/users/69a495fa-3820-5733-e053-5b8c7c1155b0
+              - cell "Joël Eschaas-Tourné" [ref=f30e479]:
+                - paragraph [ref=f30e482]:
+                  - generic [ref=f30e483]: Joël Eschaas-Tourné
+              - cell [ref=f30e484]:
+                - paragraph [ref=f30e487]: Developer
+              - cell [ref=f30e488]:
+                - button [ref=f30e491] [cursor=pointer]:
+                  - generic [ref=f30e492]:
+                    - generic "Quick Bible" [ref=f30e494]:
+                      - img "Quick Bible" [ref=f30e495]
+                    - generic "Quick Emojis" [ref=f30e497]:
+                      - img "Quick Emojis" [ref=f30e498]
+            - row [ref=f30e499]:
+              - cell [ref=f30e500]:
+                - link "gianandrea777@gmail.com" [ref=f30e502] [cursor=pointer]:
+                  - /url: /access/users/69a49602-350c-5733-e053-5b8c7c1155b0
+              - cell "David Gianandrea" [ref=f30e503]:
+                - paragraph [ref=f30e506]:
+                  - generic [ref=f30e507]: David Gianandrea
+              - cell [ref=f30e508]:
+                - paragraph [ref=f30e511]: Developer
+              - cell [ref=f30e512]:
+                - button [ref=f30e515] [cursor=pointer]:
+                  - generic [ref=f30e516]:
+                    - generic "Quick Bible" [ref=f30e518]:
+                      - img "Quick Bible" [ref=f30e519]
+                    - generic "Quick Emojis" [ref=f30e521]:
+                      - img "Quick Emojis" [ref=f30e522]
+            - row [ref=f30e523]:
+              - cell [ref=f30e524]:
+                - link "danielgoodwyn@gmail.com" [ref=f30e526] [cursor=pointer]:
+                  - /url: /access/users/69a495ec-41e5-5733-e053-5b8c7c1155b0/settings
+              - cell "Daniel Goodwyn" [ref=f30e527]:
+                - paragraph [ref=f30e530]:
+                  - generic [ref=f30e531]: Daniel Goodwyn
+              - cell [ref=f30e532]:
+                - generic [ref=f30e534]:
+                  - paragraph [ref=f30e535]: Account Holder
+                  - paragraph [ref=f30e536]: ", Admin"
+              - cell [ref=f30e537]:
+                - button [ref=f30e540] [cursor=pointer]:
+                  - paragraph [ref=f30e542]: All Apps
+            - row [ref=f30e543]:
+              - cell [ref=f30e544]:
+                - link "bruce.goodwyn@gmail.com" [ref=f30e546] [cursor=pointer]:
+                  - /url: /access/users/69a495f9-5d12-5733-e053-5b8c7c1155b0
+              - cell "Bruce Goodwyn" [ref=f30e547]:
+                - paragraph [ref=f30e550]:
+                  - generic [ref=f30e551]: Bruce Goodwyn
+              - cell [ref=f30e552]:
+                - paragraph [ref=f30e555]: Admin
+              - cell [ref=f30e556]:
+                - button [ref=f30e559] [cursor=pointer]:
+                  - paragraph [ref=f30e561]: All Apps
+            - row [ref=f30e562]:
+              - cell [ref=f30e563]:
+                - link "cdgoodwyn@gmail.com" [ref=f30e565] [cursor=pointer]:
+                  - /url: /access/users/69a495fa-94ad-5733-e053-5b8c7c1155b0
+              - cell "Chris Goodwyn" [ref=f30e566]:
+                - paragraph [ref=f30e569]:
+                  - generic [ref=f30e570]: Chris Goodwyn
+              - cell [ref=f30e571]:
+                - paragraph [ref=f30e574]: Admin
+              - cell [ref=f30e575]:
+                - button [ref=f30e578] [cursor=pointer]:
+                  - paragraph [ref=f30e580]: All Apps
+            - row [ref=f30e581]:
+              - cell [ref=f30e582]:
+                - link "andrewgoodwyn@yahoo.com" [ref=f30e584] [cursor=pointer]:
+                  - /url: /access/users/69a495fa-94af-5733-e053-5b8c7c1155b0
+              - cell "Andrew Goodwyn" [ref=f30e585]:
+                - paragraph [ref=f30e588]:
+                  - generic [ref=f30e589]: Andrew Goodwyn
+              - cell [ref=f30e590]:
+                - paragraph [ref=f30e593]: Admin
+              - cell [ref=f30e594]:
+                - button [ref=f30e597] [cursor=pointer]:
+                  - paragraph [ref=f30e599]: All Apps
+            - row [ref=f30e600]:
+              - cell [ref=f30e601]:
+                - link "daniel.goodwyn@jewsforjesus.org" [ref=f30e603] [cursor=pointer]:
+                  - /url: /access/users/69a49600-bfd9-5733-e053-5b8c7c1155b0
+              - cell "Daniel Goodwyn" [ref=f30e604]:
+                - paragraph [ref=f30e607]:
+                  - generic [ref=f30e608]: Daniel Goodwyn
+              - cell [ref=f30e609]:
+                - paragraph [ref=f30e612]: Admin
+              - cell [ref=f30e613]:
+                - button [ref=f30e616] [cursor=pointer]:
+                  - paragraph [ref=f30e618]: All Apps
+            - row [ref=f30e619]:
+              - cell [ref=f30e620]:
+                - link "lukeknepper@gmail.com" [ref=f30e622] [cursor=pointer]:
+                  - /url: /access/users/69a495ff-6bb0-5733-e053-5b8c7c1155b0
+              - cell "Luke Knepper" [ref=f30e623]:
+                - paragraph [ref=f30e626]:
+                  - generic [ref=f30e627]: Luke Knepper
+              - cell [ref=f30e628]:
+                - paragraph [ref=f30e631]: Developer
+              - cell [ref=f30e632]:
+                - button [ref=f30e635] [cursor=pointer]:
+                  - generic "Quick Emojis" [ref=f30e638]:
+                    - img "Quick Emojis" [ref=f30e639]
+            - row [ref=f30e640]:
+              - cell [ref=f30e641]:
+                - link "ruslan88@gmail.com" [ref=f30e643] [cursor=pointer]:
+                  - /url: /access/users/69a495f6-5c13-5733-e053-5b8c7c1155b0
+              - cell "Ruslan Kurdyumov" [ref=f30e644]:
+                - paragraph [ref=f30e647]:
+                  - generic [ref=f30e648]: Ruslan Kurdyumov
+              - cell [ref=f30e649]:
+                - paragraph [ref=f30e652]: Developer
+              - cell [ref=f30e653]:
+                - button [ref=f30e656] [cursor=pointer]:
+                  - generic "Quick Emojis" [ref=f30e659]:
+                    - img "Quick Emojis" [ref=f30e660]
+            - row [ref=f30e661]:
+              - cell [ref=f30e662]:
+                - link "benemleonard@yahoo.com" [ref=f30e664] [cursor=pointer]:
+                  - /url: /access/users/69a495f0-e0bf-5733-e053-5b8c7c1155b0
+              - cell "Benjamin Leonard" [ref=f30e665]:
+                - paragraph [ref=f30e668]:
+                  - generic [ref=f30e669]: Benjamin Leonard
+              - cell [ref=f30e670]:
+                - paragraph [ref=f30e673]: Developer
+              - cell [ref=f30e674]:
+                - button [ref=f30e677] [cursor=pointer]:
+                  - generic [ref=f30e678]:
+                    - generic "DHMCo_" [ref=f30e680]:
+                      - img "DHMCo_" [ref=f30e681]
+                    - generic "Quick Bible" [ref=f30e683]:
+                      - img "Quick Bible" [ref=f30e684]
+                    - generic "Quick Emojis" [ref=f30e686]:
+                      - img "Quick Emojis" [ref=f30e687]
+            - row [ref=f30e688]:
+              - cell [ref=f30e689]:
+                - link "jessicamroos@yahoo.com" [ref=f30e691] [cursor=pointer]:
+                  - /url: /access/users/69a495fd-97e5-5733-e053-5b8c7c1155b0
+              - cell "J M" [ref=f30e692]:
+                - paragraph [ref=f30e695]:
+                  - generic [ref=f30e696]: J M
+              - cell [ref=f30e697]:
+                - paragraph [ref=f30e700]: Developer
+              - cell [ref=f30e701]:
+                - button [ref=f30e704] [cursor=pointer]:
+                  - generic [ref=f30e705]:
+                    - generic "Quick Bible" [ref=f30e707]:
+                      - img "Quick Bible" [ref=f30e708]
+                    - generic "Quick Emojis" [ref=f30e710]:
+                      - img "Quick Emojis" [ref=f30e711]
+            - row [ref=f30e712]:
+              - cell [ref=f30e713]:
+                - link "lauramarkummerchant@gmail.com" [ref=f30e715] [cursor=pointer]:
+                  - /url: /access/users/69a495fa-69d5-5733-e053-5b8c7c1155b0
+              - cell "Laura Markum" [ref=f30e716]:
+                - paragraph [ref=f30e719]:
+                  - generic [ref=f30e720]: Laura Markum
+              - cell [ref=f30e721]:
+                - paragraph [ref=f30e724]: Admin
+              - cell [ref=f30e725]:
+                - button [ref=f30e728] [cursor=pointer]:
+                  - paragraph [ref=f30e730]: All Apps
+            - row [ref=f30e731]:
+              - cell [ref=f30e732]:
+                - link "kailey.mattarella@gmail.com" [ref=f30e734] [cursor=pointer]:
+                  - /url: /access/users/69a49600-6b16-5733-e053-5b8c7c1155b0
+              - cell "Kailey Mattarella" [ref=f30e735]:
+                - paragraph [ref=f30e738]:
+                  - generic [ref=f30e739]: Kailey Mattarella
+              - cell [ref=f30e740]:
+                - paragraph [ref=f30e743]: Developer
+              - cell [ref=f30e744]:
+                - button [ref=f30e747] [cursor=pointer]:
+                  - generic "Quick Emojis" [ref=f30e750]:
+                    - img "Quick Emojis" [ref=f30e751]
+            - row [ref=f30e752]:
+              - cell [ref=f30e753]:
+                - link "Morales.guadalupe@sum.edu" [ref=f30e755] [cursor=pointer]:
+                  - /url: /access/users/69a49604-968b-5733-e053-5b8c7c1155b0
+              - cell "Lupe Morales" [ref=f30e756]:
+                - paragraph [ref=f30e759]:
+                  - generic [ref=f30e760]: Lupe Morales
+              - cell [ref=f30e761]:
+                - paragraph [ref=f30e764]: Developer
+              - cell [ref=f30e765]:
+                - button [ref=f30e768] [cursor=pointer]:
+                  - generic "Quick Emojis" [ref=f30e771]:
+                    - img "Quick Emojis" [ref=f30e772]
+            - row [ref=f30e773]:
+              - cell [ref=f30e774]:
+                - link "Morales.ofelia@sum.edu" [ref=f30e776] [cursor=pointer]:
+                  - /url: /access/users/69a49604-9a64-5733-e053-5b8c7c1155b0
+              - cell "Ofelia Morales" [ref=f30e777]:
+                - paragraph [ref=f30e780]:
+                  - generic [ref=f30e781]: Ofelia Morales
+              - cell [ref=f30e782]:
+                - paragraph [ref=f30e785]: Developer
+              - cell [ref=f30e786]:
+                - button [ref=f30e789] [cursor=pointer]:
+                  - generic "Quick Emojis" [ref=f30e792]:
+                    - img "Quick Emojis" [ref=f30e793]
+            - row [ref=f30e794]:
+              - cell [ref=f30e795]:
+                - link "wdjd@mac.com" [ref=f30e797] [cursor=pointer]:
+                  - /url: /access/users/69a49615-2ca7-5733-e053-5b8c7c1155b0
+              - cell "Alan Pearson" [ref=f30e798]:
+                - paragraph [ref=f30e801]:
+                  - generic [ref=f30e802]: Alan Pearson
+              - cell [ref=f30e803]:
+                - paragraph [ref=f30e806]: Developer
+              - cell [ref=f30e807]:
+                - button [ref=f30e810] [cursor=pointer]:
+                  - generic [ref=f30e811]:
+                    - generic "Quick Bible" [ref=f30e813]:
+                      - img "Quick Bible" [ref=f30e814]
+                    - generic "Quick Emojis" [ref=f30e816]:
+                      - img "Quick Emojis" [ref=f30e817]
+            - row [ref=f30e818]:
+              - cell [ref=f30e819]:
+                - link "designby.lau@gmail.com" [ref=f30e821] [cursor=pointer]:
+                  - /url: /access/users/69a495c2-9423-5733-e053-5b8c7c1155b0
+              - cell "Laura Pineda" [ref=f30e822]:
+                - paragraph [ref=f30e825]:
+                  - generic [ref=f30e826]: Laura Pineda
+              - cell [ref=f30e827]:
+                - paragraph [ref=f30e830]: Developer
+              - cell [ref=f30e831]:
+                - button [ref=f30e834] [cursor=pointer]:
+                  - generic "Quick Emojis" [ref=f30e837]:
+                    - img "Quick Emojis" [ref=f30e838]
+            - row [ref=f30e839]:
+              - cell [ref=f30e840]:
+                - link "epineda2012@yahoo.com" [ref=f30e842] [cursor=pointer]:
+                  - /url: /access/users/69a495f9-ee02-5733-e053-5b8c7c1155b0
+              - cell "Ronald Pineda" [ref=f30e843]:
+                - paragraph [ref=f30e846]:
+                  - generic [ref=f30e847]: Ronald Pineda
+              - cell [ref=f30e848]:
+                - paragraph [ref=f30e851]: Developer
+              - cell [ref=f30e852]:
+                - button [ref=f30e855] [cursor=pointer]:
+                  - generic [ref=f30e856]:
+                    - generic "Quick Bible" [ref=f30e858]:
+                      - img "Quick Bible" [ref=f30e859]
+                    - generic "Quick Emojis" [ref=f30e861]:
+                      - img "Quick Emojis" [ref=f30e862]
+            - row [ref=f30e863]:
+              - cell [ref=f30e864]:
+                - link "zerimar.ramirez@gmail.com" [ref=f30e866] [cursor=pointer]:
+                  - /url: /access/users/69a495fa-25ef-5733-e053-5b8c7c1155b0
+              - cell "Zerimar Ramirez" [ref=f30e867]:
+                - paragraph [ref=f30e870]:
+                  - generic [ref=f30e871]: Zerimar Ramirez
+              - cell [ref=f30e872]:
+                - paragraph [ref=f30e875]: Developer
+              - cell [ref=f30e876]:
+                - button [ref=f30e879] [cursor=pointer]:
+                  - generic [ref=f30e880]:
+                    - generic "Quick Bible" [ref=f30e882]:
+                      - img "Quick Bible" [ref=f30e883]
+                    - generic "Quick Emojis" [ref=f30e885]:
+                      - img "Quick Emojis" [ref=f30e886]
+            - row [ref=f30e887]:
+              - cell [ref=f30e888]:
+                - link "carrierobaina@gmail.com" [ref=f30e890] [cursor=pointer]:
+                  - /url: /access/users/69a49601-5d7a-5733-e053-5b8c7c1155b0
+              - cell "Carrie Robaina" [ref=f30e891]:
+                - paragraph [ref=f30e894]:
+                  - generic [ref=f30e895]: Carrie Robaina
+              - cell [ref=f30e896]:
+                - paragraph [ref=f30e899]: Developer
+              - cell [ref=f30e900]:
+                - button [ref=f30e903] [cursor=pointer]:
+                  - generic "Quick Emojis" [ref=f30e906]:
+                    - img "Quick Emojis" [ref=f30e907]
+  - contentinfo [ref=f30e10]:
+    - generic [ref=f30e11]:
+      - list [ref=f30e227]:
+        - listitem [ref=f30e908]:
+          - link "App Store Connect" [ref=f30e909] [cursor=pointer]:
+            - /url: /apps
+      - list [ref=f30e12]:
+        - listitem [ref=f30e13]: Copyright © 2026 Apple Inc. All rights reserved. |
+        - listitem [ref=f30e14]:
+          - link "Terms of Service" [ref=f30e15] [cursor=pointer]:
+            - /url: /WebObjects/iTunesConnect.woa/wa/termsOfService
+          - text: "|"
+        - listitem [ref=f30e16]:
+          - link "Privacy Policy" [ref=f30e17] [cursor=pointer]:
+            - /url: https://www.apple.com/legal/privacy
+          - text: "|"
+        - listitem [ref=f30e18]:
+          - link "Contact Us" [ref=f30e19] [cursor=pointer]:
+            - /url: /contact-us

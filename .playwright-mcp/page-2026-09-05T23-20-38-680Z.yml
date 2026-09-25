@@ -1,0 +1,224 @@
+- generic [ref=f24e2]:
+  - generic [ref=f24e3]:
+    - link "Skip to content" [ref=f24e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=f24e9]:
+      - heading "Navigation Menu" [level=2] [ref=f24e10]
+      - generic [ref=f24e11]:
+        - link "Homepage" [ref=f24e13] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f24e16]:
+          - navigation "Global" [ref=f24e17]:
+            - list [ref=f24e18]:
+              - listitem [ref=f24e19]:
+                - button "Platform" [ref=f24e21] [cursor=pointer]
+              - listitem [ref=f24e24]:
+                - button "Solutions" [ref=f24e26] [cursor=pointer]
+              - listitem [ref=f24e29]:
+                - button "Resources" [ref=f24e31] [cursor=pointer]
+              - listitem [ref=f24e34]:
+                - button "Open Source" [ref=f24e36] [cursor=pointer]
+              - listitem [ref=f24e39]:
+                - button "Enterprise" [ref=f24e41] [cursor=pointer]
+              - listitem [ref=f24e44]:
+                - link "Pricing" [ref=f24e45] [cursor=pointer]:
+                  - /url: https://github.com/pricing
+          - generic [ref=f24e46]:
+            - button "Search or jump to, type / to search" [ref=f24e48] [cursor=pointer]:
+              - generic [ref=f24e51]:
+                - generic [ref=f24e52]: Search
+                - generic [aria-hidden] [ref=f24e53]: /
+            - link "Sign in" [ref=f24e55] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fdanielgoodwyn
+            - link "Sign up" [ref=f24e58] [cursor=pointer]:
+              - /url: /signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E&source=header
+            - button "Appearance settings" [ref=f24e61] [cursor=pointer]
+  - main [ref=f24e67]:
+    - generic [ref=f24e70]:
+      - generic [ref=f24e71]:
+        - generic:
+          - generic:
+            - generic:
+              - img "@DanielGoodwyn"
+            - generic:
+              - strong: DanielGoodwyn
+              - generic:
+                - generic:
+                  - link "Follow":
+                    - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fdanielgoodwyn
+      - navigation "User profile" [ref=f24e74]:
+        - link "Overview" [ref=f24e75] [cursor=pointer]:
+          - /url: /DanielGoodwyn
+        - link "Repositories 16" [ref=f24e78] [cursor=pointer]:
+          - /url: /DanielGoodwyn?tab=repositories
+          - text: Repositories
+          - generic "16" [ref=f24e81]
+        - link "Projects 1" [ref=f24e82] [cursor=pointer]:
+          - /url: /DanielGoodwyn?tab=projects
+          - text: Projects
+          - generic "1" [ref=f24e85]
+        - link "Packages" [ref=f24e86] [cursor=pointer]:
+          - /url: /DanielGoodwyn?tab=packages
+        - link "Stars 4" [ref=f24e89] [cursor=pointer]:
+          - /url: /DanielGoodwyn?tab=stars
+          - text: Stars
+          - generic "4" [ref=f24e92]
+    - generic [ref=f24e94]:
+      - generic [ref=f24e96]:
+        - generic:
+          - generic:
+            - generic:
+              - img "@DanielGoodwyn"
+            - generic:
+              - generic:
+                - strong: DanielGoodwyn
+            - generic:
+              - generic:
+                - generic:
+                  - link "Follow":
+                    - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fdanielgoodwyn
+        - generic [ref=f24e97]:
+          - generic [ref=f24e98]:
+            - link [ref=f24e100] [cursor=pointer]:
+              - /url: https://avatars.githubusercontent.com/u/3278672?v=4
+              - img "View DanielGoodwyn's full-sized avatar" [ref=f24e101]
+            - heading "Daniel Goodwyn DanielGoodwyn" [level=1] [ref=f24e103]:
+              - generic [ref=f24e104]: Daniel Goodwyn
+              - generic [ref=f24e105]: DanielGoodwyn
+          - generic [ref=f24e106]:
+            - link "Follow" [ref=f24e113] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fdanielgoodwyn
+            - generic [ref=f24e114]:
+              - generic [ref=f24e116]:
+                - link "3 followers" [ref=f24e117] [cursor=pointer]:
+                  - /url: https://github.com/DanielGoodwyn?tab=followers
+                - text: ·
+                - link "3 following" [ref=f24e120] [cursor=pointer]:
+                  - /url: https://github.com/DanielGoodwyn?tab=following
+              - list [ref=f24e121]:
+                - 'listitem "Home location: San Francisco" [ref=f24e122]':
+                  - generic [ref=f24e125]: San Francisco
+                - listitem [ref=f24e126]:
+                  - link "danielgoodwyn.com" [ref=f24e129] [cursor=pointer]:
+                    - /url: https://danielgoodwyn.com
+                - listitem [ref=f24e130]:
+                  - img "X" [ref=f24e131]
+                  - link "@danielgoodwyn" [ref=f24e133] [cursor=pointer]:
+                    - /url: https://twitter.com/danielgoodwyn
+          - button "Block or report user" [ref=f24e135] [cursor=pointer]
+      - generic [ref=f24e140]:
+        - generic [ref=f24e142]:
+          - heading "Popular repositories Loading" [level=2] [ref=f24e143]:
+            - text: Popular repositories
+            - generic: Loading
+            - status
+          - list [ref=f24e145]:
+            - listitem [ref=f24e146]:
+              - generic [ref=f24e148]:
+                - generic [ref=f24e149]:
+                  - link "Web-QuickBible" [ref=f24e151] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/Web-QuickBible
+                  - generic [ref=f24e152]: Public
+                - paragraph [ref=f24e154]: a web app that helps a user to Navigate much more quickly to a passage of the Bible based on a known Scripture Reference (in comparison to apps that have a multi-step navigation process)!
+                - paragraph [ref=f24e155]:
+                  - generic [ref=f24e156]: HTML
+                  - link [ref=f24e158] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/Web-QuickBible/stargazers
+                    - img "stars" [ref=f24e159]
+                    - text: "4"
+                  - link [ref=f24e161] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/Web-QuickBible/forks
+                    - img "fork" [ref=f24e162]
+                    - text: "1"
+            - listitem [ref=f24e164]:
+              - generic [ref=f24e166]:
+                - generic [ref=f24e167]:
+                  - link "Android-QuickBible" [ref=f24e169] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/Android-QuickBible
+                  - generic [ref=f24e170]: Public
+                - paragraph [ref=f24e172]: an Android app that helps a user to Navigate much more quickly to a passage of the Bible based on a known Scripture Reference (in comparison to apps that have a multi-step navigation process)!
+                - paragraph [ref=f24e173]:
+                  - generic [ref=f24e174]: Java
+                  - link [ref=f24e176] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/Android-QuickBible/stargazers
+                    - img "star" [ref=f24e177]
+                    - text: "1"
+            - listitem [ref=f24e179]:
+              - generic [ref=f24e181]:
+                - generic [ref=f24e182]:
+                  - link "iOS-QuickBible" [ref=f24e184] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/iOS-QuickBible
+                  - generic [ref=f24e185]: Public
+                - paragraph [ref=f24e187]: an iOS app that helps a user to Navigate much more quickly to a passage of the Bible based on a known Scripture Reference (in comparison to apps that have a multi-step navigation process)!
+                - paragraph [ref=f24e188]:
+                  - generic [ref=f24e189]: Swift
+                  - link [ref=f24e191] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/iOS-QuickBible/stargazers
+                    - img "star" [ref=f24e192]
+                    - text: "1"
+            - listitem [ref=f24e194]:
+              - generic [ref=f24e196]:
+                - generic [ref=f24e197]:
+                  - link "links" [ref=f24e199] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/links
+                  - generic [ref=f24e200]: Public
+                - paragraph [ref=f24e202]: links
+                - paragraph [ref=f24e203]:
+                  - link [ref=f24e204] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/links/stargazers
+                    - img "star" [ref=f24e205]
+                    - text: "1"
+            - listitem [ref=f24e207]:
+              - generic [ref=f24e209]:
+                - generic [ref=f24e210]:
+                  - link "iOS-Baby-Names" [ref=f24e212] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/iOS-Baby-Names
+                  - generic [ref=f24e213]: Public
+                - paragraph [ref=f24e215]: an app that people such as expecting mothers can use to find and save Names
+                - paragraph [ref=f24e216]:
+                  - generic [ref=f24e217]: Objective-C
+            - listitem [ref=f24e219]:
+              - generic [ref=f24e221]:
+                - generic [ref=f24e222]:
+                  - link "Android-Baby-Names" [ref=f24e224] [cursor=pointer]:
+                    - /url: /DanielGoodwyn/Android-Baby-Names
+                  - generic [ref=f24e225]: Public
+                - paragraph [ref=f24e227]: an app that people such as expecting mothers can use to find and save Names
+                - paragraph [ref=f24e228]:
+                  - generic [ref=f24e229]: Java
+        - img "Loading" [ref=f24e235]
+  - contentinfo [ref=f24e238]:
+    - heading "Footer" [level=2] [ref=f24e239]
+    - generic [ref=f24e240]:
+      - generic [ref=f24e241]:
+        - link "GitHub Homepage" [ref=f24e242] [cursor=pointer]:
+          - /url: https://github.com
+        - generic [ref=f24e245]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=f24e246]:
+        - heading "Footer navigation" [level=3] [ref=f24e247]
+        - list "Footer navigation" [ref=f24e248]:
+          - listitem [ref=f24e249]:
+            - link "Terms" [ref=f24e250] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=f24e251]:
+            - link "Privacy" [ref=f24e252] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=f24e253]:
+            - link "Security" [ref=f24e254] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=f24e255]:
+            - link "Status" [ref=f24e256] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=f24e257]:
+            - link "Community" [ref=f24e258] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=f24e259]:
+            - link "Docs" [ref=f24e260] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=f24e261]:
+            - link "Contact" [ref=f24e262] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=f24e263]:
+            - button "Manage cookies" [ref=f24e265] [cursor=pointer]
+          - listitem [ref=f24e266]:
+            - button "Do not share my personal information" [ref=f24e268] [cursor=pointer]
