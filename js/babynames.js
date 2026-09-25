@@ -261,7 +261,6 @@ function signUp(e) {
         output = "Error: " + error.message;
         setOutput();
         checkCurrentUser();
-        logIn("click");
       }
     });
   } else {
@@ -275,7 +274,8 @@ function logIn(e) {
     output = "Logging in as " + capitaliseFirstLetter(username) + " with " + email + "...";
     setOutput();
 
-    Parse.User.logIn(username, password, {
+    var loginIdentifier = (email && email.length > 3 && email.includes('@')) ? email : username;
+    Parse.User.logIn(loginIdentifier, password, {
       success: function(user) {
         output = "Logged in as " + capitaliseFirstLetter(username) + ".";
         setOutput();
@@ -285,7 +285,6 @@ function logIn(e) {
         output = "Error: " + error.message;
         setOutput();
         checkCurrentUser();
-        signUp("click");
       }
     });
   } else {
