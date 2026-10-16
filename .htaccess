@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /babynames/
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /babynames/index\.html\ HTTP/
+RewriteRule ^index\.html$ https://www.danielgoodwyn.com/babynames/ [R=301,L]

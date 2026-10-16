@@ -13,7 +13,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-  <script src="js/parse-adapter.js"></script>
+  <script src="js/database-adapter.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body onload="saveExample()">
@@ -21,15 +21,15 @@
   <div id="main" class="container">
     <header>
       <h1>Baby Names</h1>
-      <button id="account" onclick="account()">Account</button>
-      <button id="myNames" onclick="myNames()">My Names</button>
-      <button id="newNames" onclick="newNames()">New Names</button>
+      <button id="account" onclick="window.account()">Account</button>
+      <button id="myNames" onclick="window.myNames()">My Names</button>
+      <button id="newNames" onclick="window.newNames()">New Names</button>
     </header>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2>About</h2>
         <p><a href="index.html">Baby Names</a> by <button onclick="dlg()">Daniel Goodwyn</button> (2015)</p>
-        <p><b>Baby Names</b> is an app available for <b>Web</b>, <b>iOS</b>, and <b>Android</b><br>that people such as expecting mothers can use to <a onclick="newNames()">Find</a> and <a onclick="newNames()">Save</a> Names.</p>
+        <p><b>Baby Names</b> is an app available for <b>Web</b>, <b>iOS</b>, and <b>Android</b><br>that people such as expecting mothers can use to <a onclick="window.newNames()">Find</a> and <a onclick="window.newNames()">Save</a> Names.</p>
         <p class="alert alert-info">Baby Names is not yet in the Apple App Store or the Google Play Store.
         <br>Check out the code at <a href="https://github.com/DanielGoodwyn/Web-Baby-Names">GitHub</a>, or contact <a href="http://www.danielgoodwyn.com/contact">Daniel Goodwyn</a> for a demonstration.</p>
         <p>Built with <a href="http://www.parse.com">Parse</a>.</p>
@@ -39,10 +39,10 @@
           <h3>How To</h3>
         </a>
         <p>You must be <a href="index.html">logged in</a> to use this app.</p>
-        <p>You must <a href="index.html">sign up</a> to <a href="index.html">log in</a>.</p>
+        <p>Enter your email and password or use Google to <a href="index.html">Begin</a>.</p>
         <p>Click on a <b>name</b> to see info about it from <a href="http://behindthename.com">Behind The Name</a>.</p>
-        <p>Click on a <a style="cursor:pointer;" onclick="fakeSave('Adam', 'M')">★</a> to the right of a name from <button onclick="newNames()"><u>New</u> Names</button> to <b>save</b> it to your <button onclick="myNames()"><u>My</u> Names</button> list.</p>
-        <p>Click on an <a style="cursor:pointer;" onclick="fakeDelete('Eve')">x</a> to the right of a name from <button onclick="myNames()"><u>My</u> Names</button> to <b>delete</b> it from your <button onclick="myNames()"><u>My</u> Names</button> list.</p>
+        <p>Click on a <a style="cursor:pointer;" onclick="fakeSave('Adam', 'M')">★</a> to the right of a name from <button onclick="window.newNames()"><u>New</u> Names</button> to <b>save</b> it to your <button onclick="window.myNames()"><u>My</u> Names</button> list.</p>
+        <p>Click on an <a style="cursor:pointer;" onclick="fakeDelete('Eve')">x</a> to the right of a name from <button onclick="window.myNames()"><u>My</u> Names</button> to <b>delete</b> it from your <button onclick="window.myNames()"><u>My</u> Names</button> list.</p>
         <a name="example"></a> <a href="#example">
           <h3>Example</h3>
         </a>
@@ -63,6 +63,6 @@
   <footer>
     <button class="selected" onclick="about()">About</button>
   </footer>
-  <script src="js/babynames.js"></script>
+  <script src="js/babynames.js?v=4"></script>
 </body>
 </html>

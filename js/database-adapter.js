@@ -1,4 +1,4 @@
-const Parse = {
+const Database = {
   initialize: function() {
     firebase.initializeApp({
       projectId: "goodwyn-babynames",
@@ -14,18 +14,18 @@ const Parse = {
     auth.onAuthStateChanged(u => {
       if (u) {
         db.collection('users').doc(u.uid).get().then(d => {
-          Parse.User._currentUser = new Parse.UserClass(u, d.data() || {});
+          Database.User._currentUser = new Database.UserClass(u, d.data() || {});
           if (!authResolved) {
             authResolved = true;
-            Parse.authResolved = true;
+            Database.authResolved = true;
             if (typeof checkCurrentUser === 'function') checkCurrentUser();
           }
         });
       } else {
-        Parse.User._currentUser = null;
+        Database.User._currentUser = null;
         if (!authResolved) {
           authResolved = true;
-          Parse.authResolved = true;
+          Database.authResolved = true;
           if (typeof checkCurrentUser === 'function') checkCurrentUser();
         }
       }
@@ -45,14 +45,94 @@ const Parse = {
       let email = u.includes('@') ? u : u + '@babynames.com';
       auth.signInWithEmailAndPassword(email, p).then(cred => {
         db.collection('users').doc(cred.user.uid).get().then(d => {
-          Parse.User._currentUser = new Parse.UserClass(cred.user, d.data() || {});
-          if (cb && cb.success) cb.success(Parse.User._currentUser);
+          Database.User._currentUser = new Database.UserClass(cred.user, d.data() || {});
+          if (cb && cb.success) cb.success(Database.User._currentUser);
         });
       }).catch(e => {
         if (cb && cb.error) cb.error(null, e);
       });
     },
-    logOut: function() { auth.signOut(); Parse.User._currentUser = null; },
+    begin: function(email, password, cb) {
+      email = (email || '').trim().toLowerCase();
+      auth.signInWithEmailAndPassword(email, password).then(cred => {
+        return db.collection('users').doc(cred.user.uid).get().then(d => {
+          let userData = d.data() || { email: email, username: email.split('@')[0] };
+          Database.User._currentUser = new Database.UserClass(cred.user, userData);
+          if (cb && cb.success) cb.success(Database.User._currentUser, 'login');
+        });
+      }).catch(err => {
+        if (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-login-credentials' || err.code === 'auth/invalid-credential') {
+          auth.createUserWithEmailAndPassword(email, password).then(cred => {
+            let initialData = {
+              email: email,
+              username: email.split('@')[0],
+              limit: 25,
+              letter: "A",
+              name: "Adam",
+              gender: "M",
+              sort: "popular",
+              lastPage: "Account"
+            };
+            return db.collection('users').doc(cred.user.uid).set(initialData, {merge: true}).then(() => {
+              Database.User._currentUser = new Database.UserClass(cred.user, initialData);
+              if (cb && cb.success) cb.success(Database.User._currentUser, 'signup');
+            });
+          }).catch(signUpErr => {
+            if (signUpErr.code === 'auth/email-already-in-use') {
+              if (cb && cb.error) cb.error(null, { code: 'auth/wrong-password', message: 'Incorrect password. If you forgot your password, click Forgot Password.' });
+            } else {
+              if (cb && cb.error) cb.error(null, signUpErr);
+            }
+          });
+        } else if (err.code === 'auth/wrong-password') {
+          if (cb && cb.error) cb.error(null, { code: 'auth/wrong-password', message: 'Incorrect password. If you forgot your password, click Forgot Password.' });
+        } else {
+          if (cb && cb.error) cb.error(null, err);
+        }
+      });
+    },
+    logInWithGoogle: function(cb) {
+      let provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('email');
+      provider.addScope('profile');
+      let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      if (isMobile) {
+        auth.signInWithRedirect(provider);
+        return;
+      }
+      auth.signInWithPopup(provider).then(cred => {
+        let u = cred.user;
+        return db.collection('users').doc(u.uid).get().then(d => {
+          let existingData = d.exists ? (d.data() || {}) : {};
+          let displayName = u.displayName || u.email.split('@')[0];
+          let mergedData = Object.assign({
+            email: u.email,
+            username: displayName,
+            limit: 25,
+            letter: "A",
+            name: "Adam",
+            gender: "M",
+            sort: "popular",
+            lastPage: "Account"
+          }, existingData, {
+            email: u.email,
+            username: existingData.username || displayName,
+            photoURL: u.photoURL || existingData.photoURL || null
+          });
+          return db.collection('users').doc(u.uid).set(mergedData, { merge: true }).then(() => {
+            Database.User._currentUser = new Database.UserClass(u, mergedData);
+            if (cb && cb.success) cb.success(Database.User._currentUser);
+          });
+        });
+      }).catch(err => {
+        if (err.code === 'auth/popup-blocked' || err.code === 'auth/popup-closed-by-user' || err.code === 'auth/cancelled-popup-request') {
+          auth.signInWithRedirect(provider);
+        } else {
+          if (cb && cb.error) cb.error(null, err);
+        }
+      });
+    },
+    logOut: function() { auth.signOut(); Database.User._currentUser = null; },
     requestPasswordReset: function(e, cb) {
       auth.sendPasswordResetEmail(e).then(() => {
         if (cb && cb.success) cb.success();
@@ -83,7 +163,7 @@ const Parse = {
         if (w[0] == '<') ref = ref.where(w[1], '<', w[2]);
       });
       ref.limit(this._limit).get().then(snap => {
-        let res = snap.docs.map(d => new Parse.ObjectClass(this.className, d.id, d.data()));
+        let res = snap.docs.map(d => new Database.ObjectClass(this.className, d.id, d.data()));
         if (cb && cb.success) cb.success(res);
       }).catch(e => {
         if (cb && cb.error) cb.error(e);
@@ -92,7 +172,7 @@ const Parse = {
   }
 };
 
-Parse.ObjectClass = function(className, id, data) {
+Database.ObjectClass = function(className, id, data) {
   this.className = className;
   this.id = id;
   this.data = data || {};
@@ -123,18 +203,18 @@ Parse.ObjectClass = function(className, id, data) {
   };
 };
 
-Parse.Object = {
+Database.Object = {
   extend: function(className) {
     let constructor = function(id, data) {
-      return new Parse.ObjectClass(className, id, data);
+      return new Database.ObjectClass(className, id, data);
     };
     constructor.className = className;
     return constructor;
   }
 };
 
-Parse.UserClass = function(user, data) {
-  Parse.ObjectClass.call(this, 'users', user ? user.uid : null, data);
+Database.UserClass = function(user, data) {
+  Database.ObjectClass.call(this, 'users', user ? user.uid : null, data);
   this.user = user;
   this.getUsername = function() { return this.data.username || (this.user ? this.user.email : 'unknown'); };
   this.signUp = function(nullVar, cb) {
@@ -146,7 +226,7 @@ Parse.UserClass = function(user, data) {
       delete this.data.password;
       return db.collection('users').doc(this.id).set(this.data);
     }).then(() => {
-      Parse.User._currentUser = this;
+      Database.User._currentUser = this;
       if (cb && cb.success) cb.success(this);
     }).catch(e => {
       if (cb && cb.error) cb.error(this, e);
@@ -154,7 +234,7 @@ Parse.UserClass = function(user, data) {
   };
 };
 
-// Make Parse.User a constructor that returns a new UserClass
-Parse.User = Object.assign(function() {
-  return new Parse.UserClass();
-}, Parse.User);
+// Make Database.User a constructor that returns a new UserClass
+Database.User = Object.assign(function() {
+  return new Database.UserClass();
+}, Database.User);

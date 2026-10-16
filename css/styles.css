@@ -276,3 +276,146 @@ button:active, button.selected, button:disabled, button:disabled:hover {
     background: #6bb933;
     color: white;
 }
+
+.google-btn {
+    background: #ffffff!important;
+    color: #3c4043!important;
+    border: 1px solid #dadce0!important;
+    border-radius: 6px!important;
+    font-weight: 500!important;
+    font-size: 15px!important;
+    box-shadow: 0 1px 2px rgba(60,64,67,0.1)!important;
+    display: inline-flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    cursor: pointer;
+    width: 90%!important;
+    max-width: 320px;
+    padding: 8px 16px!important;
+    margin: 8px auto!important;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.google-btn:hover {
+    background: #f8f9fa!important;
+    box-shadow: 0 1px 3px rgba(60,64,67,0.2)!important;
+}
+
+/* Day/Night - System Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body, .container {
+        background: #121212!important;
+        color: #e4e4e7!important;
+    }
+
+    #main {
+        background: #1c1c1e!important;
+        color: #e4e4e7!important;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    header {
+        background: rgba(28, 28, 30, 0.85)!important;
+        border-bottom: 1px solid #2c2c2e;
+    }
+
+    header button {
+        background: #2c2c2e!important;
+        color: #e4e4e7!important;
+    }
+
+    header button.selected {
+        background: #3a3a3c!important;
+        color: #60a5fa!important;
+    }
+
+    .spacer {
+        background: #1c1c1e!important;
+    }
+
+    .showAllNames, .showAllNames:hover {
+        background: rgba(28, 28, 30, 0.85)!important;
+        color: #e4e4e7!important;
+    }
+
+    a, h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a, a:visited {
+        color: #f4f4f5!important;
+    }
+
+    a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
+        color: #60a5fa!important;
+    }
+
+    form, .form {
+        background: #27272a!important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    input, select {
+        background: #18181b!important;
+        color: #f4f4f5!important;
+        border-color: #3f3f46!important;
+        box-shadow: inset 1px 2px 3px rgba(0,0,0,0.5)!important;
+    }
+
+    input:focus {
+        border-color: #60a5fa!important;
+    }
+
+    button {
+        background: #27272a!important;
+        color: #f4f4f5!important;
+        border-color: #3f3f46!important;
+    }
+
+    button:hover {
+        background: #3f3f46!important;
+    }
+
+    button.selected {
+        background: #2563eb!important;
+        color: white!important;
+    }
+
+    .google-btn {
+        background: #27272a!important;
+        color: #f4f4f5!important;
+        border: 1px solid #3f3f46!important;
+    }
+
+    .google-btn:hover {
+        background: #3f3f46!important;
+    }
+
+    .boy {
+        background: #1e3a5f!important;
+        color: #bfdbfe!important;
+    }
+
+    .boy:hover {
+        background: #2563eb!important;
+        color: #ffffff!important;
+    }
+
+    .girl {
+        background: #5c2438!important;
+        color: #fbcfe8!important;
+    }
+
+    .girl:hover {
+        background: #db2777!important;
+        color: #ffffff!important;
+    }
+
+    .listItem, .rowTitle, .detail {
+        border-bottom-color: rgba(255,255,255,0.1)!important;
+    }
+
+    .orderedListNumber {
+        color: #a1a1aa!important;
+    }
+
+    #genderForm {
+        background: rgba(255,255,255,0.05)!important;
+    }
+}

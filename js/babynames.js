@@ -1,4 +1,4 @@
-Parse.initialize("bm6jT0Rj1lUCwutfFk1WUgXm4wLRpN1Jz4LKMLqw", "5efdGRCwsq00WEv7jCMrndhfmGPhLlhhqgQ9f2LU");
+Database.initialize("bm6jT0Rj1lUCwutfFk1WUgXm4wLRpN1Jz4LKMLqw", "5efdGRCwsq00WEv7jCMrndhfmGPhLlhhqgQ9f2LU");
 
 var loginForm;
 var userLabel;
@@ -34,7 +34,7 @@ var exampleInnerHTML;
 function currentPage(value) {
 	currentPageValue = value;
 
-  if (Parse.authResolved) {
+  if (Database.authResolved) {
     checkCurrentUser();
     if (currentUser!=null) {
       currentUser.save({
@@ -87,84 +87,86 @@ function setElementById(identification, string) {
 }
 
 function getLoginInput() {
-  var loginForm = document.getElementById("loginForm");
-  username = loginForm.elements[0].value.toLowerCase();
-  password = loginForm.elements[1].value;
-  email = loginForm.elements[2].value.toLowerCase();
+  var emailElement = document.getElementById("email");
+  var passwordElement = document.getElementById("password");
+  
+  email = emailElement ? emailElement.value.toLowerCase() : "";
+  username = email;
+  password = passwordElement ? passwordElement.value : "";
 }
 
 function setOutput() {    
   document.getElementById("output").innerHTML = output;
 }
 
-function signUpWithButton() {
+function beginWithButton() {
   var e = "click";
-  signUp(e);
+  begin(e);
+}
+
+function beginWithGoogle() {
+  output = "Signing in with Google...";
+  setOutput();
+  Database.User.logInWithGoogle({
+    success: function(user) {
+      output = "Welcome, " + capitaliseFirstLetter(user.getUsername()) + "!";
+      setOutput();
+      checkCurrentUser();
+    },
+    error: function(user, error) {
+      output = "Google Sign-In: " + (error ? (error.message || error) : "Failed to sign in.");
+      setOutput();
+      checkCurrentUser();
+    }
+  });
+}
+
+function begin(e) {
+  if (e.keyCode == 13 || e == "click") {
+    getLoginInput();
+    if (!email || email.length < 3 || !email.includes('@')) {
+      output = "Please enter a valid email address.";
+      setOutput();
+      return;
+    }
+    if (!password || password.length < 6) {
+      output = "Please enter a password with at least 6 characters.";
+      setOutput();
+      return;
+    }
+
+    output = "Beginning...";
+    setOutput();
+
+    Database.User.begin(email, password, {
+      success: function(user, action) {
+        if (action === 'signup') {
+          output = "Account created! Welcome, " + capitaliseFirstLetter(user.getUsername()) + ".";
+        } else {
+          output = "Logged in as " + capitaliseFirstLetter(user.getUsername()) + ".";
+        }
+        setOutput();
+        checkCurrentUser();
+      },
+      error: function(user, error) {
+        if (error && (error.code === 'auth/wrong-password' || error.message.includes('wrong-password'))) {
+          output = "Incorrect password. If you forgot your password, please click Forgot Password.";
+        } else {
+          output = "Error: " + (error ? (error.message || error) : "Authentication failed.");
+        }
+        setOutput();
+        checkCurrentUser();
+      }
+    });
+  }
+}
+
+function signUpWithButton() {
+  beginWithButton();
 }
 
 function logInWithButton() {
-  var e = "click";
-  logIn(e);
-}
-
-function logInWithFB() {
-  output = "User logging in through Facebook...";
-  setOutput();
-  Parse.FacebookUtils.logIn(null, {
-    success: function(user) {
-      if (!user.existed()) {
-        checkCurrentUser();
-        output = capitaliseFirstLetter(currentUser.getUsername()) + " signed up and logged in through Facebook.";
-        setOutput();
-      } else {
-        checkCurrentUser();        
-        output = capitaliseFirstLetter(currentUser.getUsername()) + " logged in through Facebook.";
-        setOutput();
-      }
-    },
-    error: function(user, error) {
-      alert("User cancelled the Facebook login or did not fully authorize.");
-      console.log("user cancelled");
-    }
-  });
-}
-
-// use this?
-function getNameFromFB() {
-  console.log("getNameFromFB");
-  FB.api('/me', function(response) {
-    alert('Your name is ' + response.name);
-  });
-}
-
-function linkWithFB() {
-  currentUser = Parse.User.current();
-
-  var query = new Parse.Query(Parse.User);
-  query.equalTo("username", currentUser.getUsername());
-  query.find({
-    success: function(queryUser) {
-
-      linkUser = queryUser[0];
-      console.log(linkUser);
-
-      if (!Parse.FacebookUtils.isLinked(linkUser)) {
-        Parse.FacebookUtils.link(linkUser, null, {
-          success: function(linkUser) {
-            output = capitaliseFirstLetter(currentUser.getUsername()) + " is now linked to Facebook.";
-            setOutput();
-            checkCurrentUser();
-          },
-          error: function(linkUser, error) {
-            output = "Facebook authorization failure:" + error.message;
-            setOutput();
-            checkCurrentUser();
-          }
-        });
-      }
-
-    }
-  });
+  beginWithButton();
 }
 
 function setUsername() {
@@ -199,7 +201,6 @@ function setEmail() {
   });
 }
 
-
 function resetPassword() {
   getLoginInput();
   if (!email || email.length < 3) {
@@ -209,7 +210,7 @@ function resetPassword() {
   }
   output = "Sending password reset email...";
   setOutput();
-  Parse.User.requestPasswordReset(email, {
+  Database.User.requestPasswordReset(email, {
     success: function() {
       output = "Password reset email sent to " + email;
       setOutput();
@@ -221,140 +222,64 @@ function resetPassword() {
   });
 }
 
-function unlinkFromFB() {
-  Parse.FacebookUtils.unlink(currentUser, {
-    success: function(currentUser) {
-      output = capitaliseFirstLetter(currentUser.getUsername()) + " is no longer associated with their Facebook account.";
-      setOutput();
-      checkCurrentUser();
-    },
-    error: function(currentUser, error) {
-      output = "Facebook deauthorization failure:" + error.message;
-      setOutput();
-    }
-  });
-}
-
-function loginInputValidate() {
-  // Removed buggy validation that hid buttons
-}
-
-function signUp(e) {
-  if (e.keyCode == 13 || e == "click") {
-    getLoginInput();
-
-    var user = new Parse.User();
-    user.set("username", username);
-    user.set("password", password);
-    user.set("email", email);      
-    user.set("limit", 25);
-    user.set("letter", "A");
-    user.set("name", "Adam");
-    user.set("gender", "M");
-    user.set("sort", "popular");
-    user.set("lastPage", "Account");
-     
-    user.signUp(null, {
-      success: function(user) {
-        output = "Signed up as " + capitaliseFirstLetter(username) + ".";
-        setOutput();
-        checkCurrentUser();
-      },
-      error: function(user, error) {
-        output = "Error: " + error.message;
-        setOutput();
-        checkCurrentUser();
-      }
-    });
-  } else {
-    loginInputValidate();
-  }
-}
-
-function logIn(e) {
-  if (e.keyCode == 13 || e == "click") {
-    getLoginInput();
-    output = "Logging in as " + capitaliseFirstLetter(username) + " with " + email + "...";
-    setOutput();
-
-    var loginIdentifier = (email && email.length > 3 && email.includes('@')) ? email : username;
-    Parse.User.logIn(loginIdentifier, password, {
-      success: function(user) {
-        output = "Logged in as " + capitaliseFirstLetter(username) + ".";
-        setOutput();
-        checkCurrentUser();
-      },
-      error: function(user, error) {
-        output = "Error: " + error.message;
-        setOutput();
-        checkCurrentUser();
-      }
-    });
-  } else {
-    loginInputValidate(e);
-  }
-}
-
 function logOut() {
   output = "Logged out.";
   username = undefined;
   setOutput();
 
-  Parse.User.logOut();
+  Database.User.logOut();
   account();
 }
 
 function checkCurrentUser() {
-  currentUser = Parse.User.current();
+  if (currentPageValue === undefined) {
+    if (window.location.href.includes("mynames.html")) currentPageValue = "MyNames";
+    else if (window.location.href.includes("newnames.html")) currentPageValue = "NewNames";
+    else if (window.location.href.includes("about.html")) currentPageValue = "About";
+    else currentPageValue = "Account";
+  }
+
+  currentUser = Database.User.current();
 
   if (currentUser) {
     userId = currentUser.id;
     if (currentPageValue == "Account") {
       $('h2').html('My Account');
-      document.getElementById("begin").style.display = "inline-block";
-      document.getElementById("myNames").style.display = "inline-block";
-      document.getElementById("newNames").style.display = "inline-block";
-      document.getElementById("logOut").style.display = "inline-block";
-      document.getElementById("logIn").style.display = "none";
-      if (document.getElementById("logInWithFB")) document.getElementById("logInWithFB").style.display = "none";      
-      if (Parse.FacebookUtils && Parse.FacebookUtils.isLinked(currentUser)) {
-        if (document.getElementById("unlinkFromFB")) document.getElementById("unlinkFromFB").style.display = "inline-block";
-        if (document.getElementById("linkWithFB")) document.getElementById("linkWithFB").style.display = "none";
-      } else {
-        if (document.getElementById("linkWithFB")) document.getElementById("linkWithFB").style.display = "inline-block";
-        if (document.getElementById("unlinkFromFB")) document.getElementById("unlinkFromFB").style.display = "none";
-      }
-      document.getElementById("resetPassword").style.display = "none";
-      document.getElementById("setEmail").style.display = "inline-block";
-      document.getElementById("setUsername").style.display = "inline-block";
+      if (document.getElementById("begin")) document.getElementById("begin").style.display = "inline-block";
+      if (document.getElementById("myNames")) document.getElementById("myNames").style.display = "inline-block";
+      if (document.getElementById("newNames")) document.getElementById("newNames").style.display = "inline-block";
+      if (document.getElementById("logOut")) document.getElementById("logOut").style.display = "inline-block";
+      if (document.getElementById("authActions")) document.getElementById("authActions").style.display = "none";
+      if (document.getElementById("resetPassword")) document.getElementById("resetPassword").style.display = "none";
+      if (document.getElementById("password")) document.getElementById("password").style.display = "none";
       username = currentUser.getUsername();
       email = currentUser.get("email");
-      password = currentUser.get("password");
-      document.getElementById("username").value = capitaliseFirstLetter(username);
-      document.getElementById("email").value = email;
+      if (document.getElementById("email")) {
+        document.getElementById("email").value = email || "";
+        document.getElementById("email").disabled = true;
+      }
     }
-    } else {
-      if (currentPageValue == "Account") {
-      $('h2').html('Log In / Sign Up');
-      document.getElementById("myNames").style.display = "none";
-      document.getElementById("newNames").style.display = "none";
-      document.getElementById("logOut").style.display = "none";
-      document.getElementById("logIn").style.display = "inline-block";
-      document.getElementById("signUp").style.display = "inline-block";
-      if (document.getElementById("logInWithFB")) document.getElementById("logInWithFB").style.display = "inline-block";
-      if (document.getElementById("linkWithFB")) document.getElementById("linkWithFB").style.display = "none";
-      if (document.getElementById("unlinkFromFB")) document.getElementById("unlinkFromFB").style.display = "none";
-      document.getElementById("resetPassword").style.display = "inline-block";
+  } else {
+    if (currentPageValue == "Account") {
+      $('h2').html('Begin');
+      if (document.getElementById("myNames")) document.getElementById("myNames").style.display = "none";
+      if (document.getElementById("newNames")) document.getElementById("newNames").style.display = "none";
+      if (document.getElementById("logOut")) document.getElementById("logOut").style.display = "none";
+      if (document.getElementById("begin")) document.getElementById("begin").style.display = "none";
+      if (document.getElementById("authActions")) document.getElementById("authActions").style.display = "block";
+      if (document.getElementById("resetPassword")) document.getElementById("resetPassword").style.display = "inline-block";
+      if (document.getElementById("password")) document.getElementById("password").style.display = "inline-block";
+      if (document.getElementById("email")) document.getElementById("email").disabled = false;
       setElementById("account","!current");
     } else {
       account();
     }
   }
-  if (Parse.User.current() == null || Parse.User.current().getUsername() == "undefined") {
+  if (Database.User.current() == null || Database.User.current().getUsername() == "undefined") {
     setElementById("account","please log in.");
     currentUser = null;
   } else {
-    setElementById("account",capitaliseFirstLetter(Parse.User.current().getUsername()));
+    setElementById("account",capitaliseFirstLetter(Database.User.current().getUsername()));
   }  
   setDefaults();
   if (currentPageValue == "NewNames") {
@@ -685,14 +610,14 @@ function randomNumber(min, max) {
 }
 
 function getMyNames() {
-  currentUser = Parse.User.current();
+  currentUser = Database.User.current();
   username = currentUser.getUsername();
   var startsWithEl = document.getElementById("startsWith");
   startsWithValue = startsWithEl ? startsWithEl.value : "";
   namesArray = [];
   gendersArray = [];
   var genderClass;
-  var BabyName = Parse.Object.extend("names");
+  var BabyName = Database.Object.extend("names");
 
   currentUser.save({
     limit: limit,
@@ -707,7 +632,7 @@ function getMyNames() {
     }
   });
 
-  var query = new Parse.Query(BabyName);
+  var query = new Database.Query(BabyName);
   query.equalTo("userId", userId);
 
   if (startsWithValue != null && startsWithValue != "") {
@@ -792,7 +717,7 @@ function getMyNames() {
 }
 
 function getNewNames() {
-  currentUser = Parse.User.current();
+  currentUser = Database.User.current();
   username = currentUser.getUsername();
   var startsWithEl = document.getElementById("startsWith");
   startsWithValue = startsWithEl ? startsWithEl.value : "";
@@ -800,7 +725,7 @@ function getNewNames() {
   namesArray = [];
   gendersArray = [];
   var genderClass;
-  var BabyName = Parse.Object.extend("Name");
+  var BabyName = Database.Object.extend("Name");
 
   currentUser.save({
     limit: limit,
@@ -815,7 +740,7 @@ function getNewNames() {
     }
   });
 
-  var query = new Parse.Query(BabyName);
+  var query = new Database.Query(BabyName);
   // We will filter by gender locally after fetching to avoid Firestore index errors
   // if (gender!="All"){
   //   query.equalTo("gender", gender);
@@ -899,8 +824,8 @@ function deleteRow(rowName) {
   output = output + "Deleted " + rowName + ".<br>";
   setOutput();
 
-  var BabyName = Parse.Object.extend("names");
-  var query = new Parse.Query(BabyName);
+  var BabyName = Database.Object.extend("names");
+  var query = new Database.Query(BabyName);
   query.equalTo("name", rowName);
   query.limit(1);
   query.find({
@@ -923,7 +848,7 @@ function deleteRow(rowName) {
 }
 
 function saveRow(rowName, rowGender) {
-  currentUser = Parse.User.current();
+  currentUser = Database.User.current();
   username = currentUser.getUsername();
 
     currentUser.save({
@@ -953,8 +878,8 @@ function saveRow(rowName, rowGender) {
   output = outputDiv.innerHTML;
   setOutput();
 
-  var BabyName = Parse.Object.extend("names");
-  var query = new Parse.Query(BabyName);
+  var BabyName = Database.Object.extend("names");
+  var query = new Database.Query(BabyName);
   query.equalTo("name", rowName);
   query.equalTo("userId", userId);
   query.limit(1);
@@ -964,7 +889,7 @@ function saveRow(rowName, rowGender) {
 
       if (results.length < 1) {
 
-        var NameObject = Parse.Object.extend("names");
+        var NameObject = Database.Object.extend("names");
         var nameObject = new NameObject();
          
         nameObject.set("userId", userId);

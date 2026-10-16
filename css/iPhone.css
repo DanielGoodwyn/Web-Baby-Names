@@ -215,3 +215,52 @@ a:visited {
     margin-left: auto!important;
     margin-right: auto!important;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000!important;
+        color: #f2f2f7!important;
+    }
+    p {
+        color: #e5e5ea!important;
+    }
+    header {
+        background: rgba(28, 28, 30, 0.9)!important;
+    }
+    header button {
+        background: #2c2c2e!important;
+        color: #ffffff!important;
+    }
+    .spacer {
+        background: #000000!important;
+    }
+    form {
+        background: #1c1c1e!important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4)!important;
+    }
+    input {
+        background: #2c2c2e!important;
+        border-color: #3a3a3c!important;
+        color: #ffffff!important;
+    }
+    input:focus {
+        border-color: #0a84ff!important;
+        background: #2c2c2e!important;
+    }
+    select {
+        background: #2c2c2e!important;
+        border-color: #3a3a3c!important;
+        color: #ffffff!important;
+    }
+    .boy {
+        background: #1e3a5f!important;
+    }
+    .girl {
+        background: #5c2438!important;
+    }
+    .google-btn {
+        background: #2c2c2e!important;
+        color: #ffffff!important;
+        border-color: #3a3a3c!important;
+    }
+}
