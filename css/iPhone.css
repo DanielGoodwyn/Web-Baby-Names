@@ -1,4 +1,8 @@
 
+:root {
+    color-scheme: light dark;
+}
+
 p {
     margin: 1em auto!important;
     text-align: center!important;

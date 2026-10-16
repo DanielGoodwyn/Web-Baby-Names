@@ -1,3 +1,7 @@
+:root {
+    color-scheme: light dark;
+}
+
 body, .container {
     background: #eee;
     text-align: center;
@@ -303,69 +307,96 @@ button:active, button.selected, button:disabled, button:disabled:hover {
 
 /* Day/Night - System Dark Mode */
 @media (prefers-color-scheme: dark) {
-    body, .container {
+    html, body, .container {
+        background-color: #121212!important;
         background: #121212!important;
-        color: #e4e4e7!important;
+        color: #f4f4f5!important;
     }
 
     #main {
         background: #1c1c1e!important;
-        color: #e4e4e7!important;
-        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        background-color: #1c1c1e!important;
+        color: #f4f4f5!important;
+        box-shadow: 0 0 20px rgba(0,0,0,0.8)!important;
     }
 
     header {
-        background: rgba(28, 28, 30, 0.85)!important;
-        border-bottom: 1px solid #2c2c2e;
+        background: rgba(28, 28, 30, 0.95)!important;
+        border-bottom: 1px solid #2c2c2e!important;
+    }
+
+    header h1, header h1 a {
+        color: #ffffff!important;
     }
 
     header button {
         background: #2c2c2e!important;
-        color: #e4e4e7!important;
+        color: #f4f4f5!important;
+        border: 1px solid #3f3f46!important;
+    }
+
+    header button:hover {
+        background: #3f3f46!important;
+        color: #ffffff!important;
     }
 
     header button.selected {
-        background: #3a3a3c!important;
-        color: #60a5fa!important;
+        background: #2563eb!important;
+        color: #ffffff!important;
     }
 
     .spacer {
-        background: #1c1c1e!important;
+        background: #121212!important;
     }
 
     .showAllNames, .showAllNames:hover {
-        background: rgba(28, 28, 30, 0.85)!important;
-        color: #e4e4e7!important;
+        background: rgba(28, 28, 30, 0.95)!important;
+        color: #f4f4f5!important;
+        border-top: 1px solid #2c2c2e!important;
     }
 
-    a, h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a, a:visited {
+    h1, h2, h3, h4, #pageTitle {
         color: #f4f4f5!important;
     }
 
-    a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
+    a, a:visited {
         color: #60a5fa!important;
     }
 
-    form, .form {
-        background: #27272a!important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    a:hover {
+        color: #93c5fd!important;
     }
 
-    input, select {
-        background: #18181b!important;
+    form, #loginForm, .form {
+        background: #242429!important;
+        background-color: #242429!important;
         color: #f4f4f5!important;
-        border-color: #3f3f46!important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.5)!important;
+        border: 1px solid #383842!important;
+    }
+
+    input, select, textarea, .form-control {
+        background: #141417!important;
+        background-color: #141417!important;
+        color: #ffffff!important;
+        border: 1px solid #3f3f46!important;
         box-shadow: inset 1px 2px 3px rgba(0,0,0,0.5)!important;
     }
 
-    input:focus {
+    input:focus, select:focus, textarea:focus, .form-control:focus {
         border-color: #60a5fa!important;
+        outline: none!important;
+        box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.3)!important;
+    }
+
+    input::placeholder {
+        color: #888888!important;
     }
 
     button {
-        background: #27272a!important;
-        color: #f4f4f5!important;
-        border-color: #3f3f46!important;
+        background: #2c2c2e!important;
+        color: #ffffff!important;
+        border: 1px solid #3f3f46!important;
     }
 
     button:hover {
@@ -374,22 +405,39 @@ button:active, button.selected, button:disabled, button:disabled:hover {
 
     button.selected {
         background: #2563eb!important;
-        color: white!important;
+        color: #ffffff!important;
+    }
+
+    #beginActionBtn.green {
+        background: #2563eb!important;
+        color: #ffffff!important;
+        border: none!important;
+    }
+
+    #beginActionBtn.green:hover {
+        background: #1d4ed8!important;
     }
 
     .google-btn {
         background: #27272a!important;
-        color: #f4f4f5!important;
+        color: #ffffff!important;
         border: 1px solid #3f3f46!important;
     }
 
     .google-btn:hover {
         background: #3f3f46!important;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.4)!important;
+    }
+
+    #googleAuthDivider span {
+        border-color: #3f3f46!important;
+        color: #a1a1aa!important;
     }
 
     .boy {
-        background: #1e3a5f!important;
-        color: #bfdbfe!important;
+        background: #17345b!important;
+        color: #cde2f8!important;
+        border: 1px solid #264c80!important;
     }
 
     .boy:hover {
@@ -398,8 +446,9 @@ button:active, button.selected, button:disabled, button:disabled:hover {
     }
 
     .girl {
-        background: #5c2438!important;
-        color: #fbcfe8!important;
+        background: #571837!important;
+        color: #fcd9e5!important;
+        border: 1px solid #78254f!important;
     }
 
     .girl:hover {
@@ -408,7 +457,8 @@ button:active, button.selected, button:disabled, button:disabled:hover {
     }
 
     .listItem, .rowTitle, .detail {
-        border-bottom-color: rgba(255,255,255,0.1)!important;
+        border-bottom-color: rgba(255,255,255,0.12)!important;
+        color: #f4f4f5!important;
     }
 
     .orderedListNumber {
@@ -417,5 +467,13 @@ button:active, button.selected, button:disabled, button:disabled:hover {
 
     #genderForm {
         background: rgba(255,255,255,0.05)!important;
+    }
+
+    footer {
+        color: #a1a1aa!important;
+    }
+
+    footer a {
+        color: #60a5fa!important;
     }
 }
