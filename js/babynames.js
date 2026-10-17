@@ -618,14 +618,88 @@ function randomNumber(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-function getMyNames() {
-  currentUser = Database.User.current();
-  username = currentUser.getUsername();
+var myNamesSubscription = null;
+var cachedMyNamesResults = null;
+
+function renderMyNames(rawResults) {
+  if (!rawResults) return;
   var startsWithEl = document.getElementById("startsWith");
   startsWithValue = startsWithEl ? startsWithEl.value : "";
   namesArray = [];
   gendersArray = [];
   var genderClass;
+
+  var results = rawResults.slice();
+  if (gender == "M" || gender == "F") {
+    results = results.filter(function(r) { return r.get("gender") == gender; });
+  }
+
+  var hasLetterFilter = (startsWithValue && startsWithValue != "" && startsWithValue.toUpperCase() != "ALL" && startsWithValue != "*");
+  if (hasLetterFilter) {
+    var prefix = startsWithValue.toLowerCase();
+    results = results.filter(function(r) { 
+      var n = r.get("name");
+      return n && n.toLowerCase().indexOf(prefix) === 0; 
+    });
+  }
+
+  if (sort == "newest") {
+    results.sort(function(a,b) { return (b.createdAt || 0) - (a.createdAt || 0); });
+  } else if (sort == "oldest") {
+    results.sort(function(a,b) { return (a.createdAt || 0) - (b.createdAt || 0); });
+  } else if (sort == "namesAtoZ") {
+    results.sort(function(a,b) { return (a.get("name") || "").localeCompare(b.get("name") || ""); });
+  } else if (sort == "namesZtoA") {
+    results.sort(function(a,b) { return (b.get("name") || "").localeCompare(a.get("name") || ""); });
+  } else {
+    results.sort(function(a,b) { return (a.get("name") || "").localeCompare(b.get("name") || ""); });
+  }
+
+  results = results.slice(0, limit);
+
+  for (var i = 0; i < results.length; i++) {
+    var object = results[i];       
+    namesArray.push(object.get('name'));
+    gendersArray.push(object.get('gender'));
+  }      
+  output = "<div class='orderedList'>";
+  for (var j = 0; j < namesArray.length; j++) {
+    var listItemName = namesArray[j];
+    if (gendersArray[j] == "F"){
+      genderClass = "girl";
+    } else {
+      genderClass = "boy";
+    }
+    output = output + "<div id='" + listItemName + "' class='listItem " + genderClass + "'>";
+    output = output + "<span class='rowTitle' onclick='getInfo(this.parentNode.id)' id='" + listItemName + "Label'>";
+    output = output + listItemName + "</span>";
+    output = output + "<span class='detail' onclick='deleteRow(this.parentNode.id)' id='" + listItemName + "Detail'>";
+    output = output + "×</span></div>";
+  }
+  output = output.substring(0, output.length - 6) + "</div>";
+  setOutput();
+  if (startsWithValue != "" && results.length == 0 && rawResults.length > 0) {
+    startsWithValue = "";
+    $('#startsWith').val("");
+    renderMyNames(rawResults);
+  } else if (results.length == 0) {
+    if (gender == "M") {
+      output = "No boy favorite names saved yet.";
+    } else if (gender == "F") {
+      output = "No girl favorite names saved yet.";
+    } else {
+      output = "Save a name from <a href='newnames.html'><u>New</u> Names</a>, and it will show up here.";
+    }
+    setOutput();
+  }
+}
+
+function getMyNames() {
+  currentUser = Database.User.current();
+  if (!currentUser) return;
+  username = currentUser.getUsername();
+  var startsWithEl = document.getElementById("startsWith");
+  startsWithValue = startsWithEl ? startsWithEl.value : "";
   var BabyName = Database.Object.extend("names");
 
   var effectiveGender = (gender == "M" || gender == "F") ? gender : "All";
@@ -635,26 +709,14 @@ function getMyNames() {
     lastPage: currentPageValue,
     sort: sort
   }, {
-    success: function(currentUser) {
-    },
-    error: function(currentUser, error) {
-      alert("Error: " + error.code + " " + error.message);
-    }
+    success: function(currentUser) {},
+    error: function(currentUser, error) {}
   });
-
-  var query = new Database.Query(BabyName);
-  query.equalTo("userId", userId);
 
   var hasLetterFilter = (startsWithValue && startsWithValue != "" && startsWithValue.toUpperCase() != "ALL" && startsWithValue != "*");
   if (hasLetterFilter) {
     currentUser.save({
       letter: capitaliseFirstLetter(startsWithValue.substring(0,1))
-    }, {
-      success: function(currentUser) {
-      },
-      error: function(currentUser, error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
     });
   } else {
     currentUser.save({
@@ -662,73 +724,27 @@ function getMyNames() {
     });
   }
 
-  query.limit(1000); // Fetch all to process locally
-  query.find({
-    success: function(results) {
-      if (gender == "M" || gender == "F") {
-        results = results.filter(function(r) { return r.get("gender") == gender; });
-      }
-      
-      if (hasLetterFilter) {
-        var prefix = startsWithValue.toLowerCase();
-        results = results.filter(function(r) { 
-          var n = r.get("name");
-          return n && n.toLowerCase().indexOf(prefix) === 0; 
-        });
-      }
+  if (cachedMyNamesResults) {
+    renderMyNames(cachedMyNamesResults);
+  } else {
+    output = "Getting names...";
+    setOutput();
+  }
 
-      if (sort=="newest") {
-        results.sort(function(a,b) { return b.createdAt - a.createdAt; });
-      } else if (sort=="oldest") {
-        results.sort(function(a,b) { return a.createdAt - b.createdAt; });
-      } else if (sort=="namesAtoZ") {
-        results.sort(function(a,b) { return a.get("name").localeCompare(b.get("name")); });
-      } else if (sort=="namesZtoA") {
-        results.sort(function(a,b) { return b.get("name").localeCompare(a.get("name")); });
-      } else {
-        results.sort(function(a,b) { return a.get("name").localeCompare(b.get("name")); });
+  if (!myNamesSubscription) {
+    var query = new Database.Query(BabyName);
+    query.equalTo("userId", userId);
+    query.limit(1000);
+    myNamesSubscription = query.subscribe({
+      success: function(results) {
+        cachedMyNamesResults = results;
+        renderMyNames(results);
+      },
+      error: function(error) {
+        console.error("Error subscribing to favorites:", error);
       }
-      
-      results = results.slice(0, limit);
-
-      for (var i = 0; i < results.length; i++) {
-        var object = results[i];       
-        namesArray.push(object.get('name'));
-        gendersArray.push(object.get('gender'));
-        setOutput();        
-      }      
-      output = "<div class='orderedList'>"
-      for (var j = 0; j < namesArray.length; j++) {
-        var listItemName = namesArray[j];
-        if (gendersArray[j]=="F"){
-          genderClass = "girl";
-        } else {
-          genderClass = "boy";
-        }
-        output = output + "<div id='" + listItemName + "' class='listItem " + genderClass + "'>";
-        output = output + "<span class='rowTitle' onclick='getInfo(this.parentNode.id)' id='" + listItemName + "Label'>";
-        output = output + listItemName + "</span>";
-        output = output + "<span class='detail' onclick='deleteRow(this.parentNode.id)' id='" + listItemName + "Detail'>";
-        output = output + "×</span></div>";
-      }
-      output = output.substring(0, output.length - 6) + "</div>";
-      setOutput();
-      if (startsWithValue != "" && results.length == 0) {
-        startsWithValue = "";
-        $('#startsWith').val("");
-        getMyNames();
-      } else if (results.length == 0) {
-        output = "Save a name from <a href='newnames.html'><u>New</u> Names</a>, and it will show up here."
-        setOutput();
-      }
-    },
-    error: function(error) {
-      alert("Error: " + error.code + " " + error.message);
-    }    
-  });
-
-  output = "Getting names...";
-  setOutput();
+    });
+  }
 }
 
 function getNewNames() {
@@ -848,19 +864,16 @@ function deleteRow(rowName) {
   var BabyName = Database.Object.extend("names");
   var query = new Database.Query(BabyName);
   query.equalTo("name", rowName);
+  if (userId) {
+    query.equalTo("userId", userId);
+  }
   query.limit(1);
   query.find({
     success: function(results) {
-      var object = results[0];
-      object.destroy({
-      });
-
-      var item = document.getElementById(rowName);
-      item.parentNode.removeChild(item);
-      var outputDiv = document.getElementById("output");
-      output = outputDiv.innerHTML;
-      setOutput();
-
+      if (results && results.length > 0) {
+        var object = results[0];
+        object.destroy({});
+      }
     },
     error: function(error) {
       alert("Error: " + error.code + " " + error.message);

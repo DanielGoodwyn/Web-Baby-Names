@@ -168,7 +168,21 @@ const Database = {
       }).catch(e => {
         if (cb && cb.error) cb.error(e);
       });
-    }
+    };
+    this.subscribe = function(cb) {
+      let ref = db.collection(this.className);
+      this._where.forEach(w => {
+        if (w[0] == '==') ref = ref.where(w[1], '==', w[2]);
+        if (w[0] == '>=') ref = ref.where(w[1], '>=', w[2]);
+        if (w[0] == '<') ref = ref.where(w[1], '<', w[2]);
+      });
+      return ref.limit(this._limit).onSnapshot(snap => {
+        let res = snap.docs.map(d => new Database.ObjectClass(this.className, d.id, d.data()));
+        if (cb && cb.success) cb.success(res);
+      }, e => {
+        if (cb && cb.error) cb.error(e);
+      });
+    };
   }
 };
 
