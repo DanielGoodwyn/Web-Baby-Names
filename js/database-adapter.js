@@ -67,9 +67,9 @@ const Database = {
               email: email,
               username: email.split('@')[0],
               limit: 25,
-              letter: "A",
+              letter: "",
               name: "Adam",
-              gender: "M",
+              gender: "All",
               sort: "popular",
               lastPage: "Account"
             };
@@ -109,9 +109,9 @@ const Database = {
             email: u.email,
             username: displayName,
             limit: 25,
-            letter: "A",
+            letter: "",
             name: "Adam",
-            gender: "M",
+            gender: "All",
             sort: "popular",
             lastPage: "Account"
           }, existingData, {

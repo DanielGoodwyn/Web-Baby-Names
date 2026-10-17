@@ -292,46 +292,55 @@ function checkCurrentUser() {
 
 function setDefaults() {
   var namesAtoZ = document.getElementById("namesAtoZ");
+  var userLetter = currentUser ? (currentUser.get("letter") || "") : "";
+  if (!userLetter || userLetter === "ALL" || userLetter === "All" || userLetter === "*" || userLetter === "undefined" || userLetter === "null") {
+    userLetter = "";
+  }
+  var startsWithEl = document.getElementById("startsWith");
+  if (startsWithEl) {
+    startsWithEl.value = userLetter;
+  }
   if (currentPageValue == "NewNames") {
-    document.getElementById("startsWith").value = currentUser.get("letter");
     sort = "popular";
     limit = 50;
-    namesAtoZ.style.background='#eee';
+    if (namesAtoZ) namesAtoZ.style.background='#eee';
     var namesPopular = document.getElementById("namesPopular");
-    namesPopular.style.background='white';
+    if (namesPopular) namesPopular.style.background='white';
     var namesUncommon = document.getElementById("namesUncommon");
-    namesUncommon.style.background='#eee';
+    if (namesUncommon) namesUncommon.style.background='#eee';
   } else if (currentPageValue == "MyNames") {
-    document.getElementById("startsWith").value = currentUser.get("letter");
     sort = "namesAtoZ";
     limit = 1000;
-    namesAtoZ.style.background='white';
+    if (namesAtoZ) namesAtoZ.style.background='white';
     var namesNewest = document.getElementById("namesNewest");
-    namesNewest.style.background='#eee';
+    if (namesNewest) namesNewest.style.background='#eee';
     var namesOldest = document.getElementById("namesOldest");
-    namesOldest.style.background='#eee';
+    if (namesOldest) namesOldest.style.background='#eee';
   }
   if (currentPageValue == "MyNames" || currentPageValue == "NewNames") {
     var genderForm = document.getElementById("genderForm");
-    genderForm.style.background='rgba(0,0,0,.1)';
+    if (genderForm) genderForm.style.background='rgba(0,0,0,.1)';
     var maleNames = document.getElementById("maleNames");
-    maleNames.style.background='#eee';
+    if (maleNames) maleNames.style.background='#eee';
     var femaleNames = document.getElementById("femaleNames");
-    femaleNames.style.background='#eee';
+    if (femaleNames) femaleNames.style.background='#eee';
     var allNames = document.getElementById("allNames");
-    allNames.style.background='#eee';
-    gender = currentUser.get("gender");
-    if (gender == "M") {
-      maleNames.style.background='white';
-      genderForm.style.background='#cdf';
-    } else if (gender == "F") {
-      femaleNames.style.background='white';
-      genderForm.style.background='#fcd';
+    if (allNames) allNames.style.background='#eee';
+    var userGender = currentUser ? currentUser.get("gender") : null;
+    if (userGender == "M") {
+      gender = "M";
+      if (maleNames) maleNames.style.background='white';
+      if (genderForm) genderForm.style.background='#cdf';
+    } else if (userGender == "F") {
+      gender = "F";
+      if (femaleNames) femaleNames.style.background='white';
+      if (genderForm) genderForm.style.background='#fcd';
     } else {
-      allNames.style.background='white';
+      gender = "All"; // Defaults to both
+      if (allNames) allNames.style.background='white';
     }
     var namesZtoA = document.getElementById("namesZtoA");
-    namesZtoA.style.background='#eee';
+    if (namesZtoA) namesZtoA.style.background='#eee';
   }
 }
 
@@ -619,9 +628,10 @@ function getMyNames() {
   var genderClass;
   var BabyName = Database.Object.extend("names");
 
+  var effectiveGender = (gender == "M" || gender == "F") ? gender : "All";
   currentUser.save({
     limit: limit,
-    gender: gender,
+    gender: effectiveGender,
     lastPage: currentPageValue,
     sort: sort
   }, {
@@ -635,7 +645,8 @@ function getMyNames() {
   var query = new Database.Query(BabyName);
   query.equalTo("userId", userId);
 
-  if (startsWithValue != null && startsWithValue != "") {
+  var hasLetterFilter = (startsWithValue && startsWithValue != "" && startsWithValue.toUpperCase() != "ALL" && startsWithValue != "*");
+  if (hasLetterFilter) {
     currentUser.save({
       letter: capitaliseFirstLetter(startsWithValue.substring(0,1))
     }, {
@@ -645,16 +656,20 @@ function getMyNames() {
         alert("Error: " + error.code + " " + error.message);
       }
     });
+  } else {
+    currentUser.save({
+      letter: ""
+    });
   }
 
   query.limit(1000); // Fetch all to process locally
   query.find({
     success: function(results) {
-      if (gender != "All") {
+      if (gender == "M" || gender == "F") {
         results = results.filter(function(r) { return r.get("gender") == gender; });
       }
       
-      if (startsWithValue && startsWithValue != "") {
+      if (hasLetterFilter) {
         var prefix = startsWithValue.toLowerCase();
         results = results.filter(function(r) { 
           var n = r.get("name");
@@ -727,9 +742,10 @@ function getNewNames() {
   var genderClass;
   var BabyName = Database.Object.extend("Name");
 
+  var effectiveGender = (gender == "M" || gender == "F") ? gender : "All";
   currentUser.save({
     limit: limit,
-    gender: gender,
+    gender: effectiveGender,
     lastPage: currentPageValue,
     sort: sort
   }, {
@@ -745,7 +761,8 @@ function getNewNames() {
   // if (gender!="All"){
   //   query.equalTo("gender", gender);
   // }
-  if (startsWithValue != null && startsWithValue != "") {
+  var hasLetterFilter = (startsWithValue && startsWithValue != "" && startsWithValue.toUpperCase() != "ALL" && startsWithValue != "*");
+  if (hasLetterFilter) {
     currentUser.save({
       letter: capitaliseFirstLetter(startsWithValue.substring(0,1))
     }, {
@@ -755,17 +772,21 @@ function getNewNames() {
         alert("Error: " + error.code + " " + error.message);
       }
     });
+  } else {
+    currentUser.save({
+      letter: ""
+    });
   }
 
   // We fetch without limit to ensure local gender filtering doesn't run out of names
   // query.limit(limit);
   query.find({
     success: function(results) {
-      if (gender != "All") {
+      if (gender == "M" || gender == "F") {
         results = results.filter(function(r) { return r.get("gender") == gender; });
       }
       
-      if (startsWithValue && startsWithValue != "") {
+      if (hasLetterFilter) {
         var prefix = startsWithValue.toLowerCase();
         results = results.filter(function(r) { 
           var n = r.get("name");
