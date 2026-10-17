@@ -826,7 +826,7 @@ function getNewNames() {
         output = output + "<div class='orderedListNumber' id='" + (j+1) + "'> " + (j+1) + ". </div>";
         output = output + listItemName + "</span>";
         output = output + "<span class='detail' onclick='saveRow(this.parentNode.id, \"" + gendersArray[j] + "\")' id='" + listItemName + "Detail'>";
-        output = output + "★</span></div>";
+        output = output + "<svg width='16' height='16' viewBox='0 0 100 100' style='vertical-align:middle;' fill='currentColor'><path fill-rule='evenodd' clip-rule='evenodd' d='M 16 12 C 13.8 12 12 13.8 12 16 L 12 84 C 12 86.2 13.8 88 16 88 L 84 88 C 86.2 88 88 86.2 88 84 L 88 28 L 72 12 L 16 12 Z M 28 16 L 68 16 C 69.1 16 70 16.9 70 18 L 70 36 C 70 37.1 69.1 38 68 38 L 28 38 C 26.9 38 26 37.1 26 36 L 26 18 C 26 16.9 26.9 16 28 16 Z M 56 22 L 62 22 L 62 32 L 56 32 Z M 24 52 C 24 49.8 25.8 48 28 48 L 72 48 C 74.2 48 76 49.8 76 52 L 76 84 L 24 84 L 24 52 Z M 32 58 L 68 58 L 68 64 L 32 64 Z M 32 70 L 68 70 L 68 76 L 32 76 Z' fill='currentColor'/></svg></span></div>";
       }
 
       output = output.substring(0, output.length - 6) + "</div>";

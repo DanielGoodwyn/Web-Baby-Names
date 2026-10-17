@@ -4,11 +4,11 @@
   <meta name="description" content="Baby Names">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
   <meta name="color-scheme" content="light dark">
-  <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=3">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css?v=8">
@@ -32,7 +32,15 @@
     <h2>New Baby Names</h2>
     <div class="showAllNames">
       <a onclick="resetDefaults()">All Names</a>
-      <a onclick="randomName()">Ξ</a>
+      <a onclick="randomName()" title="Random Name" style="display:inline-flex; align-items:center; vertical-align:middle;">
+        <svg width="22" height="22" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M 16 30 L 36 30 C 52 30 48 70 64 70 L 76 70" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 16 70 L 36 70 C 42 70 45 61 48 53" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+          <path d="M 52 47 C 55 39 58 30 64 30 L 76 30" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+          <polygon points="72,16 90,30 72,44" fill="currentColor"/>
+          <polygon points="72,56 90,70 72,84" fill="currentColor"/>
+        </svg>
+      </a>
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -106,6 +114,6 @@
   <footer>
     <button onclick="about()">About</button>
   </footer>
-  <script src="js/babynames.js?v=4"></script>
+  <script src="js/babynames.js?v=5"></script>
 </body>
 </html>
