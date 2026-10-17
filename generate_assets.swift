@@ -208,6 +208,12 @@ let svgs: [String: String] = [
   <circle cx="50" cy="32" r="20" fill="#1C1C1E"/>
   <path d="M 16 84 C 16 65 30 57 50 57 C 70 57 84 65 84 84 C 84 86 82 88 80 88 L 20 88 C 18 88 16 86 16 84 Z" fill="#1C1C1E"/>
 </svg>
+""",
+    "tool_sort": """
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <path d="M 32 80 L 32 20 M 18 36 L 32 20 L 46 36" stroke="#1C1C1E" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M 68 20 L 68 80 M 54 64 L 68 80 L 82 64" stroke="#1C1C1E" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+</svg>
 """
 ]
 
