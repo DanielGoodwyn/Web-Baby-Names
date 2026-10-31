@@ -369,13 +369,173 @@ function resetDefaults() {
 
 function setLimit() {
   var limitSelect = document.getElementById("limitSelect");
+  if (!limitSelect) return;
   var limitValue = limitSelect.options[limitSelect.selectedIndex].value;
   if (limitValue != "unlimited") {
-    limit = parseInt(limitValue);
+    limit = parseInt(limitValue, 10);
   } else {
-    limit = 1000;
+    limit = 10000;
+  }
+  updateLimitUI();
+}
+
+function updateLimitUI() {
+  var control = document.getElementById("modalLimitControl");
+  if (control) {
+    var btns = control.getElementsByClassName("segment-btn");
+    var activeKey = (limit >= 1000) ? "all" : String(limit);
+    for (var i = 0; i < btns.length; i++) {
+      if (btns[i].getAttribute("data-limit") == activeKey) {
+        btns[i].classList.add("active");
+      } else {
+        btns[i].classList.remove("active");
+      }
+    }
+  }
+  var limitSelect = document.getElementById("limitSelect");
+  if (limitSelect) {
+    var val = (limit >= 1000) ? "unlimited" : String(limit);
+    limitSelect.value = val;
   }
 }
+
+function setModalLimit(val) {
+  if (val === "all" || val >= 1000) {
+    limit = 10000;
+  } else {
+    limit = parseInt(val, 10);
+  }
+  updateLimitUI();
+  if (currentPageValue == "NewNames") {
+    getNewNames();
+  } else if (currentPageValue == "MyNames") {
+    getMyNames();
+  }
+}
+
+var allNamesCache = null;
+var isNamesLoading = false;
+var namesLoadCallbacks = [];
+
+function loadAllNames(callback) {
+  if (allNamesCache) {
+    if (callback) callback(allNamesCache);
+    return;
+  }
+  if (callback) {
+    namesLoadCallbacks.push(callback);
+  }
+  if (isNamesLoading) return;
+  isNamesLoading = true;
+  
+  fetch('assets/names.json')
+    .then(function(res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    })
+    .then(function(data) {
+      allNamesCache = data;
+      isNamesLoading = false;
+      while (namesLoadCallbacks.length > 0) {
+        var cb = namesLoadCallbacks.shift();
+        try { cb(allNamesCache); } catch(e) { console.error(e); }
+      }
+    })
+    .catch(function(err) {
+      console.error("Failed to load assets/names.json:", err);
+      isNamesLoading = false;
+      while (namesLoadCallbacks.length > 0) {
+        var cb = namesLoadCallbacks.shift();
+        try { cb([]); } catch(e) { console.error(e); }
+      }
+    });
+}
+loadAllNames();
+
+function openSearchModal() {
+  var modal = document.getElementById("searchModal");
+  if (modal) {
+    modal.style.display = 'flex';
+    updateLimitUI();
+    var input = document.getElementById("modalSearchInput");
+    if (input) {
+      input.value = "";
+      input.focus();
+      handleModalSearch("");
+    }
+  }
+}
+
+function closeSearchModal() {
+  var modal = document.getElementById("searchModal");
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+function handleModalSearch(query) {
+  var container = document.getElementById("modalSearchResults");
+  if (!container) return;
+  query = (query || "").trim().toLowerCase();
+  if (query.length === 0) {
+    container.innerHTML = "<div class='modal-empty-state'>Type a name above to search all 31,830 official SSA names.</div>";
+    return;
+  }
+  loadAllNames(function(data) {
+    var prefixMatches = [];
+    var containsMatches = [];
+    for (var i = 0; i < data.length; i++) {
+      var item = data[i];
+      var nameLower = item.name.toLowerCase();
+      if (nameLower.indexOf(query) === 0) {
+        prefixMatches.push(item);
+      } else if (nameLower.indexOf(query) > 0) {
+        containsMatches.push(item);
+      }
+      if (prefixMatches.length >= 40) break;
+    }
+    var matches = prefixMatches.concat(containsMatches).slice(0, 50);
+    if (matches.length === 0) {
+      container.innerHTML = "<div class='modal-empty-state'>No matching names found in the official SSA 2023 dataset.<br><small style='color:#888;'>Custom or invented names cannot be added.</small></div>";
+      return;
+    }
+
+    var savedNamesMap = {};
+    if (cachedMyNamesResults) {
+      for (var s = 0; s < cachedMyNamesResults.length; s++) {
+        savedNamesMap[cachedMyNamesResults[s].get('name')] = true;
+      }
+    }
+
+    var html = "";
+    for (var j = 0; j < matches.length; j++) {
+      var m = matches[j];
+      var isBoy = (m.gender === 'M');
+      var genderLabel = isBoy ? 'Boy' : 'Girl';
+      var genderClass = isBoy ? 'boy' : 'girl';
+      var isSaved = !!savedNamesMap[m.name];
+      var btnText = isSaved ? '★ Saved' : '☆ Save';
+      var btnClass = isSaved ? 'result-fav-btn saved' : 'result-fav-btn';
+
+      html += "<div class='modal-result-row " + genderClass + "'>";
+      html += "  <div class='result-info'>";
+      html += "    <span class='result-name' onclick='getInfo(\"" + m.name + "\")'>" + m.name + "</span>";
+      html += "    <span class='result-badge " + genderClass + "'>" + genderLabel + "</span>";
+      html += "    <span class='result-rank'>#" + m.rank.toLocaleString() + " (" + m.count.toLocaleString() + ")</span>";
+      html += "  </div>";
+      html += "  <button class='" + btnClass + "' onclick='modalSaveClick(this, \"" + m.name + "\", \"" + m.gender + "\")'>" + btnText + "</button>";
+      html += "</div>";
+    }
+    container.innerHTML = html;
+  });
+}
+
+function modalSaveClick(btn, name, gender) {
+  saveRow(name, gender);
+  btn.className = 'result-fav-btn saved';
+  btn.innerText = '★ Saved';
+}
+
 
 function newNamesPopular() {
   namesPopular();
@@ -749,112 +909,100 @@ function getMyNames() {
 
 function getNewNames() {
   currentUser = Database.User.current();
-  username = currentUser.getUsername();
+  if (currentUser) {
+    username = currentUser.getUsername();
+  }
   var startsWithEl = document.getElementById("startsWith");
   startsWithValue = startsWithEl ? startsWithEl.value : "";
 
   namesArray = [];
   gendersArray = [];
   var genderClass;
-  var BabyName = Database.Object.extend("Name");
 
   var effectiveGender = (gender == "M" || gender == "F") ? gender : "All";
-  currentUser.save({
-    limit: limit,
-    gender: effectiveGender,
-    lastPage: currentPageValue,
-    sort: sort
-  }, {
-    success: function(currentUser) {
-    },
-    error: function(currentUser, error) {
-      alert("Error: " + error.code + " " + error.message);
-    }
-  });
-
-  var query = new Database.Query(BabyName);
-  // We will filter by gender locally after fetching to avoid Firestore index errors
-  // if (gender!="All"){
-  //   query.equalTo("gender", gender);
-  // }
-  var hasLetterFilter = (startsWithValue && startsWithValue != "" && startsWithValue.toUpperCase() != "ALL" && startsWithValue != "*");
-  if (hasLetterFilter) {
+  if (currentUser) {
     currentUser.save({
-      letter: capitaliseFirstLetter(startsWithValue.substring(0,1))
+      limit: limit,
+      gender: effectiveGender,
+      lastPage: currentPageValue,
+      sort: sort
     }, {
-      success: function(currentUser) {
-      },
-      error: function(currentUser, error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
+      success: function(currentUser) {},
+      error: function(currentUser, error) {}
     });
-  } else {
-    currentUser.save({
-      letter: ""
-    });
-  }
 
-  // We fetch without limit to ensure local gender filtering doesn't run out of names
-  // query.limit(limit);
-  query.find({
-    success: function(results) {
-      if (gender == "M" || gender == "F") {
-        results = results.filter(function(r) { return r.get("gender") == gender; });
-      }
-      
-      if (hasLetterFilter) {
-        var prefix = startsWithValue.toLowerCase();
-        results = results.filter(function(r) { 
-          var n = r.get("name");
-          return n && n.toLowerCase().indexOf(prefix) === 0; 
-        });
-      }
-
-      if (sort=="uncommon") {
-        results.sort(function(a,b) { return b.get("rank") - a.get("rank"); });
-      } else if (sort=="popular") {
-        results.sort(function(a,b) { return a.get("rank") - b.get("rank"); });
-      } else if (sort=="namesAtoZ") {
-        results.sort(function(a,b) { return a.get("name").localeCompare(b.get("name")); });
-      } else if (sort=="namesZtoA") {
-        results.sort(function(a,b) { return b.get("name").localeCompare(a.get("name")); });
-      } else {
-        results.sort(function(a,b) { return a.get("name").localeCompare(b.get("name")); });
-      }
-
-      results = results.slice(0, limit);
-
-      for (var i = 0; i < results.length; i++) {
-        var object = results[i];
-        namesArray.push(object.get('name'));
-        gendersArray.push(object.get('gender'));
-      }
-      output = "<div class='orderedList'>";
-      for (var j = 0; j < namesArray.length; j++) {
-        var listItemName = namesArray[j];
-        if (gendersArray[j]=="F"){
-          genderClass = "girl";
-        } else {
-          genderClass = "boy";
-        }
-        output = output + "<div id='" + listItemName + "' class='listItem " + genderClass + "'>";
-        output = output + "<span class='rowTitle' onclick='getInfo(this.parentNode.id)' id='" + listItemName + "Label'>";
-        output = output + "<div class='orderedListNumber' id='" + (j+1) + "'> " + (j+1) + ". </div>";
-        output = output + listItemName + "</span>";
-        output = output + "<span class='detail' onclick='saveRow(this.parentNode.id, \"" + gendersArray[j] + "\")' id='" + listItemName + "Detail'>";
-        output = output + "<svg width='16' height='16' viewBox='0 0 100 100' style='vertical-align:middle;' fill='currentColor'><path fill-rule='evenodd' clip-rule='evenodd' d='M 16 12 C 13.8 12 12 13.8 12 16 L 12 84 C 12 86.2 13.8 88 16 88 L 84 88 C 86.2 88 88 86.2 88 84 L 88 28 L 72 12 L 16 12 Z M 28 16 L 68 16 C 69.1 16 70 16.9 70 18 L 70 36 C 70 37.1 69.1 38 68 38 L 28 38 C 26.9 38 26 37.1 26 36 L 26 18 C 26 16.9 26.9 16 28 16 Z M 56 22 L 62 22 L 62 32 L 56 32 Z M 24 52 C 24 49.8 25.8 48 28 48 L 72 48 C 74.2 48 76 49.8 76 52 L 76 84 L 24 84 L 24 52 Z M 32 58 L 68 58 L 68 64 L 32 64 Z M 32 70 L 68 70 L 68 76 L 32 76 Z' fill='currentColor'/></svg></span></div>";
-      }
-
-      output = output.substring(0, output.length - 6) + "</div>";
-      setOutput();
-    },
-    error: function(error) {
-      alert("Error: " + error.code + " " + error.message);
+    var hasLetterFilter = (startsWithValue && startsWithValue != "" && startsWithValue.toUpperCase() != "ALL" && startsWithValue != "*");
+    if (hasLetterFilter) {
+      currentUser.save({
+        letter: capitaliseFirstLetter(startsWithValue.substring(0,1))
+      });
+    } else {
+      currentUser.save({
+        letter: ""
+      });
     }
-  });
+  }
 
   output = "Getting names...";
   setOutput();
+
+  loadAllNames(function(data) {
+    var results = data.slice();
+    if (gender == "M" || gender == "F") {
+      results = results.filter(function(r) { return r.gender == gender; });
+    }
+
+    var hasLetterFilter = (startsWithValue && startsWithValue != "" && startsWithValue.toUpperCase() != "ALL" && startsWithValue != "*");
+    if (hasLetterFilter) {
+      var prefix = startsWithValue.toLowerCase();
+      results = results.filter(function(r) {
+        var n = r.name;
+        return n && n.toLowerCase().indexOf(prefix) === 0;
+      });
+    }
+
+    if (sort == "uncommon") {
+      results.sort(function(a,b) { return b.rank - a.rank; });
+    } else if (sort == "popular") {
+      results.sort(function(a,b) { return a.rank - b.rank; });
+    } else if (sort == "namesAtoZ") {
+      results.sort(function(a,b) { return a.name.localeCompare(b.name); });
+    } else if (sort == "namesZtoA") {
+      results.sort(function(a,b) { return b.name.localeCompare(a.name); });
+    } else {
+      results.sort(function(a,b) { return a.name.localeCompare(b.name); });
+    }
+
+    var effectiveLimit = (limit && limit > 0) ? limit : 50;
+    if (effectiveLimit >= 10000 || limit === "unlimited") {
+      effectiveLimit = results.length;
+    }
+    results = results.slice(0, effectiveLimit);
+
+    for (var i = 0; i < results.length; i++) {
+      namesArray.push(results[i].name);
+      gendersArray.push(results[i].gender);
+    }
+
+    output = "<div class='orderedList'>";
+    for (var j = 0; j < namesArray.length; j++) {
+      var listItemName = namesArray[j];
+      if (gendersArray[j] == "F"){
+        genderClass = "girl";
+      } else {
+        genderClass = "boy";
+      }
+      output = output + "<div id='" + listItemName + "' class='listItem " + genderClass + "'>";
+      output = output + "<span class='rowTitle' onclick='getInfo(this.parentNode.id)' id='" + listItemName + "Label'>";
+      output = output + "<div class='orderedListNumber' id='" + (j+1) + "'> " + (j+1) + ". </div>";
+      output = output + listItemName + "</span>";
+      output = output + "<span class='detail' onclick='saveRow(this.parentNode.id, \"" + gendersArray[j] + "\")' id='" + listItemName + "Detail'>";
+      output = output + "<svg width='16' height='16' viewBox='0 0 100 100' style='vertical-align:middle;' fill='currentColor'><path fill-rule='evenodd' clip-rule='evenodd' d='M 16 12 C 13.8 12 12 13.8 12 16 L 12 84 C 12 86.2 13.8 88 16 88 L 84 88 C 86.2 88 88 86.2 88 84 L 88 28 L 72 12 L 16 12 Z M 28 16 L 68 16 C 69.1 16 70 16.9 70 18 L 70 36 C 70 37.1 69.1 38 68 38 L 28 38 C 26.9 38 26 37.1 26 36 L 26 18 C 26 16.9 26.9 16 28 16 Z M 56 22 L 62 22 L 62 32 L 56 32 Z M 24 52 C 24 49.8 25.8 48 28 48 L 72 48 C 74.2 48 76 49.8 76 52 L 76 84 L 24 84 L 24 52 Z M 32 58 L 68 58 L 68 64 L 32 64 Z M 32 70 L 68 70 L 68 76 L 32 76 Z' fill='currentColor'/></svg></span></div>";
+    }
+
+    output = output + "</div>";
+    setOutput();
+  });
 }
 
 function deleteRow(rowName) {

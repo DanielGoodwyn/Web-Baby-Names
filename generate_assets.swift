@@ -214,6 +214,12 @@ let svgs: [String: String] = [
   <path d="M 32 80 L 32 20 M 18 36 L 32 20 L 46 36" stroke="#1C1C1E" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" />
   <path d="M 68 20 L 68 80 M 54 64 L 68 80 L 82 64" stroke="#1C1C1E" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" />
 </svg>
+""",
+    "tool_search": """
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <circle cx="44" cy="44" r="24" stroke="#1C1C1E" stroke-width="10" fill="none" />
+  <line x1="61" y1="61" x2="82" y2="82" stroke="#1C1C1E" stroke-width="12" stroke-linecap="round" />
+</svg>
 """
 ]
 

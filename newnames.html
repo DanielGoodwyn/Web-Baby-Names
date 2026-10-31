@@ -29,9 +29,15 @@
       <button id="myNames" onclick="window.myNames()">My Names</button>
       <button id="newNames" class="selected" onclick="window.newNames()">New Names</button>
     </header>
-    <h2>New Baby Names</h2>
+    <h2>New Baby Names <button class="btn-header-search" onclick="openSearchModal()" title="Search & Filter">🔍 Search</button></h2>
     <div class="showAllNames">
       <a onclick="resetDefaults()">All Names</a>
+      <a onclick="openSearchModal()" title="Search & Filter" style="display:inline-flex; align-items:center; vertical-align:middle; padding: 0 10px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </a>
       <a onclick="randomName()" title="Random Name" style="display:inline-flex; align-items:center; vertical-align:middle;">
         <svg width="22" height="22" viewBox="0 0 100 100" fill="currentColor">
           <path d="M 16 30 L 36 30 C 52 30 48 70 64 70 L 76 70" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
@@ -111,9 +117,40 @@
       </select>
     </div>
   </div>
+
+  <!-- Search & Filter Modal -->
+  <div id="searchModal" class="modal-overlay" style="display:none;" onclick="if(event.target===this) closeSearchModal()">
+    <div class="search-modal-content">
+      <div class="modal-header">
+        <h3>Search & Filter</h3>
+        <button class="modal-close-btn" onclick="closeSearchModal()" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <label class="modal-label">Explore Limit:</label>
+          <div class="segmented-control" id="modalLimitControl">
+            <button type="button" class="segment-btn" data-limit="25" onclick="setModalLimit(25)">25</button>
+            <button type="button" class="segment-btn" data-limit="50" onclick="setModalLimit(50)">50</button>
+            <button type="button" class="segment-btn" data-limit="100" onclick="setModalLimit(100)">100</button>
+            <button type="button" class="segment-btn" data-limit="all" onclick="setModalLimit('all')">All</button>
+          </div>
+        </div>
+        <div class="modal-section">
+          <label class="modal-label">Search SSA 2023 Names:</label>
+          <div class="search-input-wrapper">
+            <input type="search" id="modalSearchInput" placeholder="Type a name (e.g. Liam, Emma)..." oninput="handleModalSearch(this.value)" autocomplete="off">
+          </div>
+        </div>
+        <div id="modalSearchResults" class="modal-results-list">
+          <div class="modal-empty-state">Type a name above to search all 31,830 official SSA names.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <button onclick="about()">About</button>
   </footer>
-  <script src="js/babynames.js?v=5"></script>
+  <script src="js/babynames.js?v=6"></script>
 </body>
 </html>
